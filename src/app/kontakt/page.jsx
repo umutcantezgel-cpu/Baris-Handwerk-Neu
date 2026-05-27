@@ -190,7 +190,7 @@ export default function Contact() {
   ];
 
   return (
-    <PageWrapper className="relative min-h-screen py-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
+    <PageWrapper className="relative min-h-screen pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
       <SEO
         title="Kontakt"
         description="Kontaktieren Sie uns für ein kostenloses Angebot. Wir sind für Sie da. Schnelle Reaktionszeit garantiert."

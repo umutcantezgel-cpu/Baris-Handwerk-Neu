@@ -67,7 +67,7 @@ export default function Karriere() {
             />
 
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-[var(--color-blue-600)] to-[var(--color-blue-800)] py-[var(--spacing-20)] px-[var(--spacing-4)]">
+            <section className="relative bg-gradient-to-br from-[var(--color-blue-600)] to-[var(--color-blue-800)] pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)]">
                 <div className="max-w-7xl mx-auto text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                         <Briefcase className="w-4 h-4" />

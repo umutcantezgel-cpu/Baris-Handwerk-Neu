@@ -51,7 +51,7 @@ export default function Foerderung() {
             />
 
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)] py-[var(--spacing-20)] px-[var(--spacing-4)]">
+            <section className="relative bg-gradient-to-br from-[var(--color-brand-primary)] to-[var(--color-brand-secondary)] pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)]">
                 <div className="max-w-7xl mx-auto text-center">
                     <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full text-gray-900 text-sm mb-6 font-semibold shadow-lg">
                         <Euro className="w-4 h-4" />

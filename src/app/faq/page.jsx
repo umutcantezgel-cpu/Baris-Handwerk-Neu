@@ -95,7 +95,7 @@ export default function FAQ() {
             />
 
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-[var(--color-neutral-800)] to-[var(--color-neutral-900)] py-[var(--spacing-20)] px-[var(--spacing-4)]">
+            <section className="relative bg-gradient-to-br from-[var(--color-neutral-800)] to-[var(--color-neutral-900)] pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)]">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/90 text-sm mb-6">
                         <HelpCircle className="w-4 h-4" />

@@ -38,7 +38,7 @@ export default function ServicePage() {
   // Services data imported from config
 
   return (
-    <PageWrapper className="relative min-h-screen py-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
+    <PageWrapper className="relative min-h-screen pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
       <SEO
         title="Unsere Leistungen"
         description="Sanitärtechnik, Heizungstechnik, Klimatechnik - alle Leistungen im Detail. Kostenlose Beratung für Ihre Anfrage in Wetzlar."

@@ -11,7 +11,7 @@ import PageWrapper from '@/components/common/PageWrapper';
 
 export default function About() {
   return (
-    <PageWrapper className="relative min-h-screen py-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
+    <PageWrapper className="relative min-h-screen pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
       <SEO
         title="Über uns"
         description="Ihr Partner für zukunftssichere Haustechnik in Wetzlar. Erfahren Sie mehr über unser Team und unsere Werte."
