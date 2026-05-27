@@ -3,26 +3,20 @@ import React, { useEffect, useState } from 'react';
 import { List } from 'lucide-react';
 
 const TableOfContents = ({ content }) => {
-    const [headings, setHeadings] = useState([]);
     const [activeId, setActiveId] = useState('');
 
-    useEffect(() => {
-        // Parse markdown for headings (robust regex for h2 and h3)
-        // We use trim() to handle potential indentation in the template literal
-        const lines = content.split('\n');
-        const extractedHeadings = lines
+    const headings = useMemo(() => {
+        const lines = (content ?? '').split('\n');
+        return lines
             .filter(line => line.trim().startsWith('## ') || line.trim().startsWith('### '))
-            .map((line, index) => {
+            .map(line => {
                 const trimmedLine = line.trim();
                 const level = trimmedLine.match(/^#+/)[0].length;
                 const text = trimmedLine.replace(/^#+\s+/, '');
-                // Strip markdown syntax for ID generation (remove *, _, [, ], etc)
                 const plainText = text.replace(/[*_\[\]()]+/g, '');
                 const id = plainText.toLowerCase().replace(/[^a-z0-9äöüß]+/g, '-').replace(/(^-|-$)+/g, '');
                 return { id, text, level };
             });
-
-        setHeadings(extractedHeadings);
     }, [content]);
 
     useEffect(() => {

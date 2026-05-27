@@ -24,6 +24,7 @@ const EditableText = ({
     // Load saved value from localStorage or use default
     useEffect(() => {
         const saved = localStorage.getItem(`editable_${id}`);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setValue(saved || defaultValue);
     }, [id, defaultValue]);
 

@@ -127,7 +127,7 @@ const ProjectDetail = () => {
                                 <Quote className="absolute top-8 left-8 w-12 h-12 text-[var(--color-brand-primary)] opacity-10" />
                                 <blockquote className="relative z-10">
                                     <p className="text-lg italic text-[var(--color-text-secondary)] mb-[var(--spacing-4)]">
-                                        "{project.testimonial.text}"
+                                        &quot;{project.testimonial.text}&quot;
                                     </p>
                                     <footer className="font-semibold text-[var(--color-neutral-900)]">
                                         — {project.testimonial.author}

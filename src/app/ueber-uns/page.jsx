@@ -70,7 +70,7 @@ export default function About() {
             <div className="bg-gradient-to-br from-[var(--color-neutral-900)] to-[var(--color-brand-primary)] p-[var(--spacing-8)] rounded-[var(--radius-xl)] text-white shadow-[var(--shadow-md)] relative overflow-hidden">
               <div className="relative z-10">
                 <p className="text-lg font-light leading-relaxed italic opacity-90 mb-[var(--spacing-4)]">
-                  "Qualität ist kein Zufall, sondern das Ergebnis von Erfahrung, Präzision und der Liebe zum Handwerk."
+                  &quot;Qualität ist kein Zufall, sondern das Ergebnis von Erfahrung, Präzision und der Liebe zum Handwerk.&quot;
                 </p>
                 <div className="font-bold text-[var(--color-brand-secondary)]">— {COMPANY_DATA.owner.firstName} {COMPANY_DATA.owner.lastName}</div>
                 <div className="text-sm opacity-60">Geschäftsführer</div>

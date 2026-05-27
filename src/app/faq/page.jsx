@@ -200,7 +200,7 @@ export default function FAQ() {
                             <HelpCircle className="w-16 h-16 text-[var(--color-neutral-300)] mx-auto mb-4" />
                             <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Keine Ergebnisse</h3>
                             <p className="text-[var(--color-text-secondary)]">
-                                Für "{searchQuery}" wurden keine Fragen gefunden.
+                                Für &quot;{searchQuery}&quot; wurden keine Fragen gefunden.
                             </p>
                         </div>
                     )}

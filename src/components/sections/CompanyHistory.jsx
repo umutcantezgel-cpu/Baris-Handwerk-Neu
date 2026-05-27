@@ -140,7 +140,7 @@ export default function CompanyHistory() {
                 >
                     <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-10 transition-opacity" />
                     <Star className="w-16 h-16 mx-auto mb-6 text-amber-400 animate-pulse" />
-                    <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">"Handwerkliche Präzision trifft auf die Technik der Zukunft."</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">&quot;Handwerkliche Präzision trifft auf die Technik der Zukunft.&quot;</h3>
                     <div className="w-24 h-1 bg-white/20 mx-auto rounded-full" />
                 </motion.div>
             </div>

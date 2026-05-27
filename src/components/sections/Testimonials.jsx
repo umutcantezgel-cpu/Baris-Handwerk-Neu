@@ -83,7 +83,7 @@ const Testimonials = ({ className = ''}) => {
                             </div>
 
                             <blockquote className="text-[var(--color-text-primary)] leading-relaxed mb-[var(--spacing-6)]">
-                                "{testimonial.content}"
+                                &quot;{testimonial.content}&quot;
                             </blockquote>
 
                             <div className="flex items-center gap-[var(--spacing-3)]">

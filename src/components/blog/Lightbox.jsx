@@ -3,16 +3,17 @@ import React, { useEffect } from 'react';
 import { X, ZoomIn, ZoomOut } from 'lucide-react';
 
 const Lightbox = ({ src, alt, onClose }) => {
-    if (!src) return null;
-
     // Close on escape key
     useEffect(() => {
+        if (!src) return;
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') onClose();
         };
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
-    }, [onClose]);
+    }, [src, onClose]);
+
+    if (!src) return null;
 
     return (
         <div

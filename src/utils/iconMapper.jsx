@@ -1,3 +1,4 @@
+import React from 'react';
 import * as Icons from 'lucide-react';
 
 export const getIcon = (iconName) => {
@@ -12,8 +13,7 @@ export const getIcon = (iconName) => {
     return IconComponent || Icons.HelpCircle; // Fallback icon
 };
 
-export const IconWrapper = ({ name, ...props }) => {
+export const IconWrapper = React.memo(function IconWrapper({ name, ...props }) {
     const Icon = getIcon(name);
-    if (!Icon) return null;
-    return <Icon {...props} />;
-};
+    return Icon ? React.createElement(Icon, props) : null;
+});

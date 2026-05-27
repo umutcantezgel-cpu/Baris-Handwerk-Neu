@@ -35,7 +35,7 @@ export default function AGB() {
                                             (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen
                                             <span className="font-semibold"> {siteConfig.legalName}</span>,
                                             Inhaber: {siteConfig.legal.owner}, {siteConfig.contact.address.street}, {siteConfig.contact.address.zipCity}
-                                            (nachfolgend "Auftragnehmer") und dem Kunden (nachfolgend "Auftraggeber").
+                                            (nachfolgend &quot;Auftragnehmer&quot;) und dem Kunden (nachfolgend &quot;Auftraggeber&quot;).
                                         </p>
                                         <p className="mb-3">
                                             (2) Diese AGB bilden die Grundlage für alle Angebote, Aufträge und Dienstleistungsverträge

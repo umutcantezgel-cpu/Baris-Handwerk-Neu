@@ -54,37 +54,40 @@ export const hasStoredConsent = (category) => {
 const ConsentManager = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [showDetails, setShowDetails] = useState(false);
-    const [preferences, setPreferences] = useState({
-        essential: true,    // Always true and disabled
-        analytics: false,   // Google Analytics, Matomo etc.
-        marketing: false,   // Tracking pixels, ads
-        maps: false,        // Google Maps
-        externalContent: false  // YouTube, external widgets
+    const [preferences, setPreferences] = useState(() => {
+        const defaultPrefs = { essential: true, analytics: false, marketing: false, maps: false, externalContent: false };
+        if (typeof window === 'undefined') return defaultPrefs;
+        try {
+            const savedConsent = localStorage.getItem(CONSENT_KEY);
+            if (!savedConsent) return defaultPrefs;
+            const parsed = JSON.parse(savedConsent);
+            if (parsed.version !== CONSENT_VERSION) {
+                localStorage.removeItem(CONSENT_KEY);
+                return defaultPrefs;
+            }
+            return parsed.settings;
+        } catch {
+            localStorage.removeItem(CONSENT_KEY);
+            return defaultPrefs;
+        }
     });
 
     useEffect(() => {
-        const savedConsent = localStorage.getItem(CONSENT_KEY);
-        if (savedConsent) {
+        const hasValidConsent = (() => {
             try {
-                const parsed = JSON.parse(savedConsent);
-                // Check version
-                if (parsed.version !== CONSENT_VERSION) {
-                    // Version changed - show banner again
-                    localStorage.removeItem(CONSENT_KEY);
-                    const timer = setTimeout(() => setIsVisible(true), 1000);
-                    return () => clearTimeout(timer);
-                }
-                setPreferences(parsed.settings);
-            } catch (e) {
-                localStorage.removeItem(CONSENT_KEY);
-                const timer = setTimeout(() => setIsVisible(true), 1000);
-                return () => clearTimeout(timer);
+                const stored = localStorage.getItem(CONSENT_KEY);
+                if (!stored) return false;
+                const parsed = JSON.parse(stored);
+                return parsed.version === CONSENT_VERSION;
+            } catch {
+                return false;
             }
-        } else {
-            // No saved consent - show banner
-            const timer = setTimeout(() => setIsVisible(true), 1000);
-            return () => clearTimeout(timer);
-        }
+        })();
+
+        if (hasValidConsent) return;
+
+        const timer = setTimeout(() => setIsVisible(true), 1000);
+        return () => clearTimeout(timer);
     }, []);
 
     const handleAcceptAll = () => {
