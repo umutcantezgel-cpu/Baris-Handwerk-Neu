@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Building2, Award, Zap, Compass, Star, Rocket } from 'lucide-react';
@@ -15,7 +16,7 @@ const milestones = [
         title: "Meisterbetrieb",
         description: "Eintragung in die Handwerksrolle und offizieller Start als Fachbetrieb für Sanitär, Heizung und Klimatechnik.",
         icon: Award,
-        color: "bg-[#00b050]"
+        color: "bg-[#c69c6d]"
     },
     {
         year: "Fokus",
@@ -66,7 +67,7 @@ export default function CompanyHistory() {
                     {/* Animated vertical line (Desktop) */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-gray-200 hidden md:block">
                         <motion.div
-                            className="w-full bg-[#00b050] origin-top h-full"
+                            className="w-full bg-[#c69c6d] origin-top h-full"
                             style={{ scaleY }}
                         />
                     </div>
@@ -78,7 +79,7 @@ export default function CompanyHistory() {
                             return (
                                 <div key={index} className="relative">
                                     {/* Mobile Dot */}
-                                    <div className="md:hidden absolute left-0 top-6 w-4 h-4 rounded-full bg-[#00b050] z-10" />
+                                    <div className="md:hidden absolute left-0 top-6 w-4 h-4 rounded-full bg-[#c69c6d] z-10" />
 
                                     <div className={`flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0 pl-10 md:pl-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
 
@@ -102,7 +103,7 @@ export default function CompanyHistory() {
                                                     <span className="text-2xl font-black text-[#1a3a52]/20 tracking-widest">{item.year}</span>
                                                 </div>
 
-                                                <h3 className="text-2xl font-bold text-[#1a3a52] mb-4 group-hover:text-[#00b050] transition-colors">
+                                                <h3 className="text-2xl font-bold text-[#1a3a52] mb-4 group-hover:text-[#c69c6d] transition-colors">
                                                     {item.title}
                                                 </h3>
                                                 <p className="text-gray-600 leading-relaxed text-base md:text-lg">
@@ -117,7 +118,7 @@ export default function CompanyHistory() {
                                                 initial={{ scale: 0 }}
                                                 whileInView={{ scale: 1 }}
                                                 viewport={{ once: true }}
-                                                className="w-6 h-6 rounded-full bg-white border-4 border-[#00b050] shadow-glow"
+                                                className="w-6 h-6 rounded-full bg-white border-4 border-[#c69c6d] shadow-glow"
                                             />
                                         </div>
 
@@ -135,7 +136,7 @@ export default function CompanyHistory() {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-32 p-12 rounded-[3rem] bg-gradient-to-br from-[#1a3a52] to-[#00b050] text-white text-center shadow-2xl relative overflow-hidden group"
+                    className="mt-32 p-12 rounded-[3rem] bg-gradient-to-br from-[#1a3a52] to-[#c69c6d] text-white text-center shadow-2xl relative overflow-hidden group"
                 >
                     <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-10 transition-opacity" />
                     <Star className="w-16 h-16 mx-auto mb-6 text-amber-400 animate-pulse" />

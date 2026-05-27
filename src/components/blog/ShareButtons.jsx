@@ -130,8 +130,8 @@ const ShareButtons = ({ url, title, description }) => {
                                 >
                                     {copied ? (
                                         <>
-                                            <Check className="w-5 h-5 text-[#00b050]" />
-                                            <span className="text-sm font-medium text-[#00b050]">Link kopiert!</span>
+                                            <Check className="w-5 h-5 text-[#c69c6d]" />
+                                            <span className="text-sm font-medium text-[#c69c6d]">Link kopiert!</span>
                                         </>
                                     ) : (
                                         <>

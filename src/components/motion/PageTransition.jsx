@@ -1,6 +1,8 @@
+"use client";
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
+
 
 /**
  * Premium Tech Stack: Cinematic Page Transitions
@@ -55,7 +57,7 @@ const reducedMotionVariants = {
 };
 
 const PageTransition = ({ children }) => {
-    const location = useLocation();
+    const location = { pathname: usePathname() };
 
     // Check for reduced motion preference
     const prefersReducedMotion =

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import { cn } from '@/utils'
 
@@ -46,7 +47,7 @@ const testimonials = [
     }
 ]
 
-const Testimonials = ({ className }) => {
+const Testimonials = ({ className = ''}) => {
     return (
         <section className={cn("py-[var(--spacing-16)] bg-[var(--color-background-surface-secondary)]", className)}>
             <div className="container mx-auto px-4 md:px-8">

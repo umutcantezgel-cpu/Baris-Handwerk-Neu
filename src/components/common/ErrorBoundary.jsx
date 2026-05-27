@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { logger } from '@/services/logger';
 import { Button } from '@/components/ui/button';

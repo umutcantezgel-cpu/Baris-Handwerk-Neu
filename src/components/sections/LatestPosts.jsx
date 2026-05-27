@@ -1,6 +1,7 @@
+"use client";
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useContent } from '@/contexts/ContentContext';
 import BlogCard from '@/components/blog/BlogCard';
 import { Button } from '@/components/ui/button';
@@ -23,7 +24,7 @@ export default function LatestPosts() {
                             Tipps, Trends und Neuigkeiten rund um Haustechnik und Energieeffizienz.
                         </p>
                     </div>
-                    <Link to="/blog">
+                    <Link href="/blog">
                         <Button variant="ghost" className="hidden md:flex text-[var(--color-brand-primary)] hover:bg-[var(--color-blue-50)]">
                             Alle Artikel ansehen <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
@@ -39,7 +40,7 @@ export default function LatestPosts() {
                 </div>
 
                 <div className="mt-[var(--spacing-8)] text-center md:hidden">
-                    <Link to="/blog">
+                    <Link href="/blog">
                         <Button variant="outline" className="w-full">
                             Alle Artikel ansehen
                         </Button>

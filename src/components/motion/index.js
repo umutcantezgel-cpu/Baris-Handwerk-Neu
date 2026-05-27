@@ -1,3 +1,4 @@
+"use client";
 // Premium Tech Stack: Motion Components
 // Cinematic UX Module - GPU-accelerated animations
 

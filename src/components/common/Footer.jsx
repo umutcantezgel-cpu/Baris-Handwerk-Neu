@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, Wrench, ChevronRight, Instagram } from 'lucide-react';
 import { navigationLinks, quickLinks, serviceLinks } from '@/config/navigation';
 import { useContent } from '@/contexts/ContentContext';
@@ -28,10 +29,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Seiten</h3>
                         <ul className="space-y-[var(--spacing-2)]">
-                            {navigationLinks.map((link) => (
+                            {navigationLinks.filter(link => link.path !== '#').map((link) => (
                                 <li key={link.name}>
                                     <Link
-                                        to={link.path}
+                                        href={link.path}
                                         className="flex items-center text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors group text-[var(--font-size-sm)]"
                                     >
                                         <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
@@ -49,7 +50,7 @@ const Footer = () => {
                             {serviceLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
-                                        to={link.path}
+                                        href={link.path}
                                         className="flex items-center text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors group text-[var(--font-size-sm)]"
                                     >
                                         <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
@@ -136,14 +137,14 @@ const Footer = () => {
                             {quickLinks.map((link) => (
                                 <Link
                                     key={link.name}
-                                    to={link.path}
+                                    href={link.path}
                                     className="text-[var(--color-neutral-500)] hover:text-[var(--color-blue-400)] text-xs transition-colors"
                                 >
                                     {link.name}
                                 </Link>
                             ))}
                             <Link
-                                to="/login"
+                                href="/login"
                                 className="text-[var(--color-neutral-600)] hover:text-[var(--color-neutral-400)] text-xs transition-colors"
                             >
                                 Mitarbeiter

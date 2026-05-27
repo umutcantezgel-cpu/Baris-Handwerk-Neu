@@ -41,8 +41,8 @@ async function hashString(str) {
 }
 
 export const authService = {
-    // Get user profile (no credentials stored)
     getProfile() {
+        if (typeof window === 'undefined') return { ...DEFAULT_PROFILE };
         try {
             const stored = localStorage.getItem(STORAGE_KEY_PROFILE);
             if (stored) return JSON.parse(stored);
@@ -52,8 +52,8 @@ export const authService = {
         return { ...DEFAULT_PROFILE };
     },
 
-    // Save user profile (no credentials)
     saveProfile(profile) {
+        if (typeof window === 'undefined') return;
         // Sanitize - ensure no credentials leak into profile storage
         const safeProfile = {
             name: profile.name || DEFAULT_PROFILE.name,
@@ -126,14 +126,19 @@ export const authService = {
     },
 
     logout() {
-        localStorage.removeItem(STORAGE_KEY_SESSION);
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem(STORAGE_KEY_SESSION);
+        }
     },
 
     saveSession(session) {
-        localStorage.setItem(STORAGE_KEY_SESSION, JSON.stringify(session));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem(STORAGE_KEY_SESSION, JSON.stringify(session));
+        }
     },
 
     getSession() {
+        if (typeof window === 'undefined') return null;
         const stored = localStorage.getItem(STORAGE_KEY_SESSION);
         if (!stored) return null;
         try {
@@ -155,10 +160,10 @@ export const authService = {
         return !!this.getSession();
     },
 
-    // Migration: Clean up old insecure storage keys
     cleanupLegacyStorage() {
-        // Remove old auth config that stored credentials
-        localStorage.removeItem('baris_auth_config');
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem('baris_auth_config');
+        }
     }
 };
 

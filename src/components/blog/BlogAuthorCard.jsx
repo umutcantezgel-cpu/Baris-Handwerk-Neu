@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { Mail, Linkedin, Twitter, Facebook } from 'lucide-react';
 
@@ -33,7 +34,7 @@ const BlogAuthorCard = ({ author }) => {
                                 className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
                             />
                         ) : (
-                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1a3a52] to-[#00b050] flex items-center justify-center text-white text-4xl font-bold shadow-lg ring-4 ring-white">
+                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1a3a52] to-[#c69c6d] flex items-center justify-center text-white text-4xl font-bold shadow-lg ring-4 ring-white">
                                 {authorData.name?.charAt(0).toUpperCase()}
                             </div>
                         )}
@@ -46,7 +47,7 @@ const BlogAuthorCard = ({ author }) => {
                         </h3>
 
                         {authorData.title && (
-                            <p className="text-[#00b050] font-medium mb-3">
+                            <p className="text-[#c69c6d] font-medium mb-3">
                                 {authorData.title}
                             </p>
                         )}
@@ -71,7 +72,7 @@ const BlogAuthorCard = ({ author }) => {
                                             className="min-h-[44px] min-w-[44px] flex items-center justify-center backdrop-blur-md bg-white/50 hover:bg-white/80 rounded-full transition-all duration-300 hover:scale-110 group"
                                             aria-label={platform}
                                         >
-                                            <Icon className="w-5 h-5 text-[#1a3a52] group-hover:text-[#00b050] transition-colors" />
+                                            <Icon className="w-5 h-5 text-[#1a3a52] group-hover:text-[#c69c6d] transition-colors" />
                                         </a>
                                     );
                                 })}

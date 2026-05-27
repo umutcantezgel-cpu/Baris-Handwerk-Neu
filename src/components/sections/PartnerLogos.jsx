@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 
 // Using text placeholders styled to look like logos for now, as we don't have SVG assets for brands

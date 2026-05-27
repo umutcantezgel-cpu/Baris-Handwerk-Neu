@@ -1,7 +1,8 @@
+"use client";
 import React from 'react';
 import { ArrowRight, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 
 export default function CareerCTA() {
@@ -25,12 +26,12 @@ export default function CareerCTA() {
                                 Wir suchen ständig nach motivierten Talenten. Ob erfahrener Anlagenmechaniker SHK, Meister oder Auszubildender – wenn du Lust auf gutes Handwerk und ein tolles Team hast, bist du bei uns richtig.
                             </p>
                             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                                <Link to={createPageUrl('Karriere')}>
+                                <Link href={createPageUrl('Karriere')}>
                                     <Button size="lg" className="bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-primary-hover)] text-white border-0">
                                         Karriere-Seite ansehen
                                     </Button>
                                 </Link>
-                                <Link to={createPageUrl('Karriere')}>
+                                <Link href={createPageUrl('Karriere')}>
                                     <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm">
                                         Offene Stellen ansehen
                                     </Button>

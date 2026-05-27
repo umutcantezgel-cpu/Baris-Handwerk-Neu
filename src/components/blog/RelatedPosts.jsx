@@ -1,6 +1,7 @@
+"use client";
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { createPageUrl } from '@/utils';
 import { IconWrapper } from '@/utils/iconMapper';
 
@@ -55,7 +56,7 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
                         return (
                             <Link
                                 key={post.id}
-                                to={`/blog/${post.slug}`}
+                                href={`/blog/${post.slug}`}
                                 className="group"
                             >
                                 <div className="relative h-full">
@@ -73,21 +74,21 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
                                                 />
                                             </div>
                                         ) : (
-                                            <div className="h-32 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-[#1a3a52]/10 to-[#00b050]/10 flex items-center justify-center">
+                                            <div className="h-32 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-[#1a3a52]/10 to-[#c69c6d]/10 flex items-center justify-center">
                                                 <IconWrapper name={categoryData?.icon} className="w-8 h-8 text-[#1a3a52]/40" />
                                             </div>
                                         )}
 
                                         {/* Category */}
                                         {categoryData && (
-                                            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-[#00b050]/10 text-[#00b050] mb-3">
+                                            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-[#c69c6d]/10 text-[#c69c6d] mb-3">
                                                 <IconWrapper name={categoryData.icon} className="w-3 h-3 mr-1" />
                                                 {categoryData.name}
                                             </span>
                                         )}
 
                                         {/* Title */}
-                                        <h3 className="font-bold text-[#1a3a52] group-hover:text-[#00b050] transition-colors mb-2 line-clamp-2">
+                                        <h3 className="font-bold text-[#1a3a52] group-hover:text-[#c69c6d] transition-colors mb-2 line-clamp-2">
                                             {post.title}
                                         </h3>
 
@@ -97,7 +98,7 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
                                         </p>
 
                                         {/* Read More */}
-                                        <div className="flex items-center text-[#00b050] text-sm font-medium">
+                                        <div className="flex items-center text-[#c69c6d] text-sm font-medium">
                                             Weiterlesen
                                             <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </div>

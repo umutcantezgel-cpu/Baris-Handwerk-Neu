@@ -1,6 +1,7 @@
+"use client";
 import React from 'react';
 import { Search, ArrowRight, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useContent } from '@/contexts/ContentContext';
 import { IconWrapper } from '@/utils/iconMapper';
 
@@ -81,7 +82,7 @@ const BlogSidebar = ({
             ═══════════════════════════════════════════════════════════════ */}
             <div className="relative overflow-hidden rounded-3xl">
                 {/* Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-[#00b050]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-[#c69c6d]" />
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '20px 20px' }} />
 
                 <div className="relative p-6 text-white">
@@ -93,7 +94,7 @@ const BlogSidebar = ({
                         Unsere Experten helfen Ihnen gerne bei allen Fragen rund um Heizung, Sanitär und Solar.
                     </p>
                     <Link
-                        to="/kontakt"
+                        href="/kontakt"
                         className="inline-flex items-center gap-2 px-5 py-3 bg-white text-primary-700 font-semibold rounded-xl hover:bg-white/90 transition-colors shadow-lg"
                     >
                         Kontakt aufnehmen

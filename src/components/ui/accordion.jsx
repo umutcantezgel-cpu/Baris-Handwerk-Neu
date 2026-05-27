@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, createContext, useContext } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/utils';

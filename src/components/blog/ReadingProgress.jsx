@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 
 /**
@@ -33,7 +34,7 @@ const ReadingProgress = () => {
     return (
         <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-gray-200/30 backdrop-blur-sm">
             <div
-                className="h-full bg-gradient-to-r from-[#00b050] to-[#1a3a52] transition-all duration-150 ease-out"
+                className="h-full bg-gradient-to-r from-[#c69c6d] to-[#1a3a52] transition-all duration-150 ease-out"
                 style={{ width: `${progress}%` }}
             />
 

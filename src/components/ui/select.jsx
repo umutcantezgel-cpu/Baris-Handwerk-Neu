@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react"
 import { cn } from "@/utils"
 
@@ -5,7 +6,7 @@ const Select = React.forwardRef(({ className, children, value, onValueChange, ..
   return (
     <select
       className={cn(
-        "flex h-10 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00b050] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-10 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c69c6d] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       value={value}

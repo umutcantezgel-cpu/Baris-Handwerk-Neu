@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, OverlayViewF, MarkerF } from '@react-google-maps/api';
 import { COMPANY_DATA } from '@/config/company';

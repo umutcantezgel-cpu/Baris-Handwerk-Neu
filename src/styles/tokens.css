@@ -131,11 +131,11 @@
    --color-button-secondary-hover: var(--color-neutral-50);
 
    /* Brand Colors - Primary identity */
-   --color-brand-primary: var(--color-neutral-900);
-   /* Charcoal */
+   --color-brand-primary: #1a3a52;
+   /* Marineblau */
    --color-brand-secondary: var(--color-copper-500);
    /* Copper */
-   --color-brand-primary-hover: var(--color-neutral-800);
+   --color-brand-primary-hover: #132a3c;
 
    /* ========================================================================
      SPATIAL SYSTEM

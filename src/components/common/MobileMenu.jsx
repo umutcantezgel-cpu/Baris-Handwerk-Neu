@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, HelpCircle, ChevronDown, ChevronUp, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { navigationLinks } from '@/config/navigation';
 import { useContent } from '@/contexts/ContentContext';
 
 const MobileMenu = ({ isOpen, onClose, onOpenHelp }) => {
-    const location = useLocation();
+    const pathname = usePathname();
     const { siteConfig } = useContent();
     const [expandedMenu, setExpandedMenu] = useState(null);
 
@@ -26,7 +27,7 @@ const MobileMenu = ({ isOpen, onClose, onOpenHelp }) => {
                                 <>
                                     <button
                                         onClick={() => toggleSubmenu(link.name)}
-                                        className={`min-h-[44px] flex items-center justify-between px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] font-medium transition-all duration-300 w-full text-left ${link.submenu.some(sub => sub.path === location.pathname)
+                                        className={`min-h-[44px] flex items-center justify-between px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] font-medium transition-all duration-300 w-full text-left ${link.submenu.some(sub => sub.path === pathname)
                                             ? 'text-[var(--color-interactive-primary)] bg-[var(--color-blue-50)]'
                                             : 'text-[var(--color-text-primary)] hover:text-[var(--color-interactive-primary)] hover:bg-[var(--color-neutral-100)]'
                                             }`}
@@ -45,7 +46,7 @@ const MobileMenu = ({ isOpen, onClose, onOpenHelp }) => {
                                             {link.submenu.map((subLink) => (
                                                 <Link
                                                     key={subLink.name}
-                                                    to={subLink.path}
+                                                    href={subLink.path}
                                                     onClick={onClose}
                                                     className={`min-h-[40px] flex items-center px-4 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-[var(--color-interactive-primary)] hover:bg-gray-50 transition-colors`}
                                                 >
@@ -57,9 +58,9 @@ const MobileMenu = ({ isOpen, onClose, onOpenHelp }) => {
                                 </>
                             ) : (
                                 <Link
-                                    to={link.path}
+                                    href={link.path}
                                     onClick={onClose}
-                                    className={`min-h-[44px] flex items-center px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] font-medium transition-all duration-300 ${location.pathname === link.path
+                                    className={`min-h-[44px] flex items-center px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] font-medium transition-all duration-300 ${pathname === link.path
                                         ? 'text-[var(--color-interactive-primary)] bg-[var(--color-blue-50)]'
                                         : 'text-[var(--color-text-primary)] hover:text-[var(--color-interactive-primary)] hover:bg-[var(--color-neutral-100)]'
                                         }`}
@@ -87,6 +88,7 @@ const MobileMenu = ({ isOpen, onClose, onOpenHelp }) => {
 
                     <a
                         href={`tel:${siteConfig.contact.phoneLink}`}
+                        onClick={onClose}
                         className="min-h-[44px] w-full flex items-center justify-center bg-[var(--color-button-primary-bg)] text-white rounded-[var(--radius-base)] shadow-[var(--shadow-md)] font-bold transition-all duration-300 hover:bg-[var(--color-button-primary-hover)]"
                     >
                         <Phone className="w-5 h-5 mr-2" />

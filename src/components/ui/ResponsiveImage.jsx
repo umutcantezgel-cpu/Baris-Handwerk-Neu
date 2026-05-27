@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { cn } from '@/utils';
 
@@ -10,7 +11,7 @@ import { cn } from '@/utils';
  * @param {string} alt - Alt text for accessibility
  * @param {string} className - Classes for the img element
  * @param {string} containerClassName - Classes for the wrapper div/picture
- * @param {boolean} priority - If true, sets loading="eager" and fetchpriority="high"
+ * @param {boolean} priority - If true, sets loading="eager" and fetchPriority="high"
  * @param {string} sizes - Sizes attribute for responsive images
  * @param {object} style - Inline styles
  */
@@ -31,7 +32,7 @@ const ResponsiveImage = ({
                 alt={alt}
                 className={cn("w-full h-full object-cover transition-opacity duration-300", className)}
                 loading={priority ? "eager" : "lazy"}
-                fetchpriority={priority ? "high" : "auto"}
+                fetchPriority={priority ? "high" : "auto"}
                 decoding={priority ? "sync" : "async"}
                 sizes={sizes}
                 style={style}

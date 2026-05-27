@@ -1,6 +1,7 @@
+"use client";
 import React, { useEffect } from 'react';
 import { useConsent } from '@/components/common/ConsentManager';
-import { Helmet } from 'react-helmet-async';
+
 
 const TrackingScripts = () => {
     const { preferences } = useConsent();
@@ -41,14 +42,12 @@ const TrackingScripts = () => {
     }, [analyticsConsent, marketingConsent]);
 
     return (
-        <Helmet>
+        <>
             {/* Google Analytics 4 Script - Loaded only if analytics consent is true */}
             {analyticsConsent && (
                 <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
             )}
-
-            {/* Meta Pixel is injected via useEffect to handle the complex snippet */}
-        </Helmet>
+        </>
     );
 };
 

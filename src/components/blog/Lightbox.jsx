@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from 'react';
 import { X, ZoomIn, ZoomOut } from 'lucide-react';
 

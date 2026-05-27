@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, ChevronRight, Check, MapPin, BarChart3, Megaphone, Settings2 } from 'lucide-react';
@@ -26,6 +27,7 @@ export const useConsent = () => {
 
 // Helper function to get consent without context (for non-React code)
 export const getStoredConsent = () => {
+    if (typeof window === 'undefined') return null;
     try {
         const stored = localStorage.getItem(CONSENT_KEY);
         if (stored) {
@@ -137,7 +139,21 @@ const ConsentManager = () => {
         return () => window.removeEventListener('showConsentBanner', handleShowBanner);
     }, []);
 
-    if (!isVisible) return null;
+    if (!isVisible) {
+        return (
+            <button
+                onClick={() => setIsVisible(true)}
+                className="fixed bottom-6 left-6 z-40 bg-[var(--color-brand-primary)] text-white p-3 rounded-full shadow-[var(--shadow-lg)] hover:bg-[var(--color-brand-primary-hover)] transition-all hover:scale-110 flex items-center justify-center group"
+                aria-label="Cookie-Einstellungen öffnen"
+                title="Cookie-Einstellungen"
+            >
+                <Shield className="w-6 h-6" />
+                <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 text-sm font-medium">
+                    Datenschutz
+                </span>
+            </button>
+        );
+    }
 
     const cookieCategories = [
         {
@@ -226,7 +242,7 @@ const ConsentManager = () => {
                                 </Button>
                                 <Button
                                     onClick={handleAcceptAll}
-                                    className="bg-[var(--color-blue-700)] text-white hover:bg-[var(--color-blue-800)] shadow-sm min-w-[140px]"
+                                    className="bg-[var(--color-brand-primary)] text-white hover:bg-[var(--color-brand-primary-hover)] shadow-sm min-w-[140px]"
                                 >
                                     Alle akzeptieren
                                 </Button>
@@ -266,7 +282,7 @@ const ConsentManager = () => {
                                                 checked={category.required ? true : preferences[category.id]}
                                                 disabled={category.required}
                                                 onChange={(e) => setPreferences({ ...preferences, [category.id]: e.target.checked })}
-                                                className="w-4 h-4 text-[var(--color-blue-700)] rounded border-[var(--color-neutral-300)] focus:ring-[var(--color-blue-500)]"
+                                                className="w-4 h-4 text-[var(--color-brand-primary)] rounded border-[var(--color-neutral-300)] focus:ring-[var(--color-brand-primary)]"
                                             />
                                         </div>
                                         <div className="flex-1">
@@ -308,7 +324,7 @@ const ConsentManager = () => {
                             </Button>
                             <Button
                                 onClick={handleAcceptAll}
-                                className="bg-[var(--color-blue-700)] text-white hover:bg-[var(--color-blue-800)]"
+                                className="bg-[var(--color-brand-primary)] text-white hover:bg-[var(--color-brand-primary-hover)]"
                             >
                                 Alle akzeptieren
                             </Button>

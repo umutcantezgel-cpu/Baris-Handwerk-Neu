@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { Phone, ClipboardCheck, Wrench, Smile } from 'lucide-react';
 

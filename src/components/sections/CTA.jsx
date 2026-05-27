@@ -1,9 +1,10 @@
+"use client";
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import Link from 'next/link';
 import { cn, createPageUrl } from '@/utils'
 
-const CTA = ({ className }) => {
+const CTA = ({ className = ''}) => {
     return (
         <section className={cn("py-[var(--spacing-20)] bg-[var(--color-background-surface-primary)] relative overflow-hidden border-t border-b border-[var(--color-border-default)]", className)}>
 
@@ -22,7 +23,7 @@ const CTA = ({ className }) => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-[var(--spacing-4)] justify-center">
-                    <Link to={createPageUrl('Contact')}>
+                    <Link href={createPageUrl('Contact')}>
                         <Button
                             size="lg"
                             className="bg-[var(--color-button-primary-bg)] text-[var(--color-button-primary-text)] hover:bg-[var(--color-button-primary-hover)] shadow-lg border-transparent font-bold w-full sm:w-auto"
@@ -31,7 +32,7 @@ const CTA = ({ className }) => {
                         </Button>
                     </Link>
 
-                    <Link to={createPageUrl('Services')}>
+                    <Link href={createPageUrl('Services')}>
                         <Button
                             variant="outline"
                             size="lg"

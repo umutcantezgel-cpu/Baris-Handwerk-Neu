@@ -78,21 +78,23 @@ const DEFAULTS = {
 export const dataService = {
     get(key) {
         try {
-            const stored = localStorage.getItem(key);
-            if (stored) {
-                const parsed = JSON.parse(stored);
-                if (key === STORAGE_KEYS.SITE) {
-                    const freshConfig = getAdaptedSiteConfig();
-                    return {
-                        ...parsed,
-                        contact: {
-                            ...freshConfig.contact,
-                            ...parsed.contact
-                        },
-                        legal: freshConfig.legal
-                    };
+            if (typeof window !== 'undefined') {
+                const stored = localStorage.getItem(key);
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (key === STORAGE_KEYS.SITE) {
+                        const freshConfig = getAdaptedSiteConfig();
+                        return {
+                            ...parsed,
+                            contact: {
+                                ...freshConfig.contact,
+                                ...parsed.contact
+                            },
+                            legal: freshConfig.legal
+                        };
+                    }
+                    return parsed;
                 }
-                return parsed;
             }
         } catch (e) {
             console.error(`Error reading ${key} from storage:`, e);
@@ -109,8 +111,10 @@ export const dataService = {
                     return false;
                 }
             }
-            localStorage.setItem(key, JSON.stringify(data));
-            window.dispatchEvent(new Event('content-updated'));
+            if (typeof window !== 'undefined') {
+                localStorage.setItem(key, JSON.stringify(data));
+                window.dispatchEvent(new Event('content-updated'));
+            }
             return true;
         } catch (e) {
             console.error(`Error saving ${key} to storage:`, e);
@@ -128,15 +132,19 @@ export const dataService = {
     getSettings() { return this.get(STORAGE_KEYS.SETTINGS); },
 
     reset(key) {
-        localStorage.removeItem(key);
-        window.dispatchEvent(new Event('content-updated'));
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem(key);
+            window.dispatchEvent(new Event('content-updated'));
+        }
     },
 
     clearAll() {
-        Object.values(STORAGE_KEYS).forEach(key => localStorage.removeItem(key));
-        localStorage.removeItem('baris_auth_config'); // Also clear auth config
-        // Don't clear session automatically, let frontend handle it related to reload
-        window.dispatchEvent(new Event('content-updated'));
+        if (typeof window !== 'undefined') {
+            Object.values(STORAGE_KEYS).forEach(key => localStorage.removeItem(key));
+            localStorage.removeItem('baris_auth_config'); // Also clear auth config
+            // Don't clear session automatically, let frontend handle it related to reload
+            window.dispatchEvent(new Event('content-updated'));
+        }
     },
 
     exportAll() {

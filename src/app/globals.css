@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@import '../styles/tokens.css';
+
+@theme {
+  --color-primary: #1a3a52;
+  --color-primary-dark: #132a3c;
+  --color-primary-light: #2c597a;
+  
+  --color-primary-50: #e8f0f6;
+  --color-primary-100: #c6d9e8;
+  --color-primary-200: #a3c1da;
+  --color-primary-300: #7faacd;
+  --color-primary-400: #5c92bf;
+  --color-primary-500: #2c597a;
+  --color-primary-600: #1a3a52;
+  --color-primary-700: #132a3c;
+  --color-primary-800: #0e1f2b;
+  --color-primary-900: #0a151d;
+
+  --color-secondary: var(--color-neutral-800);
+  --color-secondary-hover: var(--color-neutral-900);
+  --color-secondary-light: var(--color-neutral-700);
+
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-700);
+  --color-text-light: var(--color-neutral-400);
+
+  --color-bg-primary: var(--color-neutral-0);
+  --color-bg-secondary: var(--color-neutral-50);
+  --color-bg-tertiary: var(--color-neutral-100);
+
+  --color-success: var(--color-green-600);
+  --color-warning: var(--color-amber-500);
+  --color-error: var(--color-red-600);
+  --color-info: var(--color-blue-500);
+
+  --color-border: var(--color-neutral-200);
+  --color-divider: var(--color-neutral-100);
+
+  --font-sans: var(--font-family-display);
+  --font-mono: var(--font-family-mono);
+  
+  --spacing-1: var(--spacing-1);
+  --spacing-2: var(--spacing-2);
+  --spacing-3: var(--spacing-3);
+  --spacing-4: var(--spacing-4);
+  --spacing-5: var(--spacing-5);
+  --spacing-6: var(--spacing-6);
+  --spacing-8: var(--spacing-8);
+  --spacing-10: var(--spacing-10);
+  --spacing-12: var(--spacing-12);
+  --spacing-16: var(--spacing-16);
+  --spacing-20: var(--spacing-20);
+}
+
+@layer base {
+  html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Lenis smooth scroll styles */
+  html.lenis,
+  html.lenis body {
+      height: auto;
+  }
+
+  .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+      overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+  }
+
+  body {
+      background-color: var(--color-bg-secondary);
+      color: var(--color-text-primary);
+      font-family: var(--font-sans);
+      font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-sans);
+      color: var(--color-text-primary);
+      letter-spacing: -0.015em;
+  }
+}
+
+@layer utilities {
+  .touch-target {
+      @apply min-h-[44px] min-w-[44px];
+  }
+
+  .safe-area-top {
+      padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+      padding-bottom: env(safe-area-inset-bottom);
+  }
+}

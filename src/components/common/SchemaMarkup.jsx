@@ -1,16 +1,18 @@
+"use client";
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { siteConfig } from '@/config/site';
 
 const SchemaMarkup = () => {
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://batherm.de';
+
     // LocalBusiness Schema
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": siteConfig.name, // "Bariş Haustechnik"
-        "image": `${window.location.origin}/images/og-image.jpg`, // Adjust path if needed
+        "image": `${origin}/images/og-image.jpg`, // Adjust path if needed
         "description": siteConfig.description,
-        "url": window.location.origin,
+        "url": origin,
         "telephone": siteConfig.contact.phone,
         "email": siteConfig.contact.email,
         "address": {
@@ -46,8 +48,8 @@ const SchemaMarkup = () => {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": siteConfig.legalName || siteConfig.name,
-        "url": window.location.origin,
-        "logo": `${window.location.origin}/logo.png`,
+        "url": origin,
+        "logo": `${origin}/logo.png`,
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": siteConfig.contact.phone,
@@ -56,14 +58,10 @@ const SchemaMarkup = () => {
     };
 
     return (
-        <Helmet>
-            <script type="application/ld+json">
-                {JSON.stringify(localBusinessSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(organizationSchema)}
-            </script>
-        </Helmet>
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        </>
     );
 };
 

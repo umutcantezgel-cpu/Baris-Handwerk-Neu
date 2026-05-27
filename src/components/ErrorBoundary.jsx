@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
 import { Button } from '@/components/ui/button';
@@ -36,7 +37,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
 
                     <Button
                         onClick={resetErrorBoundary}
-                        className="bg-[#00b050] hover:bg-[#00b050]/90 text-white"
+                        className="bg-[#1a3a52] hover:bg-[#132a3c] text-white"
                     >
                         <RefreshCw className="w-4 h-4 mr-2" />
                         Erneut versuchen

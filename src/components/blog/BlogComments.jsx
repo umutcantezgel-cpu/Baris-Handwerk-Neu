@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Send, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -51,7 +52,7 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
                 <div className="relative p-4">
                     {/* Author Info */}
                     <div className="flex items-start gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1a3a52] to-[#00b050] flex items-center justify-center text-white font-bold">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1a3a52] to-[#c69c6d] flex items-center justify-center text-white font-bold">
                             {comment.author_name.charAt(0).toUpperCase()}
                         </div>
                         <div className="flex-1">
@@ -77,7 +78,7 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
                     {!isReply && (
                         <button
                             onClick={() => setReplyTo(comment.id)}
-                            className="text-sm text-[#00b050] hover:underline font-medium"
+                            className="text-sm text-[#c69c6d] hover:underline font-medium"
                         >
                             Antworten
                         </button>
@@ -99,7 +100,7 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
             <div className="relative p-8">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-8">
-                    <MessageCircle className="w-6 h-6 text-[#00b050]" />
+                    <MessageCircle className="w-6 h-6 text-[#c69c6d]" />
                     <h2 className="text-2xl font-bold text-[#1a3a52]">
                         Kommentare ({comments.length})
                     </h2>
@@ -111,7 +112,7 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
                         <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 backdrop-blur-sm rounded-2xl border border-white/30" />
                         <div className="relative p-6">
                             {replyTo && (
-                                <div className="mb-4 p-3 bg-[#00b050]/10 rounded-lg border border-[#00b050]/20 flex items-center justify-between">
+                                <div className="mb-4 p-3 bg-[#c69c6d]/10 rounded-lg border border-[#c69c6d]/20 flex items-center justify-between">
                                     <span className="text-sm text-[#1a3a52]">
                                         Antwort auf {comments.find(c => c.id === replyTo)?.author_name}
                                     </span>
@@ -168,7 +169,7 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
 
                                 <Button
                                     type="submit"
-                                    className="bg-[#00b050] hover:bg-[#00b050]/90 min-h-[44px]"
+                                    className="bg-[#1a3a52] hover:bg-[#132a3c] min-h-[44px]"
                                 >
                                     <Send className="w-4 h-4 mr-2" />
                                     Kommentar absenden

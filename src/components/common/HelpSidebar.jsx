@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import {
   X,
@@ -14,7 +15,8 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
+
 import { siteConfig } from '@/config/site';
 
 const HelpSidebar = ({ isOpen, onClose }) => {
@@ -90,7 +92,7 @@ const HelpSidebar = ({ isOpen, onClose }) => {
     }
   ];
 
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
   // ... (existing code for effect hooks if any other logic needed) ...
 
@@ -232,7 +234,7 @@ const HelpSidebar = ({ isOpen, onClose }) => {
     if (faq.type === 'view') {
       setCurrentView(faq.target);
     } else if (faq.type === 'route') {
-      navigate(faq.target);
+      router.push(faq.target);
       onClose(); // Close sidebar when navigating away
     }
   };
@@ -391,7 +393,7 @@ const HelpSidebar = ({ isOpen, onClose }) => {
           {currentView === 'faq_cost' && (
             <Button
               onClick={() => {
-                navigate('/contact');
+                router.push('/contact');
                 onClose();
               }}
               className="w-full bg-[var(--color-brand-secondary)] hover:bg-[var(--color-brand-primary)] text-white mt-4"

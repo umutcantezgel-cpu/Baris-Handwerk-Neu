@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Clock, ArrowRight } from 'lucide-react';
 import { useContent } from '@/contexts/ContentContext';
 import { IconWrapper } from '@/utils/iconMapper';
@@ -14,7 +15,7 @@ const BlogCard = ({ post }) => {
 
     return (
         <Link
-            to={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}`}
             className="group cursor-pointer block h-full perspective-1000"
         >
             <div className="relative h-full transform-gpu transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 group-hover:rotate-y-1">
@@ -37,7 +38,7 @@ const BlogCard = ({ post }) => {
                             </>
                         ) : (
                             <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
-                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-600 to-[#00b050] flex items-center justify-center shadow-lg">
+                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-600 to-[#c69c6d] flex items-center justify-center shadow-lg">
                                     {categoryData && <IconWrapper name={categoryData.icon} className="w-10 h-10 text-white" />}
                                 </div>
                             </div>

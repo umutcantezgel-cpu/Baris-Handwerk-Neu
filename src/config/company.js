@@ -51,7 +51,7 @@ export const COMPANY_DATA = {
         phone: "+49 172 9475061", // Placeholder as per doc
         phoneFormatted: "+49 172 9475061", // Format example
         email: "info@batherm.de",
-        website: "https://www.batherm-haustechnik.de",
+        website: "https://www.batherm.de",
         emergency: {
             available: false,
             phone24_7: null,

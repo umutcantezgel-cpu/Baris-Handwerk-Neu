@@ -1,39 +1,46 @@
+"use client";
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { cn } from '@/utils'
+import Link from 'next/link';
+import { cn } from '@/utils';
+import { motion } from 'framer-motion';
 
 const ServiceCard = ({ title, description, icon: Icon, href, className }) => {
     return (
-        <div className={cn(
-            "group relative flex flex-col p-[var(--spacing-6)] rounded-[var(--radius-lg)]",
-            "bg-[var(--color-background-elevated)] border border-[var(--color-border-default)]",
-            "transition-all duration-300 ease-in-out",
-            "hover:shadow-md hover:border-[var(--color-border-strong)] hover:-translate-y-1",
-            className
-        )}>
+        <motion.div 
+            whileHover={{ y: -8 }}
+            className={cn(
+                "group relative flex flex-col p-8 rounded-3xl",
+                "bg-white shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] border border-neutral-100",
+                "transition-all duration-500 ease-out overflow-hidden z-10",
+                className
+            )}
+        >
+            {/* Hover Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+
             {Icon && (
-                <div className="mb-[var(--spacing-4)] text-[var(--color-interactive-primary)]">
-                    <Icon size={32} strokeWidth={1.5} />
+                <div className="mb-6 w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                    <Icon size={28} strokeWidth={1.5} />
                 </div>
             )}
 
-            <h3 className="text-[var(--font-size-lg)] font-semibold text-[var(--color-text-primary)] mb-[var(--spacing-2)] font-display">
+            <h3 className="text-xl font-bold text-neutral-900 mb-3 font-sans tracking-tight">
                 {title}
             </h3>
 
-            <p className="text-[var(--font-size-base)] text-[var(--color-text-secondary)] leading-relaxed mb-[var(--spacing-4)] flex-grow">
+            <p className="text-base text-neutral-600 leading-relaxed mb-6 flex-grow font-light">
                 {description}
             </p>
 
             {href && (
-                <Link to={href} className="inline-flex items-center text-[var(--font-size-sm)] font-medium text-[var(--color-text-interactive)] group-hover:underline mt-auto">
+                <Link href={href} className="inline-flex items-center text-sm font-semibold text-blue-600 group-hover:text-blue-700 mt-auto">
                     Mehr erfahren
-                    <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                     </svg>
                 </Link>
             )}
-        </div>
+        </motion.div>
     )
 }
 
