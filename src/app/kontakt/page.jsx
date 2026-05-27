@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, AlertCircle, Lock, ShieldCheck, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, AlertCircle, Lock, ShieldCheck } from 'lucide-react';
+import { InstagramLogo as Instagram } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';

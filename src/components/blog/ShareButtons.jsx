@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Share2, Facebook, Twitter, Linkedin, Mail, Link as LinkIcon, MessageCircle, Check } from 'lucide-react';
+import { Share2, Mail, Link as LinkIcon, MessageCircle, Check } from 'lucide-react';
+import { FacebookLogo as Facebook, TwitterLogo as Twitter, LinkedinLogo as Linkedin } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/button';
 
 /**

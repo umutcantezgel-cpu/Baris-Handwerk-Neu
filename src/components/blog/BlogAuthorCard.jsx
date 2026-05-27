@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
-import { Mail, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { LinkedinLogo as Linkedin, TwitterLogo as Twitter, FacebookLogo as Facebook } from '@phosphor-icons/react';
 
 /**
  * Blog Author Card Component

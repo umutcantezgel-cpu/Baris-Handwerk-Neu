@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Wrench, ChevronRight, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Wrench, ChevronRight } from 'lucide-react';
+import { InstagramLogo as Instagram } from '@phosphor-icons/react';
 import { navigationLinks, quickLinks, serviceLinks } from '@/config/navigation';
 import { useContent } from '@/contexts/ContentContext';
 
