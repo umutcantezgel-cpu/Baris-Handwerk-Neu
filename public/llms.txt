@@ -1,26 +1,93 @@
-# Batherm Haustechnik - Sanitär, Heizung & Solar in Wetzlar
+# Batherm Haustechnik
 
-## Über uns
-Batherm Haustechnik ist ein Meisterbetrieb für Sanitär-, Heizungs- und Klimatechnik mit Sitz in Wetzlar. Geführt von Baris Aydin, bieten wir erstklassigen Service, höchste Qualität und moderne Lösungen für Privat- und Gewerbekunden in Wetzlar und Umgebung (Gießen, Marburg, Limburg an der Lahn).
+> Batherm Haustechnik ist ein Meisterbetrieb für Sanitär-, Heizungs- und Klimatechnik mit Sitz in Wetzlar, Hessen, Deutschland. Inhabergeführt von Baris Aydin (Meister im SHK-Handwerk). Wir bieten professionelle Haustechnik-Lösungen für Privat- und Gewerbekunden in Wetzlar und einem Umkreis von 50 km (Mittelhessen).
 
-## Unsere Kernkompetenzen
-- **Sanitärtechnik**: Komplette Badsanierung (von der 3D-Planung bis zur Umsetzung), barrierefreie Bäder, Trinkwasserinstallationen und Wasseraufbereitungsanlagen.
-- **Heizungstechnik**: Installation moderner Heizsysteme wie Wärmepumpen (Luft-Wasser, Sole-Wasser), Gas- und Ölheizungsmodernisierung sowie Fußbodenheizungen.
-- **Solar & Erneuerbare Energien**: Solarthermie für Warmwasser und Heizungsunterstützung.
-- **Klimatechnik**: Einbau und Wartung von Klimaanlagen für ein optimales Raumklima.
+## Firmendaten
 
-## Kontakt & Standort
-- **Name**: Baris Aydin Batherm Haustechnik
-- **Inhaber**: Baris Aydin (Meister im Handwerk)
-- **Adresse**: Linsenbergstrasse 9, 35586 Wetzlar, Deutschland (DE-HE)
+- **Firmenname**: Baris Aydin Batherm Haustechnik
+- **Rechtsform**: Einzelunternehmen
+- **Inhaber & Geschäftsführer**: Baris Aydin (Meister im SHK-Handwerk)
+- **Qualifikation**: Meisterbrief Sanitär-, Heizungs- und Klimatechnik (HWK)
+- **Adresse**: Linsenbergstrasse 9, 35586 Wetzlar, Hessen, Deutschland
+- **Koordinaten**: 50.5567°N, 8.5022°E
 - **Telefon**: +49 172 9475061
 - **E-Mail**: info@batherm.de
 - **Website**: https://www.batherm.de
+- **Instagram**: https://www.instagram.com/batherm_haustechnik
+- **Sprachen**: Deutsch, Türkisch, Englisch
+- **Zahlungsarten**: Überweisung, EC-Karte, Barzahlung
 
 ## Öffnungszeiten
-Montag - Freitag: 07:00 - 17:00 Uhr
-Samstag: 08:00 - 13:00 Uhr
-Sonntag & Feiertage: Geschlossen
 
-## Unser Qualitätsversprechen
-Wir garantieren fachgerechte Ausführung, Zuverlässigkeit und den Einsatz modernster Technologien. Egal ob es um eine kleine Reparatur, einen Heizungstausch oder eine komplette Badsanierung geht – bei Batherm Haustechnik sind Sie in besten Händen.
+- Montag bis Freitag: 07:00–17:00 Uhr
+- Samstag: 08:00–13:00 Uhr
+- Sonntag & Feiertage: Geschlossen
+- **24h-Notdienst**: Sanitär-Notdienst außerhalb der Geschäftszeiten erreichbar
+
+## Leistungen
+
+- [Sanitärtechnik](https://www.batherm.de/leistungen/sanitaer): Badsanierung, barrierefreie Bäder, Kücheninstallation, Rohrleitungssanierung, Armaturen, Trinkwasserinstallation
+- [Heizungstechnik](https://www.batherm.de/leistungen/heizung): Wärmepumpen (Luft-Wasser, Sole-Wasser), Gas-Brennwertheizung, Pelletheizung, Solarthermie, Fußbodenheizung, Heizungsmodernisierung
+- [Klimatechnik](https://www.batherm.de/leistungen/klima): Split-Klimaanlagen, Lüftungsanlagen, Luftreinigung, Feuchte-Kontrolle, Raumklima-Optimierung
+- [Wartung & Service](https://www.batherm.de/leistungen/wartung): Heizungswartung, Sanitär-Check, Filterwechsel, jährliche Inspektion, Funktionsprüfung
+- [Smart Home](https://www.batherm.de/leistungen/smart-home): Heizungssteuerung per App, Sicherheitstechnik, Lichtsteuerung, Energiemanagement, Sprachsteuerung
+- [Wasseraufbereitung](https://www.batherm.de/leistungen/wasseraufbereitung): Enthärtungsanlagen, Trinkwasserfilter, Dosieranlagen, Kalkschutz
+
+## Einzugsgebiet (50 km Radius um Wetzlar)
+
+Wir bedienen folgende Städte und Regionen in Mittelhessen:
+
+- [Wetzlar](https://www.batherm.de/standorte/wetzlar): Hauptstandort (Lahn-Dill-Kreis)
+- [Aßlar](https://www.batherm.de/standorte/asslar): 5 km (Lahn-Dill-Kreis)
+- [Solms](https://www.batherm.de/standorte/solms): 8 km (Lahn-Dill-Kreis)
+- [Braunfels](https://www.batherm.de/standorte/braunfels): 10 km (Lahn-Dill-Kreis)
+- [Herborn](https://www.batherm.de/standorte/herborn): 20 km (Lahn-Dill-Kreis)
+- [Gießen](https://www.batherm.de/standorte/giessen): 25 km (Landkreis Gießen)
+- [Dillenburg](https://www.batherm.de/standorte/dillenburg): 25 km (Lahn-Dill-Kreis)
+- [Haiger](https://www.batherm.de/standorte/haiger): 30 km (Lahn-Dill-Kreis)
+- [Butzbach](https://www.batherm.de/standorte/butzbach): 35 km (Wetteraukreis)
+- [Limburg an der Lahn](https://www.batherm.de/standorte/limburg): 35 km (Landkreis Limburg-Weilburg)
+- [Marburg](https://www.batherm.de/standorte/marburg): 40 km (Landkreis Marburg-Biedenkopf)
+- [Bad Nauheim](https://www.batherm.de/standorte/bad-nauheim): 40 km (Wetteraukreis)
+- [Friedberg](https://www.batherm.de/standorte/friedberg): 45 km (Wetteraukreis)
+- Weitere Orte: Lahnau, Hüttenberg, Linden, Pohlheim
+
+## Wichtige Seiten
+
+- [Startseite](https://www.batherm.de/): Übersicht über Batherm Haustechnik
+- [Alle Leistungen](https://www.batherm.de/leistungen): Vollständiges Leistungsspektrum
+- [Notdienst](https://www.batherm.de/notdienst): 24h Sanitär-Notdienst in Wetzlar und Umgebung
+- [Über uns](https://www.batherm.de/ueber-uns): Geschichte, Team und Philosophie
+- [Referenzen](https://www.batherm.de/referenzen): Abgeschlossene Projekte und Kundenstimmen
+- [Blog & Ratgeber](https://www.batherm.de/blog): Expertentipps zu Heizung, Sanitär und Energie
+- [FAQ](https://www.batherm.de/faq): Häufig gestellte Fragen zu Kosten, Wartung und Förderung
+- [Förderung](https://www.batherm.de/foerderung): KfW- und BAFA-Fördermittel für Heizungstausch
+- [Energieberatung](https://www.batherm.de/energieberatung): Sanierungsfahrplan und Energieausweis
+- [Kontakt](https://www.batherm.de/kontakt): Kontaktformular und Anfahrt
+- [Beratung buchen](https://www.batherm.de/beratung): Kostenlosen Beratungstermin vereinbaren
+- [Karriere](https://www.batherm.de/karriere): Stellenangebote und Ausbildungsplätze
+
+## Blog-Artikel (Ratgeber)
+
+- [Wärmepumpen-Förderung 2024](https://www.batherm.de/blog/waermepumpen-foerderung-2024): Bis zu 70% Zuschuss für den Heizungstausch
+- [Wasserschaden vermeiden](https://www.batherm.de/blog/wasserschaden-vermeiden-tipps): Präventions-Tipps für Hausbesitzer
+- [Solarthermie vs. Photovoltaik](https://www.batherm.de/blog/solarthermie-vs-photovoltaik-vergleich): Welche Technologie lohnt sich?
+- [Fußbodenheizung nachrüsten](https://www.batherm.de/blog/fussbodenheizung-nachruesten): Kosten, Vorteile und Voraussetzungen
+- [Badumbau-Ratgeber](https://www.batherm.de/blog/badumbau): Planung, Kosten und Zeitrahmen
+- [Heizung optimieren](https://www.batherm.de/blog/heizung-optimieren-energiesparen): Energiesparen im Altbau
+- [Trinkwasserhygiene](https://www.batherm.de/blog/trinkwasserhygiene-legionellen): Legionellen-Prävention
+- [Klimaanlage Ratgeber](https://www.batherm.de/blog/klimaanlage-ratgeber): Die richtige Klimaanlage wählen
+- [Notdienst-Guide](https://www.batherm.de/blog/sanitaer-notdienst-guide): Was tun bei Rohrbruch?
+- [Smart Home Heizung](https://www.batherm.de/blog/smart-home-heizungssteuerung): Intelligente Heizungssteuerung
+- [Regenwassernutzung](https://www.batherm.de/blog/regenwassernutzung-garten-haushalt): Nachhaltigkeit für Haus und Garten
+- [Barrierefreies Bad](https://www.batherm.de/blog/barrierefreies-bad-planen): Altersgerecht und komfortabel planen
+- [Energieausweis-Pflicht](https://www.batherm.de/blog/energieausweis-pflicht-2024): Was Eigentümer wissen müssen
+
+## Qualifikationen & Garantien
+
+- Meisterbetrieb (Meisterbrief SHK, Handwerkskammer)
+- Fachbetrieb für Wärmepumpen
+- Energieberatung nach DIN
+- Garantie auf Material und Arbeit
+- Kostenlose Erstberatung vor Ort
+- Transparente Kostenaufstellung vor Arbeitsbeginn
