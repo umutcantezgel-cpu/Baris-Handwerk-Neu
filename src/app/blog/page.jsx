@@ -209,8 +209,11 @@ const Blog = () => {
                     key={post.id}
                     className={`${index % 3 === 0 ? 'md:row-span-1' : ''}`}
                     style={{
+                      animationName: 'fadeInUp',
+                      animationDuration: '0.6s',
+                      animationTimingFunction: 'ease-out',
+                      animationFillMode: 'forwards',
                       animationDelay: `${index * 0.1}s`,
-                      animation: 'fadeInUp 0.6s ease-out forwards',
                       opacity: 0
                     }}
                   >
