@@ -53,5 +53,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...blogPages, ...cityPages];
+  // Service×City Matrix: hyper-local pages (e.g. /leistungen/sanitaer/giessen)
+  const serviceCityPages: MetadataRoute.Sitemap = SERVICES.flatMap((service) =>
+    CITIES.map((city) => ({
+      url: `${baseUrl}/leistungen/${service.id}/${city}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  );
+
+  return [...staticPages, ...servicePages, ...blogPages, ...cityPages, ...serviceCityPages];
 }

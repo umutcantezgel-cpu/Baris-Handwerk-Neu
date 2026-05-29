@@ -49,6 +49,26 @@ export async function generateMetadata({
 }
 
 // ---------------------------------------------------------------------------
+// Helper – get nearby cities sorted by proximity (closest first)
+// ---------------------------------------------------------------------------
+function getNearbyCities(currentSlug: string, count: number = 5) {
+  const current = CITIES.find((c) => c.slug === currentSlug);
+  if (!current) return [];
+
+  return CITIES
+    .filter((c) => c.slug !== currentSlug)
+    .sort((a, b) => {
+      // Sort by absolute distance difference from current city
+      const distA = Math.abs(a.distanceKm - current.distanceKm);
+      const distB = Math.abs(b.distanceKm - current.distanceKm);
+      // For same distance diff, prefer closer to Wetzlar
+      if (distA === distB) return a.distanceKm - b.distanceKm;
+      return distA - distB;
+    })
+    .slice(0, count);
+}
+
+// ---------------------------------------------------------------------------
 // Page Component (Server Component – no 'use client')
 // Next.js 16: params is a Promise and must be awaited
 // ---------------------------------------------------------------------------
@@ -60,6 +80,8 @@ export default async function StandortPage({
   const { stadt } = await params;
   const city = CITIES.find((c) => c.slug === stadt);
   if (!city) notFound();
+
+  const nearbyCities = getNearbyCities(city.slug, 5);
 
   // JSON-LD Service schema with areaServed for local SEO
   const serviceSchema = {
@@ -186,6 +208,62 @@ export default async function StandortPage({
                 <p className="text-sm text-gray-600 mb-4">
                   {service.shortDescription}
                 </p>
+                <span className="text-sm text-[#c69c6d] font-semibold">
+                  Mehr erfahren →
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* ── Service × City Links ─────────────────────────────────────── */}
+          <div className="mt-12 bg-white rounded-xl border border-gray-100 p-8">
+            <h3 className="text-xl font-bold text-[#1a3a52] mb-6">
+              Unsere Fachbereiche in {city.name}
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {SERVICES.map((service) => (
+                <Link
+                  key={service.id}
+                  href={`/leistungen/${service.id}/${city.slug}`}
+                  className="flex items-center gap-2 px-4 py-3 rounded-lg bg-[#f9f8f6] hover:bg-[#c69c6d]/10 text-[#1a3a52] hover:text-[#c69c6d] transition-colors text-sm font-medium"
+                >
+                  <span>→</span>
+                  <span>{service.name} in {city.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Nearby Cities ────────────────────────────────────────────────── */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a3a52] mb-4 text-center">
+            Weitere Standorte in der Nähe
+          </h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Wir sind auch in diesen Städten und Gemeinden für Sie im Einsatz.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {nearbyCities.map((nearbyCity) => (
+              <Link
+                key={nearbyCity.slug}
+                href={`/standorte/${nearbyCity.slug}`}
+                className="group bg-[#f9f8f6] rounded-xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-lg font-bold text-[#1a3a52] group-hover:text-[#c69c6d] transition-colors">
+                    {nearbyCity.name}
+                  </h3>
+                  <span className="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">
+                    {nearbyCity.distanceKm === 0
+                      ? 'Vor Ort'
+                      : `${nearbyCity.distanceKm} km`}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500 mb-3">{nearbyCity.region}</p>
                 <span className="text-sm text-[#c69c6d] font-semibold">
                   Mehr erfahren →
                 </span>
