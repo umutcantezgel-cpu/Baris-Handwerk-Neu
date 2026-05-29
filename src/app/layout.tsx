@@ -262,6 +262,8 @@ export default function RootLayout({
         <meta name="geo.placename" content="Wetzlar" />
         <meta name="geo.position" content="50.5567;8.5022" />
         <meta name="ICBM" content="50.5567, 8.5022" />
+        <link rel="alternate" hrefLang="de" href="https://www.batherm.de/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.batherm.de/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

@@ -37,7 +37,7 @@ const Blog = () => {
           PREMIUM HERO SECTION
           Animated gradient background with glassmorphism elements
       ═══════════════════════════════════════════════════════════════════ */}
-      <div className="relative pt-24 pb-20 overflow-hidden">
+      <div className="relative pt-[var(--spacing-32)] pb-20 overflow-hidden">
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900" />
 

@@ -61,7 +61,7 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen pt-24 flex items-center justify-center">
+      <div className="min-h-screen pt-[var(--spacing-32)] flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Artikel nicht gefunden</h2>
           <Link href={createPageUrl('Blog')}>
@@ -96,7 +96,7 @@ const BlogPost = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           HERO SECTION
       ═══════════════════════════════════════════════════════════════════ */}
-      <div className="relative pt-32 pb-20 overflow-hidden">
+      <div className="relative pt-[var(--spacing-32)] pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-[#1a3a52] z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a52] via-[#1a3a52] to-[#c69c6d] opacity-90" />
           {post.image_url && (

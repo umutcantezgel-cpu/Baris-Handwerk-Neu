@@ -165,6 +165,9 @@
    /* 8x Base - Major section padding */
    --spacing-20: 80px;
    --spacing-24: 96px;
+   --spacing-32: 128px;
+   --spacing-36: 144px;
+   --spacing-40: 160px;
 
    /* ========================================================================
      TYPOGRAPHY SYSTEM
