@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, Mail, MapPin, Clock, Wrench, ChevronRight } from 'lucide-react';
 import { InstagramLogo as Instagram } from '@phosphor-icons/react';
 import { navigationLinks, quickLinks, serviceLinks } from '@/config/navigation';
@@ -8,6 +9,30 @@ import { useContent } from '@/contexts/ContentContext';
 
 const Footer = () => {
     const { siteConfig } = useContent();
+    const pathname = usePathname();
+    
+    // SEO/GEO Optimization: Dofollow on home & impressum, Nofollow elsewhere
+    const isDofollow = pathname === '/' || pathname === '/impressum';
+    
+    // Anchor Text Variation to prevent Google Penguin issues
+    const anchorTexts = [
+        "Webdesign von Coday",
+        "Ein Projekt von Coday",
+        "Coday Web Agency",
+        "Digitalisiert durch Coday"
+    ];
+    
+    const getStableIndex = (str) => {
+        if (!str) return 0;
+        let sum = 0;
+        for (let i = 0; i < str.length; i++) {
+            sum += str.charCodeAt(i);
+        }
+        return sum % anchorTexts.length;
+    };
+    
+    const anchorText = anchorTexts[getStableIndex(pathname)];
+
     return (
         <footer className="bg-[var(--color-neutral-900)] border-t border-[var(--color-neutral-800)] text-[var(--color-neutral-50)]">
             <div className="max-w-7xl mx-auto px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] py-[var(--spacing-12)]">
@@ -130,9 +155,22 @@ const Footer = () => {
                             >
                                 <Instagram className="w-5 h-5" />
                             </a>
-                            <p className="text-[var(--color-neutral-500)] text-xs text-center md:text-left">
-                                © {new Date().getFullYear()} {siteConfig.name}. Alle Rechte vorbehalten.
-                            </p>
+                            <div className="flex flex-col sm:flex-row items-center gap-2 text-[var(--color-neutral-500)] text-xs text-center md:text-left">
+                                <span>© {new Date().getFullYear()} {siteConfig.name}. Alle Rechte vorbehalten.</span>
+                                <span className="hidden sm:inline">|</span>
+                                <span className="text-[var(--color-neutral-600)] transition-colors">
+                                    <span className="sr-only">Diese Handwerker Webseite wurde konzipiert und technisch realisiert durch die Coday Web Agency, Experten für Webdesign und GEO in Hessen.</span>
+                                    <a 
+                                        href="https://www.codayweb.de/" 
+                                        target="_blank" 
+                                        rel={isDofollow ? "dofollow noopener noreferrer" : "nofollow noopener noreferrer"}
+                                        title="Zur Coday Web Agency - Premium Webdesign"
+                                        className="hover:text-[var(--color-neutral-400)] transition-colors"
+                                    >
+                                        {anchorText}
+                                    </a>
+                                </span>
+                            </div>
                         </div>
                         <div className="flex gap-[var(--spacing-4)]">
                             {quickLinks.map((link) => (

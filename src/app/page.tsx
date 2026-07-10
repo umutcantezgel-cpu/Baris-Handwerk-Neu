@@ -16,9 +16,36 @@ export const metadata = createMetadata({
   path: '/',
 });
 
+const agencySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.codayweb.de/#organization",
+      "name": "Coday Web Agency",
+      "url": "https://www.codayweb.de/",
+      "description": "Experten für Webdesign und GEO in Hessen",
+      "sameAs": [
+        "https://www.codayweb.de/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.batherm.de/#website",
+      "creator": {
+        "@id": "https://www.codayweb.de/#organization"
+      }
+    }
+  ]
+};
+
 export default function HomePage() {
   return (
     <PageWrapper className="relative min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(agencySchema) }}
+      />
       <Hero
         title="Meisterhafte Installationen für Ihr Zuhause"
         subtitle="Wir verbinden handwerkliche Präzision mit modernster Technik für Sanitär, Heizung und Klima."
