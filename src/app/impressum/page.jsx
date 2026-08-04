@@ -173,6 +173,26 @@ export default function Impressum() {
                 </div>
               </section>
 
+              {/* Webdesign & Konzeption */}
+              <section>
+                <h2 className="text-2xl font-bold text-[#1a3a52] mb-4">
+                  Webdesign & Konzeption
+                </h2>
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                  <p className="leading-relaxed text-sm">
+                    Technische Konzeption und Realisierung durch: <br />
+                    <a 
+                      href="https://codayweb.de" 
+                      target="_blank" 
+                      rel="dofollow noopener noreferrer"
+                      className="text-[#1a3a52] hover:underline font-semibold"
+                    >
+                      Coday Webdesign Wetzlar
+                    </a>
+                  </p>
+                </div>
+              </section>
+
             </div>
           </div>
         </div>

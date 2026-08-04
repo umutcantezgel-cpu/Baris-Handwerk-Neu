@@ -11,9 +11,7 @@ const Footer = () => {
     const { siteConfig } = useContent();
     const pathname = usePathname();
     
-    // SEO/GEO Optimization: Dofollow on home & impressum, Nofollow elsewhere
-    const isDofollow = pathname === '/' || pathname === '/impressum';
-    
+
     // Anchor Text Variation to prevent Google Penguin issues
     const anchorTexts = [
         "Webdesign von Coday",
@@ -163,7 +161,7 @@ const Footer = () => {
                                     <a 
                                         href="https://www.codayweb.de/" 
                                         target="_blank" 
-                                        rel={isDofollow ? "dofollow noopener noreferrer" : "nofollow noopener noreferrer"}
+                                        rel="dofollow noopener noreferrer"
                                         title="Zur Coday Web Agency - Premium Webdesign"
                                         className="hover:text-[var(--color-neutral-400)] transition-colors"
                                     >
