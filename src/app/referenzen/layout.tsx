@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Referenzen & Projekte – Unsere Arbeiten',
-  description: 'Abgeschlossene Projekte von Batherm Haustechnik: Badsanierungen, Heizungsinstallationen und mehr in Wetzlar und Umgebung.',
+  title: 'Referenzen & Projekte unserer Arbeiten',
+  description: 'Abgeschlossene Projekte von Batherm Haustechnik: Badsanierungen, Heizungsinstallationen und Solaranlagen in Wetzlar und Umgebung.',
   path: '/referenzen',
 });
 

@@ -32,26 +32,48 @@ export async function generateMetadata({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) return {};
 
-  const title = `${service.name} ${city.name} – Meisterbetrieb | Batherm`;
-  const description = `${service.name} in ${city.name}: ${service.shortDescription}. Ihr Meisterbetrieb aus Wetzlar – ${
-    city.distanceKm === 0 ? 'direkt vor Ort' : `nur ${city.distanceKm} km entfernt`
-  }. Jetzt beraten lassen!`;
+  const title = `${service.name} in ${city.name} – Meisterbetrieb`;
+  const fullTitle = `${title} | Batherm Haustechnik`;
+  const description = `${service.name} in ${city.name}: Fachgerechte Montage & Wartung vom Meisterbetrieb. ${
+    city.distanceKm === 0 ? 'Direkt vor Ort.' : `Nur ${city.distanceKm} km entfernt.`
+  } Jetzt anfragen!`;
 
   const url = `https://www.batherm.de/leistungen/${service.id}/${city.slug}`;
 
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: { 
+      canonical: url,
+      languages: {
+        'de': url,
+        'x-default': url,
+      },
+    },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       siteName: 'Batherm Haustechnik',
       locale: 'de_DE',
       type: 'website',
     },
-    robots: { index: true, follow: true },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description,
+    },
+    robots: { 
+      index: true, 
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

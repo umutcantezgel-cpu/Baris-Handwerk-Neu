@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin, Clock, Wrench, ChevronRight } from 'lucide-react';
 import { InstagramLogo as Instagram } from '@phosphor-icons/react';
 import { navigationLinks, quickLinks, serviceLinks } from '@/config/navigation';
 import { useContent } from '@/contexts/ContentContext';
+import { CITIES } from '@/config/cities';
 
 const Footer = () => {
     const { siteConfig } = useContent();
@@ -41,6 +42,9 @@ const Footer = () => {
                             <img
                                 src="/images/footer-logo.png"
                                 alt="Batherm Meisterbetrieb Logo"
+                                width={200}
+                                height={64}
+                                loading="lazy"
                                 className="h-16 w-auto object-contain"
                             />
                         </div>
@@ -122,19 +126,20 @@ const Footer = () => {
 
                     {/* Service Area */}
                     <div>
-                        <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Servicegebiet</h3>
+                        <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Standorte</h3>
                         <p className="text-[var(--color-neutral-400)] text-[var(--font-size-sm)] mb-[var(--spacing-3)]">
-                            Wir sind für Sie in folgenden Städten tätig:
+                            Ihr Meisterbetrieb in der Region:
                         </p>
                         <div className="grid grid-cols-2 gap-[var(--spacing-2)]">
-                            {siteConfig.serviceAreas.map((area) => (
-                                <div
-                                    key={area}
-                                    className="text-[var(--color-neutral-400)] text-xs flex items-center"
+                            {CITIES.map((city) => (
+                                <Link
+                                    key={city.slug}
+                                    href={`/standorte/${city.slug}`}
+                                    className="text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] text-xs flex items-center transition-colors"
                                 >
                                     <div className="w-1.5 h-1.5 bg-[var(--color-blue-500)] rounded-full mr-2"></div>
-                                    {area}
-                                </div>
+                                    {city.name}
+                                </Link>
                             ))}
                         </div>
                     </div>

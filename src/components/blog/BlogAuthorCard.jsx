@@ -32,6 +32,8 @@ const BlogAuthorCard = ({ author }) => {
                             <img
                                 src={authorData.avatar}
                                 alt={authorData.name}
+                                width={96}
+                                height={96}
                                 className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
                             />
                         ) : (

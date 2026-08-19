@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Energieberatung Wetzlar – Sanierung & Effizienz',
-  description: 'Professionelle Energieberatung in Wetzlar. Sanierungsfahrplan, Energieausweis und Fördermittelberatung vom Meisterbetrieb.',
+  title: 'Energieberatung für Sanierung & Effizienz',
+  description: 'Professionelle Energieberatung in Wetzlar. Individueller Sanierungsfahrplan, Energieausweis und Fördermittelberatung vom Meister.',
   path: '/energieberatung',
 });
 

@@ -69,6 +69,8 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
                                                 <img
                                                     src={post.image_url}
                                                     alt={post.title}
+                                                    width={300}
+                                                    height={128}
                                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                                     loading="lazy"
                                                 />

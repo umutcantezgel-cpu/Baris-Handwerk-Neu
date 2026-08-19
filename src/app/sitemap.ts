@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { posts } from '@/config/posts';
 import { SERVICES } from '@/config/services';
+import { PORTFOLIO_PROJECTS } from '@/config/projects';
 export const dynamic = 'force-static';
 
 const CITIES = [
@@ -46,6 +47,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const projectPages: MetadataRoute.Sitemap = PORTFOLIO_PROJECTS.map((project) => ({
+    url: `${baseUrl}/referenzen/${project.id}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   const cityPages: MetadataRoute.Sitemap = CITIES.map((city) => ({
     url: `${baseUrl}/standorte/${city}`,
     lastModified: now,
@@ -63,5 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticPages, ...servicePages, ...blogPages, ...cityPages, ...serviceCityPages];
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...blogPages,
+    ...projectPages,
+    ...cityPages,
+    ...serviceCityPages
+  ];
 }

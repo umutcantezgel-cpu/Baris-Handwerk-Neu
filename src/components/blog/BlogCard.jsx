@@ -30,6 +30,8 @@ const BlogCard = ({ post }) => {
                                 <img
                                     src={post.image}
                                     alt={post.title}
+                                    width={400}
+                                    height={208}
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                                     loading="lazy"
                                 />
@@ -85,8 +87,6 @@ const BlogCard = ({ post }) => {
 
                         {/* Footer */}
                         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-
-
                             {/* Read More Arrow */}
                             <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                                 Lesen

@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Impressum',
-  description: 'Impressum und Anbieterkennzeichnung der Batherm Haustechnik, Linsenbergstrasse 9, 35586 Wetzlar.',
+  title: 'Impressum & rechtliche Angaben',
+  description: 'Impressum und gesetzliche Anbieterkennzeichnung der Batherm Haustechnik, Linsenbergstrasse 9, 35586 Wetzlar. Inhaber Baris Aydin.',
   path: '/impressum',
 });
 

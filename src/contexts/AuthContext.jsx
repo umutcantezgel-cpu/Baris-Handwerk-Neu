@@ -15,7 +15,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [isEditMode, setIsEditMode] = useState(false);
 
     // Check session on mount
@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }) => {
                 setUser(session.user);
                 setIsAuthenticated(true);
             }
-            setIsLoading(false);
         };
         checkAuth();
     }, []);
@@ -69,7 +68,7 @@ export const AuthProvider = ({ children }) => {
             logout,
             toggleEditMode
         }}>
-            {!isLoading && children}
+            {children}
         </AuthContext.Provider>
     );
 };

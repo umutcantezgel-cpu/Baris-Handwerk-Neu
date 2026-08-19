@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Karriere – Jobs bei Batherm in Wetzlar',
-  description: 'Stellenangebote bei Batherm Haustechnik Wetzlar. Anlagenmechaniker SHK und Ausbildungsplätze – jetzt bewerben!',
+  title: 'Karriere & Jobs im SHK-Handwerk',
+  description: 'Werden Sie Teil unseres Teams bei Batherm Haustechnik in Wetzlar. Aktuelle Jobs für Anlagenmechaniker SHK – jetzt unkompliziert bewerben!',
   path: '/karriere',
 });
 

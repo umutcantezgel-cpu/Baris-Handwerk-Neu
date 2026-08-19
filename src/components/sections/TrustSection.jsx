@@ -3,27 +3,35 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ShieldCheck, Clock, CheckCircle2, Award, Users, ThumbsUp, MapPin } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 
-const AnimatedCounter = ({ end, duration = 2, suffix = "" }) => {
-    const [count, setCount] = useState(0);
+const AnimatedCounter = ({ end, duration = 1.2, suffix = "" }) => {
+    const [count, setCount] = useState(end);
     const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-50px" });
+    const hasAnimated = useRef(false);
 
     useEffect(() => {
-        if (inView) {
-            let start = 0;
-            const increment = end / (duration * 60);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= end) {
-                    setCount(end);
-                    clearInterval(timer);
-                } else {
-                    setCount(Math.floor(start));
-                }
-            }, 1000 / 60);
-            return () => clearInterval(timer);
-        }
-    }, [end, duration, inView]);
+        if (!ref.current || hasAnimated.current) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0]?.isIntersecting && !hasAnimated.current) {
+                hasAnimated.current = true;
+                let startTime = null;
+                const step = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+                    setCount(Math.floor(progress * end));
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        setCount(end);
+                    }
+                };
+                requestAnimationFrame(step);
+            }
+        }, { threshold: 0.1 });
+
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [end, duration]);
 
     return (
         <span ref={ref} className="text-4xl md:text-5xl font-black bg-gradient-to-br from-blue-600 to-blue-400 bg-clip-text text-transparent">

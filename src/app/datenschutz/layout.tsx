@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Datenschutzerklärung',
-  description: 'Datenschutzerklärung der Batherm Haustechnik Wetzlar gemäß DSGVO.',
+  title: 'Datenschutzerklärung nach DSGVO',
+  description: 'Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei Batherm Haustechnik gemäß DSGVO.',
   path: '/datenschutz',
 });
 

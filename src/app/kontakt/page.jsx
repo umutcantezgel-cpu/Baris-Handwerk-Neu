@@ -10,8 +10,17 @@ import { useContent } from '@/contexts/ContentContext';
 import PageWrapper from '@/components/common/PageWrapper';
 import SEO from '@/components/SEO';
 import { z } from 'zod';
+import dynamic from 'next/dynamic';
 import { hasStoredConsent } from '@/components/common/ConsentManager';
-import PremiumMap from '@/components/common/PremiumMap';
+
+const PremiumMap = dynamic(() => import('@/components/common/PremiumMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-neutral-900 flex items-center justify-center text-white/40">
+      <MapPin className="w-8 h-8 animate-pulse" />
+    </div>
+  ),
+});
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name muss mindestens 2 Zeichen lang sein'),

@@ -76,11 +76,11 @@ const Hero = ({
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="font-sans font-bold text-5xl md:text-6xl lg:text-8xl leading-[1.05] mb-8 tracking-tight text-white drop-shadow-2xl"
+                        className="font-sans font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-8 tracking-tight text-white drop-shadow-2xl"
                     >
-                        <span className="block text-white/90">Premium</span>
+                        <span className="block text-white/90">Sanitär, Heizung &amp; Solar</span>
                         <span className="block bg-gradient-to-r from-blue-400 via-white to-blue-200 bg-clip-text text-transparent">
-                            Haustechnik.
+                            in Wetzlar &amp; Region
                         </span>
                     </motion.h1>
 

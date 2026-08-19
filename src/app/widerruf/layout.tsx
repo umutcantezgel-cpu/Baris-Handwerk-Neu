@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Widerrufsbelehrung',
-  description: 'Widerrufsbelehrung der Batherm Haustechnik Wetzlar.',
+  title: 'Widerrufsbelehrung & Musterformular',
+  description: 'Widerrufsbelehrung und Muster-Widerrufsformular für Verbraucher bei Beauftragung von Leistungen der Batherm Haustechnik.',
   path: '/widerruf',
 });
 

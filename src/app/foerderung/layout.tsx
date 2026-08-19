@@ -1,7 +1,7 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Förderung 2024 – Zuschüsse für Heizung & Sanierung',
+  title: 'Förderung & Zuschüsse für Heizung',
   description: 'Bis zu 70% Förderung für Wärmepumpen und Heizungstausch. Wir helfen bei KfW- und BAFA-Anträgen in Wetzlar und Umgebung.',
   path: '/foerderung',
 });

@@ -2,10 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Outfit, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
+import { ClientWidgets } from '@/components/layout/ClientWidgets';
 import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';
-import WhatsAppButton from '@/components/common/WhatsAppButton';
-import ConsentManager from '@/components/common/ConsentManager';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { AuthProvider } from '@/contexts/AuthContext';
 
@@ -29,8 +28,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.batherm.de'),
   title: {
-    default: 'Batherm Haustechnik | Sanitär & Heizung in Wetzlar',
+    default: 'Sanitär, Heizung & Solar in Wetzlar | Batherm Haustechnik',
     template: '%s | Batherm Haustechnik'
   },
   description: 'Ihr zuverlässiger Partner für Sanitär, Heizung, Solar und Wärmepumpen in Wetzlar und Umgebung. Professionelle Haustechnik von Batherm.',
@@ -38,11 +38,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Batherm Haustechnik' }],
   creator: 'Batherm Haustechnik',
   publisher: 'Batherm Haustechnik',
+  alternates: {
+    canonical: 'https://www.batherm.de/',
+  },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
     url: 'https://www.batherm.de/',
-    title: 'Batherm Haustechnik | Sanitär & Heizung in Wetzlar',
+    title: 'Sanitär, Heizung & Solar in Wetzlar | Batherm Haustechnik',
     description: 'Ihr zuverlässiger Partner für Sanitär, Heizung, Solar und Wärmepumpen in Wetzlar und Umgebung. Professionelle Haustechnik von Batherm.',
     siteName: 'Batherm Haustechnik',
   },
@@ -262,8 +265,6 @@ export default function RootLayout({
         <meta name="geo.placename" content="Wetzlar" />
         <meta name="geo.position" content="50.5567;8.5022" />
         <meta name="ICBM" content="50.5567, 8.5022" />
-        <link rel="alternate" hrefLang="de" href="https://www.batherm.de/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.batherm.de/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -281,14 +282,12 @@ export default function RootLayout({
         <AuthProvider>
           <ContentProvider>
             <TrackingScripts />
-            <WhatsAppButton />
-            
             <HeaderWrapper />
             <div className="flex-1">
               {children}
             </div>
             <Footer />
-            <ConsentManager />
+            <ClientWidgets />
           </ContentProvider>
         </AuthProvider>
       </body>

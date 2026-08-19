@@ -12,7 +12,7 @@ import PageWrapper from '@/components/common/PageWrapper';
 import { createMetadata } from '@/lib/metadata';
 export const metadata = createMetadata({
   title: 'Sanitär, Heizung & Solar in Wetzlar',
-  description: 'Ihr verlässlicher Partner für Sanitär, Heizung und Solartechnik im Raum Wetzlar. 30+ Jahre Erfahrung, 24h Notdienst.',
+  description: 'Ihr Meisterbetrieb für Sanitär, Heizung, Solar und Wärmepumpen in Wetzlar. 24h Notdienst, faire Preise & persönliche Beratung. Jetzt anfragen!',
   path: '/',
 });
 

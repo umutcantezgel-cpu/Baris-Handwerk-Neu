@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Beratungstermin buchen – Kostenlos & Unverbindlich',
-  description: 'Buchen Sie eine kostenlose Beratung bei Batherm Haustechnik Wetzlar. Persönlich, kompetent und unverbindlich.',
+  title: 'Kostenlose Fachberatung buchen',
+  description: 'Buchen Sie einen kostenlosen Beratungstermin bei Batherm Haustechnik Wetzlar. Persönlich, kompetent und unverbindlich vor Ort oder online.',
   path: '/beratung',
 });
 

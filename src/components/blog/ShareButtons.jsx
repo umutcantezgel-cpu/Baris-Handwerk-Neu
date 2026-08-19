@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Share2, Mail, Link as LinkIcon, MessageCircle, Check } from 'lucide-react';
 import { FacebookLogo as Facebook, TwitterLogo as Twitter, LinkedinLogo as Linkedin } from '@phosphor-icons/react';
@@ -11,8 +12,8 @@ const ShareButtons = ({ url, title, description }) => {
     const [copied, setCopied] = useState(false);
     const [showShareMenu, setShowShareMenu] = useState(false);
 
-    const shareUrl = url || window.location.href;
-    const shareTitle = title || document.title;
+    const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://www.batherm.de');
+    const shareTitle = title || (typeof document !== 'undefined' ? document.title : 'Batherm Haustechnik');
     const shareDescription = description || '';
 
     const shareLinks = {

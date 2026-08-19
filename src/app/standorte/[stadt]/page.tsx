@@ -25,26 +25,49 @@ export async function generateMetadata({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!city) return {};
 
-  const title = `Sanitär & Heizung ${city.name} – Batherm Haustechnik`;
-  const description = `Ihr Meisterbetrieb für Sanitär, Heizung und Klimatechnik in ${city.name}. ${
+  const pageUrl = `https://www.batherm.de/standorte/${city.slug}`;
+  const title = `Sanitär & Heizung in ${city.name}`;
+  const fullTitle = `${title} | Batherm Haustechnik`;
+  const description = `Ihr Meisterbetrieb für Sanitär, Heizung & Klima in ${city.name}. ${
     city.distanceKm === 0
-      ? 'Direkt vor Ort'
-      : `Nur ${city.distanceKm} km entfernt`
-  }. Kostenlose Beratung & faire Preise.`;
+      ? 'Direkt vor Ort.'
+      : `Nur ${city.distanceKm} km entfernt.`
+  } Kostenlose Beratung & 24h Notdienst.`;
 
   return {
     title,
     description,
-    alternates: { canonical: `https://www.batherm.de/standorte/${city.slug}` },
+    alternates: { 
+      canonical: pageUrl,
+      languages: {
+        'de': pageUrl,
+        'x-default': pageUrl,
+      },
+    },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
-      url: `https://www.batherm.de/standorte/${city.slug}`,
+      url: pageUrl,
       siteName: 'Batherm Haustechnik',
       locale: 'de_DE',
       type: 'website',
     },
-    robots: { index: true, follow: true },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description,
+    },
+    robots: { 
+      index: true, 
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

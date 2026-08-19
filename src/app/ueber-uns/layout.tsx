@@ -1,8 +1,8 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Über uns – Meisterbetrieb seit 2025',
-  description: 'Lernen Sie Batherm Haustechnik kennen. Meisterbetrieb für Sanitär und Heizung in Wetzlar – zuverlässig, kompetent, persönlich.',
+  title: 'Über uns – Meisterbetrieb in Wetzlar',
+  description: 'Lernen Sie Batherm Haustechnik kennen. Ihr Meisterbetrieb für Sanitär und Heizung in Wetzlar – zuverlässig, kompetent, persönlich.',
   path: '/ueber-uns',
 });
 

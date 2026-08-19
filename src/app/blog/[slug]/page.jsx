@@ -103,6 +103,8 @@ const BlogPost = () => {
             <img
               src={post.image_url}
               alt={post.title}
+              width={1200}
+              height={600}
               className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay"
             />
           )}

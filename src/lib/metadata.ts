@@ -9,15 +9,26 @@ export function createMetadata(options: {
   path: string;
   image?: string;
 }): Metadata {
-  const fullTitle = `${options.title} | ${SITE_NAME}`;
+  const canonicalUrl = `${BASE_URL}${options.path === '/' ? '' : options.path}`;
+  const isHomePage = options.path === '/' || options.path === '';
+  const fullTitle = isHomePage 
+    ? `${options.title} | ${SITE_NAME}`
+    : `${options.title} | ${SITE_NAME}`;
+
   return {
-    title: fullTitle,
+    title: isHomePage ? { absolute: fullTitle } : options.title,
     description: options.description,
-    alternates: { canonical: `${BASE_URL}${options.path}` },
+    alternates: { 
+      canonical: canonicalUrl,
+      languages: {
+        'de': canonicalUrl,
+        'x-default': canonicalUrl,
+      },
+    },
     openGraph: {
       title: fullTitle,
       description: options.description,
-      url: `${BASE_URL}${options.path}`,
+      url: canonicalUrl,
       siteName: SITE_NAME,
       locale: 'de_DE',
       type: 'website',
@@ -28,6 +39,16 @@ export function createMetadata(options: {
       title: fullTitle,
       description: options.description,
     },
-    robots: { index: true, follow: true },
+    robots: { 
+      index: true, 
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
