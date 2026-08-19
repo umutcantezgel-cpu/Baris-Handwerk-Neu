@@ -144,7 +144,7 @@ export default async function StandortPage({
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Sanitär &amp; Heizung in{' '}
+            Sanitär, Heizung &amp; Klimatechnik in{' '}
             <span className="text-[#c69c6d]">{city.name}</span>
           </h1>
 

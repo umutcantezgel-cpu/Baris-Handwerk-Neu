@@ -27,8 +27,8 @@ const ProjectDetail = () => {
                 <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-[var(--spacing-4)]">
                     <h1 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)]">Projekt nicht gefunden</h1>
                     <p className="text-[var(--color-text-secondary)] mb-[var(--spacing-8)]">Das gesuchte Projekt existiert leider nicht.</p>
-                    <Link href={createPageUrl('Projects')}>
-                        <Button>Zurück zur Übersicht</Button>
+                    <Link href="/referenzen">
+                        <Button>Zurück zur Projekt-Übersicht</Button>
                     </Link>
                 </div>
             </PageWrapper>
@@ -58,9 +58,9 @@ const ProjectDetail = () => {
                 </div>
 
                 <div className="absolute inset-0 flex flex-col justify-end pb-[var(--spacing-12)] md:pb-[var(--spacing-24)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] max-w-7xl mx-auto">
-                    <Link href={createPageUrl('Projects')} className="inline-flex items-center text-white/80 hover:text-white mb-[var(--spacing-6)] transition-colors group">
+                    <Link href="/referenzen" className="inline-flex items-center text-white/80 hover:text-white mb-[var(--spacing-6)] transition-colors group">
                         <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-                        Zurück zu den Projekten
+                        Zurück zur Projekt-Übersicht
                     </Link>
 
                     <div className="flex flex-wrap items-center gap-[var(--spacing-3)] mb-[var(--spacing-4)]">
@@ -91,9 +91,14 @@ const ProjectDetail = () => {
 
                         {/* Description */}
                         <div>
-                            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] font-display">Über das Projekt</h2>
-                            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed whitespace-pre-line">
+                            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] font-display">
+                                Projekt-Überblick: {project.title} in {project.location}
+                            </h2>
+                            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed whitespace-pre-line mb-4">
                                 {project.description}
+                            </p>
+                            <p className="text-base text-gray-700 leading-relaxed">
+                                Für dieses Projekt im Bereich {categoryName} in {project.location} übernahm unser Meisterbetrieb die vollständige Konzeption, Demontage der Altanlage, präzise Neuinstallation und fachgerechte Inbetriebnahme. Durch die enge Abstimmung mit dem Bauherrn konnten alle Arbeiten termingerecht und im vereinbarten Budgetrahmen abgeschlossen werden.
                             </p>
                         </div>
 
@@ -101,23 +106,52 @@ const ProjectDetail = () => {
                         <div className="grid md:grid-cols-2 gap-[var(--spacing-8)]">
                             {project.challenge && (
                                 <div className="bg-[var(--color-feedback-error-bg)] p-[var(--spacing-6)] rounded-[var(--radius-lg)] border border-[var(--color-feedback-error-border)]">
-                                    <h3 className="text-lg font-bold text-[var(--color-feedback-error-text)] mb-[var(--spacing-3)]">Herausforderung</h3>
-                                    <p className="text-[var(--color-text-secondary)]">{project.challenge}</p>
+                                    <h3 className="text-lg font-bold text-[var(--color-feedback-error-text)] mb-[var(--spacing-3)]">Herausforderung vor Ort</h3>
+                                    <p className="text-[var(--color-text-secondary)] leading-relaxed">{project.challenge}</p>
                                 </div>
                             )}
                             {project.solution && (
                                 <div className="bg-[var(--color-feedback-success-bg)] p-[var(--spacing-6)] rounded-[var(--radius-lg)] border border-[var(--color-feedback-success-border)]">
-                                    <h3 className="text-lg font-bold text-[var(--color-feedback-success-text)] mb-[var(--spacing-3)]">Lösung</h3>
-                                    <p className="text-[var(--color-text-secondary)]">{project.solution}</p>
+                                    <h3 className="text-lg font-bold text-[var(--color-feedback-success-text)] mb-[var(--spacing-3)]">Handwerkliche Meisterlösung</h3>
+                                    <p className="text-[var(--color-text-secondary)] leading-relaxed">{project.solution}</p>
                                 </div>
                             )}
                         </div>
 
+                        {/* Implementation Details & Technology */}
+                        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                            <h3 className="text-2xl font-bold text-gray-900">Technische Besonderheiten & Ausführung</h3>
+                            <p className="text-gray-700 leading-relaxed">
+                                Bei der handwerklichen Umsetzung von &bdquo;{project.title}&ldquo; legte unser Team besonderen Wert auf Langlebigkeit, Energieeffizienz und höchste Betriebssicherheit. Alle Anschlüsse wurden normgerecht nach DIN und den Vorgaben der Hersteller realisiert. Ein hydraulischer Abgleich sowie eine umfassende Einweisung des Kunden rundeten das Projekt erfolgreich ab.
+                            </p>
+                            <div className="grid sm:grid-cols-2 gap-3 pt-2">
+                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                                    <span>Normgerechte Meisterausführung</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                                    <span>Hochwertige Markenkomponenten</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                                    <span>Maximale Energieeffizienz</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-gray-700">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                                    <span>Vollständige Dokumentation & Garantie</span>
+                                </div>
+                            </div>
+                        </div>
+
                         {/* Quality Section */}
                         <div>
-                            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] font-display">Qualität, die überzeugt</h3>
-                            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
-                                Bei der Umsetzung dieses Projekts haben wir modernste Techniken und hochwertige Materialien verwendet, um ein langlebiges und energieeffizientes Ergebnis zu erzielen. Unsere erfahrenen Fachkräfte sorgen dafür, dass jede Installation höchsten Qualitätsstandards entspricht.
+                            <h3 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] font-display">Qualität, die langfristig überzeugt</h3>
+                            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-4">
+                                Bei der Umsetzung dieses Projekts in {project.location} haben wir modernste Technologien und zertifizierte Werkstoffe eingesetzt. Unser Anspruch ist es, langlebige Systeme zu schaffen, die den Wohnkomfort spürbar erhöhen und die Betriebskosten nachhaltig senken.
+                            </p>
+                            <p className="text-base text-gray-600 leading-relaxed">
+                                Auch nach der Fertigstellung stehen wir unserem Kunden mit regelmäßigen Wartungen und unserem zuverlässigen 24h-Service jederzeit zur Seite.
                             </p>
                         </div>
 
@@ -142,7 +176,7 @@ const ProjectDetail = () => {
                     <div className="lg:col-span-1">
                         <div className="bg-[var(--color-background-elevated)] rounded-[var(--radius-2xl)] shadow-[var(--shadow-lg)] border border-[var(--color-border-default)] p-[var(--spacing-8)] sticky top-24">
                             <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)] flex items-center font-display">
-                                Projektdaten
+                                Projektdaten im Detail
                             </h3>
 
                             <div className="space-y-[var(--spacing-6)]">
@@ -158,9 +192,16 @@ const ProjectDetail = () => {
                                 <div className="flex items-center justify-between py-[var(--spacing-3)] border-b border-[var(--color-border-default)]">
                                     <span className="text-[var(--color-text-tertiary)] flex items-center">
                                         <Ruler className="w-4 h-4 mr-2" />
-                                        Typ
+                                        Kategorie
                                     </span>
                                     <span className="font-semibold text-[var(--color-neutral-900)] capitalize">{categoryName}</span>
+                                </div>
+                                <div className="flex items-center justify-between py-[var(--spacing-3)] border-b border-[var(--color-border-default)]">
+                                    <span className="text-[var(--color-text-tertiary)] flex items-center">
+                                        <MapPin className="w-4 h-4 mr-2" />
+                                        Standort
+                                    </span>
+                                    <span className="font-semibold text-[var(--color-neutral-900)]">{project.location}</span>
                                 </div>
                             </div>
 
@@ -181,7 +222,7 @@ const ProjectDetail = () => {
                                 <p className="text-sm text-[var(--color-text-secondary)] mb-[var(--spacing-4)] text-center">
                                     Planen Sie ein ähnliches Projekt?
                                 </p>
-                                <Link href={createPageUrl('Contact')}>
+                                <Link href="/kontakt">
                                     <Button className="w-full bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] text-white min-h-[44px]">
                                         Projekt anfragen
                                         <ArrowRight className="w-4 h-4 ml-2" />

@@ -21,10 +21,10 @@ export default function About() {
         {/* Header */}
         <div className="text-center mb-[var(--spacing-16)]">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] tracking-tight">
-            Über uns
+            Über Batherm Haustechnik – Ihr Meisterbetrieb in Wetzlar
           </h1>
           <p className="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto font-light leading-relaxed">
-            Ihr Partner für zukunftssichere Haustechnik in Wetzlar und Umgebung
+            Erfahren Sie mehr über unsere Werte, unser qualifiziertes Team und unseren Anspruch an nachhaltige Handwerksqualität als Meisterbetrieb für Sanitär, Heizung und Klimatechnik in Wetzlar und Umgebung.
           </p>
         </div>
 

@@ -248,16 +248,15 @@ export default async function ServiceCityPage({
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             {service.name} in{' '}
-            <span className="text-[#c69c6d]">{city.name}</span>
+            <span className="text-[#c69c6d]">{city.name}</span> – Meisterbetrieb Batherm
           </h1>
 
           <p className="text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
             Batherm Haustechnik ist Ihr Meisterbetrieb für {service.name} in{' '}
-            {city.name} und {city.region}.{' '}
-            {service.shortDescription}.{' '}
+            {city.name} und {city.region}. {service.shortDescription}.{' '}
             {city.distanceKm > 0
-              ? `Nur ${city.distanceKm} km von unserem Standort in Wetzlar – schnelle Reaktionszeiten garantiert.`
-              : 'Direkt vor Ort – minimale Anfahrtszeit für maximalen Service.'}
+              ? `Mit unserem Standort in Wetzlar trennen uns nur ${city.distanceKm} km von ${city.name} – für eine reibungslose Betreuung und rasche Einsatzzeiten.`
+              : 'Direkt vor Ort in Wetzlar für kürzeste Anfahrtswege und persönliche Betreuung.'}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -285,43 +284,38 @@ export default async function ServiceCityPage({
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a3a52] mb-6">
-            {service.name} vom Meisterbetrieb in {city.name}
+            Fachkompetenz &amp; Meisterqualität in {city.name}
           </h2>
 
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            Batherm Haustechnik ist Ihr Meisterbetrieb für {service.name} in{' '}
-            {city.name} und {city.region}. {city.description}
+            Egal ob Neubau, Altbausanierung oder laufende Instandhaltung: Als konzessionierter Handwerks-Meisterbetrieb realisieren wir anspruchsvolle Projekte im Bereich {service.name} für Privat- und Gewerbekunden in {city.name} sowie der gesamten Region {city.region}. {city.description}
           </p>
 
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            Unsere Leistungen im Bereich {service.name} umfassen:{' '}
-            {featureList}.{' '}
-            {subcategoryNames
-              ? `Ob ${subcategoryNames} – wir sind ${distanceInfo} und garantieren schnelle Reaktionszeiten und persönlichen Service.`
-              : `Wir sind ${distanceInfo} und garantieren schnelle Reaktionszeiten und persönlichen Service.`}
+            Im Mittelpunkt unserer Arbeit stehen Energieeffizienz, Langlebigkeit und höchste Ausführungsqualität nach aktuellen DIN- und VDI-Standards. Unser Portfolio umfasst {featureList}. {subcategoryNames ? `Wir decken alle Kernbereiche wie ${subcategoryNames} lückenlos ab.` : ''} Durch die Nähe zu {city.name} ({distanceInfo}) garantieren wir termingerechte Ausführung und faire Konditionen.
           </p>
 
           {/* Stats row */}
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="bg-[#f9f8f6] rounded-xl p-6 text-center">
               <div className="text-3xl font-bold text-[#c69c6d] mb-2">
-                {city.distanceKm === 0 ? '✓' : `${city.distanceKm} km`}
+                {city.distanceKm === 0 ? 'Vor Ort' : `${city.distanceKm} km`}
               </div>
               <div className="text-sm text-gray-600">
-                {city.distanceKm === 0 ? 'Vor Ort in Wetzlar' : 'Entfernung'}
+                {city.distanceKm === 0 ? 'Standort Wetzlar' : 'Kurze Anfahrt'}
               </div>
             </div>
             <div className="bg-[#f9f8f6] rounded-xl p-6 text-center">
               <div className="text-3xl font-bold text-[#c69c6d] mb-2">
                 {(service.features ?? []).length}+
               </div>
-              <div className="text-sm text-gray-600">Leistungsbereiche</div>
+              <div className="text-sm text-gray-600">Spezialisierungen</div>
             </div>
             <div className="bg-[#f9f8f6] rounded-xl p-6 text-center">
               <div className="text-3xl font-bold text-[#c69c6d] mb-2">
                 100%
               </div>
-              <div className="text-sm text-gray-600">Meisterqualität</div>
+              <div className="text-sm text-gray-600">Meisterbetrieb</div>
             </div>
           </div>
         </div>
@@ -332,11 +326,10 @@ export default async function ServiceCityPage({
         <section className="py-20 px-4 bg-[#f9f8f6]">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-[#1a3a52] mb-4 text-center">
-              {service.name} – Unsere Leistungen
+              Detailliertes Leistungsspektrum
             </h2>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-              Profitieren Sie von unserem umfassenden Leistungsspektrum im
-              Bereich {service.name} in {city.name}.
+              Maßgeschneiderte Handwerkslösungen für maximale Zuverlässigkeit in {city.name}.
             </p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -361,11 +354,10 @@ export default async function ServiceCityPage({
         <section className="py-20 px-4 bg-white">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-[#1a3a52] mb-4 text-center">
-              Unsere {service.name} Bereiche in {city.name}
+              Spezialisierte Fachbereiche für {city.name}
             </h2>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-              Von der Beratung bis zur Wartung – alle Fachbereiche aus einer
-              Hand.
+              Von der Erstberatung bis zur regelmäßigen Wartung alle Gewerke aus Meisterhand.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -393,10 +385,10 @@ export default async function ServiceCityPage({
       <section className="py-20 px-4 bg-[#1a3a52]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-4">
-            So läuft Ihr {service.name}-Projekt in {city.name} ab
+            Schritt für Schritt zu Ihrem Projekterfolg
           </h2>
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Von der ersten Kontaktaufnahme bis zur finalen Übergabe – transparent und zuverlässig.
+            Von der ersten Kontaktaufnahme bis zur Endabnahme transparent und strukturiert.
           </p>
 
           <div className="grid md:grid-cols-4 gap-8">
@@ -427,12 +419,10 @@ export default async function ServiceCityPage({
       <section className="py-20 px-4 bg-gradient-to-br from-[#c69c6d] to-[#a67c52]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            {service.name} in {city.name} – jetzt Projekt starten
+            Unverbindliche Beratung für Ihr Vorhaben in {city.name}
           </h2>
           <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Kontaktieren Sie uns für eine kostenlose Beratung und ein
-            unverbindliches Angebot. Wir freuen uns auf Ihr {service.name}
-            -Projekt in {city.name}!
+            Kontaktieren Sie uns jetzt für eine persönliche Beratung und ein transparentes Angebot für {service.name} in {city.name}!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -453,27 +443,24 @@ export default async function ServiceCityPage({
       </section>
 
       {/* ── Internal Links ───────────────────────────────────────────────── */}
-      <section className="py-16 px-4 bg-[#f9f8f6]">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1a3a52] mb-8 text-center">
-            Weitere Informationen
-          </h2>
-
-          <div className="grid sm:grid-cols-3 gap-6">
+      <section className="py-20 px-4 bg-[#f9f8f6]">
+        <div className="max-w-6xl mx-auto">
+          {/* Back links */}
+          <div className="grid sm:grid-cols-2 gap-6 mb-16">
             {/* Link to parent service page */}
             <Link
               href={`/leistungen/${service.id}`}
               className="group bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all text-center"
             >
               <div className="text-3xl mb-3">🔧</div>
-              <h3 className="text-lg font-bold text-[#1a3a52] mb-2 group-hover:text-[#c69c6d] transition-colors">
+              <h3 className="font-bold text-lg text-[#1a3a52] group-hover:text-[#c69c6d] transition-colors mb-1">
                 {service.name}
               </h3>
               <p className="text-sm text-gray-600">
-                Alle Infos zu unserem {service.name}-Angebot
+                Alle Details zu unserem {service.name}-Angebot
               </p>
               <span className="inline-block mt-3 text-sm text-[#c69c6d] font-semibold">
-                Zur Übersicht →
+                Zur Hauptseite {service.name} →
               </span>
             </Link>
 

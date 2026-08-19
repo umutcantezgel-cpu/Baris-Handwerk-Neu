@@ -54,10 +54,9 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
                         const categoryData = categories.find(c => c.id === post.category);
 
                         return (
-                            <Link
+                            <div
                                 key={post.id}
-                                href={`/blog/${post.slug}`}
-                                className="group"
+                                className="group relative"
                             >
                                 <div className="relative h-full">
                                     <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-xl border border-white/20 group-hover:shadow-lg transition-all duration-300" />
@@ -83,15 +82,17 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
 
                                         {/* Category */}
                                         {categoryData && (
-                                            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-[#c69c6d]/10 text-[#c69c6d] mb-3">
+                                            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-[#c69c6d]/10 text-[#c69c6d] mb-3 pointer-events-none">
                                                 <IconWrapper name={categoryData.icon} className="w-3 h-3 mr-1" />
                                                 {categoryData.name}
                                             </span>
                                         )}
 
-                                        {/* Title */}
+                                        {/* Title with Stretched Link */}
                                         <h3 className="font-bold text-[#1a3a52] group-hover:text-[#c69c6d] transition-colors mb-2 line-clamp-2">
-                                            {post.title}
+                                            <Link href={`/blog/${post.slug}`} className="hover:underline focus:outline-none after:absolute after:inset-0">
+                                                {post.title}
+                                            </Link>
                                         </h3>
 
                                         {/* Excerpt */}
@@ -100,13 +101,13 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
                                         </p>
 
                                         {/* Read More */}
-                                        <div className="flex items-center text-[#c69c6d] text-sm font-medium">
+                                        <div className="flex items-center text-[#c69c6d] text-sm font-medium pointer-events-none">
                                             Weiterlesen
                                             <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         );
                     })}
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, AlertCircle, Lock, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, AlertCircle, Lock, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { InstagramLogo as Instagram } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -194,62 +194,40 @@ export default function Contact() {
       icon: Instagram,
       title: 'Instagram',
       details: ['@batherm_haustechnik'],
-      action: '/instagram'
+      action: 'https://www.instagram.com/bathermhaustechnik'
     }
   ];
 
   return (
     <PageWrapper className="relative min-h-screen pt-[var(--spacing-32)] pb-[var(--spacing-20)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] bg-[var(--color-background-surface-secondary)]">
-      <SEO
-        title="Kontakt"
-        description="Kontaktieren Sie uns für ein kostenloses Angebot. Wir sind für Sie da. Schnelle Reaktionszeit garantiert."
-        keywords="Kontakt, Terminbuchung, Angebot, Wetzlar"
-      />
+      <SEO title="Kontakt" description="Kontaktieren Sie uns für ein kostenloses Angebot. Wir sind für Sie da." keywords="Kontakt, Terminbuchung, Angebot, Wetzlar" />
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-[var(--spacing-16)]">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] tracking-tight">
-            Kontakt aufnehmen
+            Kontakt aufnehmen zu Batherm Haustechnik in Wetzlar
           </h1>
           <p className="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto font-light">
-            Wir sind für Sie da – persönlich, telefonisch oder per E-Mail
+            Sie möchten Kontakt aufnehmen für eine persönliche Fachberatung, ein transparentes Angebot oder einen schnellen Vor-Ort-Termin? Unser Meisterbetrieb für Sanitär, Heizung und Klimatechnik in Wetzlar steht Ihnen persönlich, telefonisch und digital zur Seite.
           </p>
         </div>
 
-        {/* Contact Grid */}
         <div className="grid lg:grid-cols-2 gap-[var(--spacing-12)] mb-[var(--spacing-20)]">
-          {/* Contact Info Cards */}
           <div className="space-y-[var(--spacing-6)]">
-            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)]">
-              Wie können wir Ihnen helfen?
-            </h2>
-
+            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)]">Wie können wir Ihnen helfen?</h2>
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
-                <div key={index} className="bg-[var(--color-neutral-0)] rounded-[var(--radius-lg)] border border-[var(--color-neutral-200)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-300 group">
+                <div key={index} className="bg-[var(--color-neutral-0)] rounded-[var(--radius-lg)] border border-[var(--color-neutral-200)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-300">
                   <div className="p-[var(--spacing-6)] flex items-start gap-[var(--spacing-4)]">
                     <div className="w-12 h-12 rounded-[var(--radius-base)] bg-[var(--color-brand-secondary)]/10 flex items-center justify-center flex-shrink-0 border border-[var(--color-brand-secondary)]/20">
                       <Icon className="w-6 h-6 text-[var(--color-brand-secondary)]" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">{info.title}</h3>
-                      {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-[var(--color-text-secondary)]">
-                          {detail}
-                        </p>
-                      ))}
+                      {info.details.map((detail, idx) => <p key={idx} className="text-[var(--color-text-secondary)]">{detail}</p>)}
                       {info.action && (
-                        <a
-                          href={info.action}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-block mt-2 text-[var(--color-interactive-primary)] font-medium hover:underline min-h-[44px] flex items-center"
-                        >
-                          {info.icon === Phone ? 'Jetzt anrufen' :
-                            info.icon === Mail ? 'E-Mail senden' :
-                              info.icon === Instagram ? 'Profil besuchen' :
-                                'Route planen'} →
+                        <a href={info.action} target="_blank" rel="noreferrer" className="inline-block mt-2 text-[var(--color-interactive-primary)] font-medium hover:underline min-h-[44px] flex items-center">
+                          {info.icon === Phone ? 'Jetzt anrufen' : info.icon === Mail ? 'E-Mail senden' : info.icon === MapPin ? 'Route planen' : 'Instagram Profil öffnen'} →
                         </a>
                       )}
                     </div>
@@ -257,220 +235,119 @@ export default function Contact() {
                 </div>
               );
             })}
+            <div className="bg-amber-500/10 border-2 border-amber-500/30 rounded-[var(--radius-lg)] p-[var(--spacing-6)]">
+              <div className="flex items-start gap-[var(--spacing-4)]">
+                <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold text-amber-900 mb-1">Dringender Notfall?</h4>
+                  <p className="text-amber-800 text-sm mb-3">Bei Rohrbruch, totalem Heizungsausfall im Winter oder Gasgeruch erreichen Sie unseren 24h-Notdienst rund um die Uhr.</p>
+                  <a href={`tel:${siteConfig.contact.phoneLink}`} className="inline-flex items-center text-amber-900 font-bold hover:underline min-h-[44px]">
+                    <Phone className="w-4 h-4 mr-2" />Notruf: {siteConfig.contact.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-[var(--color-neutral-0)] rounded-[var(--radius-xl)] border border-[var(--color-neutral-200)] shadow-[var(--shadow-sm)]">
-            <div className="p-[var(--spacing-8)]">
-              <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)]">
-                Anfrage senden
-              </h2>
-
-              {isSuccess ? (
-                <div className="text-center py-[var(--spacing-12)] animate-in fade-in zoom-in duration-500">
-                  <div className="w-16 h-16 bg-[var(--color-brand-secondary)]/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-[var(--color-brand-secondary)]/20">
-                    <Send className="w-8 h-8 text-[var(--color-brand-secondary)]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Vielen Dank!</h3>
-                  <p className="text-[var(--color-text-secondary)] mb-6">
-                    Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns schnellstmöglich bei Ihnen melden.
-                  </p>
-                  <Button
-                    onClick={() => setIsSuccess(false)}
-                    variant="outline"
-                    className="border-[var(--color-brand-secondary)] text-[var(--color-brand-secondary)] hover:bg-[var(--color-brand-secondary)] hover:text-white"
-                  >
-                    Neue Anfrage senden
-                  </Button>
+          <div className="bg-[var(--color-neutral-0)] rounded-[var(--radius-xl)] border border-[var(--color-neutral-200)] shadow-[var(--shadow-lg)] p-[var(--spacing-8)]">
+            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-2)]">Nachricht senden</h2>
+            <p className="text-[var(--color-text-secondary)] mb-[var(--spacing-6)]">Füllen Sie das Formular aus – wir melden uns schnellstmöglich bei Ihnen.</p>
+            {isSuccess ? (
+              <div className="bg-green-500/10 border-2 border-green-500/30 rounded-[var(--radius-lg)] p-[var(--spacing-8)] text-center">
+                <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-[var(--spacing-4)]" />
+                <h3 className="text-xl font-bold text-green-900 mb-2">Vielen Dank für Ihre Nachricht!</h3>
+                <p className="text-green-800 mb-[var(--spacing-6)]">Wir haben Ihre Anfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
+                <Button onClick={() => setIsSuccess(false)} variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 min-h-[44px]">Weitere Nachricht senden</Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-[var(--spacing-6)]">
+                <input type="text" name="website" value={formData.website || ''} onChange={(e) => handleChange('website', e.target.value)} style={{ position: 'absolute', opacity: 0, zIndex: -1, height: 0, width: 0 }} tabIndex="-1" aria-hidden="true" />
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">Name *</label>
+                  <input type="text" id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} disabled={isSubmitting} className={`w-full px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] border ${errors.name ? 'border-red-500' : 'border-[var(--color-neutral-300)]'} focus:outline-none focus:ring-2 focus:ring-[var(--color-interactive-focus)] bg-white text-[var(--color-neutral-900)] min-h-[48px]`} placeholder="Ihr vollständiger Name" />
+                  {errors.name && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.name}</p>}
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-[var(--spacing-6)]">
-                  {/* Honeypot Field - Hidden for humans */}
-                  <input
-                    type="text"
-                    name="website"
-                    value={formData.website || ''}
-                    onChange={(e) => handleChange('website', e.target.value)}
-                    style={{ position: 'absolute', opacity: 0, zIndex: -1, height: 0, width: 0 }}
-                    tabIndex="-1"
-                    autoComplete="off"
-                    aria-hidden="true"
-                  />
+                <div className="grid sm:grid-cols-2 gap-[var(--spacing-4)]">
                   <div>
-                    <label className="block text-sm font-medium text-[var(--color-text-primary)] mb-[var(--spacing-2)]">
-                      Name *
-                    </label>
-                    <Input
-                      required
-                      value={formData.name}
-                      onChange={(e) => handleChange('name', e.target.value)}
-                      placeholder="Ihr vollständiger Name"
-                      className={`h-12 border-[var(--color-border-default)] focus:border-[var(--color-interactive-focus)] focus:ring-[var(--color-interactive-focus)] ${errors.name ? 'border-red-500' : ''}`}
-                      disabled={isSubmitting}
-                    />
-                    {errors.name && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.name}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--color-text-primary)] mb-[var(--spacing-2)]">
-                      E-Mail *
-                    </label>
-                    <Input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => handleChange('email', e.target.value)}
-                      placeholder="ihre.email@beispiel.de"
-                      className={`h-12 border-[var(--color-border-default)] focus:border-[var(--color-interactive-focus)] focus:ring-[var(--color-interactive-focus)] ${errors.email ? 'border-red-500' : ''}`}
-                      disabled={isSubmitting}
-                    />
+                    <label htmlFor="email" className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">E-Mail *</label>
+                    <input type="email" id="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} disabled={isSubmitting} className={`w-full px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] border ${errors.email ? 'border-red-500' : 'border-[var(--color-neutral-300)]'} focus:outline-none focus:ring-2 focus:ring-[var(--color-interactive-focus)] bg-white text-[var(--color-neutral-900)] min-h-[48px]`} placeholder="ihre.email@beispiel.de" />
                     {errors.email && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.email}</p>}
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-[var(--color-text-primary)] mb-[var(--spacing-2)]">
-                      Telefon
-                    </label>
-                    <Input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleChange('phone', e.target.value)}
-                      placeholder="+49 170 12345678"
-                      className="h-12 border-[var(--color-border-default)] focus:border-[var(--color-interactive-focus)] focus:ring-[var(--color-interactive-focus)]"
-                      disabled={isSubmitting}
-                    />
+                    <label htmlFor="phone" className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">Telefon</label>
+                    <input type="tel" id="phone" value={formData.phone} onChange={(e) => handleChange('phone', e.target.value)} disabled={isSubmitting} className="w-full px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] border border-[var(--color-neutral-300)] focus:outline-none focus:ring-2 focus:ring-[var(--color-interactive-focus)] bg-white text-[var(--color-neutral-900)] min-h-[48px]" placeholder="06441 123456" />
                   </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-[var(--color-text-primary)] mb-[var(--spacing-2)]">
-                      Interessiert an *
-                    </label>
-                    <select
-                      id="service"
-                      required
-                      value={formData.service}
-                      onChange={(e) => handleChange('service', e.target.value)}
-                      disabled={isSubmitting}
-                      className={`w-full h-12 px-3 rounded-md border bg-white text-[var(--color-text-primary)] border-[var(--color-border-default)] focus:border-[var(--color-interactive-focus)] focus:ring-1 focus:ring-[var(--color-interactive-focus)] focus:outline-none ${errors.service ? 'border-red-500' : ''}`}
-                    >
-                      <option value="">Bitte wählen...</option>
-                      {COMPANY_DATA.business.primaryServices.map((svc, idx) => (
-                        <option key={idx} value={svc.toLowerCase()}>{svc}</option>
-                      ))}
-                      <option value="beratung">Allgemeine Beratung</option>
-                      <option value="sonstiges">Sonstiges</option>
-                    </select>
-                    {errors.service && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.service}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--color-text-primary)] mb-[var(--spacing-2)]">
-                      Ihre Nachricht *
-                    </label>
-                    <Textarea
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) => handleChange('message', e.target.value)}
-                      placeholder="Beschreiben Sie Ihr Anliegen..."
-                      disabled={isSubmitting}
-                      className={`border-[var(--color-border-default)] focus:border-[var(--color-interactive-focus)] focus:ring-[var(--color-interactive-focus)] ${errors.message ? 'border-red-500' : ''}`}
-                    />
-                    {errors.message && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.message}</p>}
-                  </div>
-
-                  {/* Security Notice */}
-                  <div className="bg-[var(--color-blue-50)] border border-[var(--color-blue-100)] rounded-lg p-4 flex gap-3 text-sm text-[var(--color-blue-900)]">
-                    <Lock className="w-5 h-5 text-[var(--color-blue-700)] flex-shrink-0" />
-                    <p>
-                      Ihre Daten werden sicher via SSL-Verschlüsselung übertragen.
-                      Wir nutzen Ihre Angaben ausschließlich zur Beantwortung Ihrer Anfrage.
-                      Eine Weitergabe an Dritte findet nicht statt.
-                    </p>
-                  </div>
-
-                  {/* Privacy Checkbox */}
-                  <div className="flex items-start gap-[var(--spacing-3)]">
-                    <input
-                      type="checkbox"
-                      id="privacyAccepted"
-                      checked={formData.privacyAccepted}
-                      onChange={(e) => handleChange('privacyAccepted', e.target.checked)}
-                      disabled={isSubmitting}
-                      className="mt-1 w-4 h-4 rounded border-[var(--color-border-default)] text-[var(--color-interactive-primary)] focus:ring-[var(--color-interactive-focus)]"
-                    />
-                    <label htmlFor="privacyAccepted" className="text-sm text-[var(--color-text-secondary)]">
-                      Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden.
-                      Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.
-                      Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an {COMPANY_DATA.contact.email} widerrufen.
-                      Detaillierte Informationen finden Sie in der{' '}
-                      <a href="/datenschutz" target="_blank" rel="noreferrer" className="text-[var(--color-interactive-primary)] underline hover:no-underline">
-                        Datenschutzerklärung
-                      </a>. *
-                    </label>
-                  </div>
-                  {errors.privacyAccepted && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.privacyAccepted}</p>}
-
-                  {/* Error Message Display */}
-                  {submitError && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex gap-3 text-sm text-red-800">
-                      <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
-                      <p>{submitError}</p>
-                    </div>
-                  )}
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] min-h-[48px] shadow-[var(--shadow-sm)]"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
-                        Wird gesendet...
-                      </div>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5 mr-2" />
-                        Anfrage absenden
-                      </>
-                    )}
-                  </Button>
-
-                  <p className="text-xs text-[var(--color-text-tertiary)] text-center">
-                    * Pflichtfelder. Ihre Daten werden vertraulich behandelt.
-                  </p>
-                </form>
-              )}
-            </div>
+                </div>
+                <div>
+                  <label htmlFor="service" className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">Gewünschte Leistung</label>
+                  <select id="service" value={formData.service} onChange={(e) => handleChange('service', e.target.value)} disabled={isSubmitting} className="w-full px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] border border-[var(--color-neutral-300)] focus:outline-none focus:ring-2 focus:ring-[var(--color-interactive-focus)] bg-white text-[var(--color-neutral-900)] min-h-[48px]">
+                    <option value="">Bitte wählen...</option>
+                    <option value="sanitaer">Sanitärtechnik & Badrenovierung</option>
+                    <option value="heizung">Heizungstechnik & Wärmepumpen</option>
+                    <option value="klima">Klimatechnik & Lüftung</option>
+                    <option value="wartung">Wartung & Inspektion</option>
+                    <option value="beratung">Kostenlose Energieberatung</option>
+                    <option value="notdienst">Dringender Notdienst</option>
+                    <option value="sonstiges">Sonstiges Anliegen</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-[var(--color-neutral-900)] mb-2">Ihre Nachricht *</label>
+                  <textarea id="message" rows="4" value={formData.message} onChange={(e) => handleChange('message', e.target.value)} disabled={isSubmitting} className={`w-full px-[var(--spacing-4)] py-[var(--spacing-3)] rounded-[var(--radius-base)] border ${errors.message ? 'border-red-500' : 'border-[var(--color-neutral-300)]'} focus:outline-none focus:ring-2 focus:ring-[var(--color-interactive-focus)] bg-white text-[var(--color-neutral-900)] resize-none`} placeholder="Beschreiben Sie kurz Ihr Vorhaben..." />
+                  {errors.message && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.message}</p>}
+                </div>
+                <div className="bg-[var(--color-blue-50)] border border-[var(--color-blue-100)] rounded-lg p-4 flex gap-3 text-sm text-[var(--color-blue-900)]">
+                  <Lock className="w-5 h-5 text-[var(--color-blue-700)] flex-shrink-0" />
+                  <p>Ihre Daten werden sicher via SSL-Verschlüsselung übertragen. Wir nutzen Ihre Angaben ausschließlich zur Beantwortung Ihrer Anfrage.</p>
+                </div>
+                <div className="flex items-start gap-[var(--spacing-3)]">
+                  <input type="checkbox" id="privacyAccepted" checked={formData.privacyAccepted} onChange={(e) => handleChange('privacyAccepted', e.target.checked)} disabled={isSubmitting} className="mt-1 w-4 h-4 rounded border-[var(--color-border-default)] text-[var(--color-interactive-primary)]" />
+                  <label htmlFor="privacyAccepted" className="text-sm text-[var(--color-text-secondary)]">Ich stimme der <a href="/datenschutz" target="_blank" rel="noreferrer" className="text-[var(--color-interactive-primary)] underline">Datenschutzerklärung</a> zu. *</label>
+                </div>
+                {errors.privacyAccepted && <p className="text-red-500 text-xs mt-1 flex items-center"><AlertCircle className="w-3 h-3 mr-1" />{errors.privacyAccepted}</p>}
+                {submitError && <p className="text-red-500 text-sm">{submitError}</p>}
+                <Button type="submit" size="lg" className="w-full bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] min-h-[48px]" disabled={isSubmitting}>
+                  {isSubmitting ? 'Wird gesendet...' : <><Send className="w-5 h-5 mr-2" />Anfrage absenden</>}
+                </Button>
+              </form>
+            )}
           </div>
         </div>
 
-        {/* Map with Consent Gate */}
-        <div className="h-[400px] rounded-[var(--radius-xl)] overflow-hidden shadow-[var(--shadow-lg)] border border-[var(--color-border-default)] bg-[var(--color-neutral-100)] relative">
-          {mapsConsent ? (
-            <PremiumMap />
-          ) : (
+        <div className="h-[400px] rounded-[var(--radius-xl)] overflow-hidden shadow-[var(--shadow-lg)] border border-[var(--color-border-default)] bg-[var(--color-neutral-100)] relative mb-16">
+          {mapsConsent ? <PremiumMap /> : (
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-[var(--color-neutral-0)]">
               <MapPin className="w-12 h-12 text-[var(--color-neutral-400)] mb-4" />
-              <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">
-                Karte deaktiviert
-              </h3>
-              <p className="text-[var(--color-text-secondary)] max-w-md mb-6">
-                Um die Google Maps Karte anzuzeigen, benötigen wir Ihre Einwilligung.
-                Dabei werden Daten an Google übertragen.
-              </p>
-              <Button
-                onClick={() => window.dispatchEvent(new CustomEvent('showConsentBanner'))}
-                variant="outline"
-                className="border-[var(--color-brand-primary)] text-[var(--color-brand-primary)] hover:bg-[var(--color-brand-primary)] hover:text-white"
-              >
-                <ShieldCheck className="w-4 h-4 mr-2" />
-                Karte aktivieren (Cookie-Einstellungen)
-              </Button>
+              <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Karte deaktiviert</h3>
+              <p className="text-[var(--color-text-secondary)] mb-6">Bitte bestätigen Sie die Cookie-Einstellungen, um die Karte zu sehen.</p>
+              <Button onClick={() => window.dispatchEvent(new CustomEvent('showConsentBanner'))} variant="outline"><ShieldCheck className="w-4 h-4 mr-2" />Karte aktivieren</Button>
             </div>
           )}
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Ihr Weg zum Festpreis-Angebot</h2>
+            <div className="space-y-4">
+              {[1, 2, 3].map(step => (
+                <div key={step} className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center flex-shrink-0">{step}</div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">{step === 1 ? 'Unverbindliche Erstberatung' : step === 2 ? 'Präziser Vor-Ort-Termin' : 'Detailliertes Festpreisangebot'}</h4>
+                    <p className="text-sm text-gray-600">{step === 1 ? 'Sie schildern Ihr Anliegen.' : step === 2 ? 'Meister prüft die Gegebenheiten.' : 'Transparente Kostenaufstellung.'}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Einsatzgebiet</h2>
+            <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+              {['Wetzlar', 'Gießen', 'Marburg', 'Limburg', 'Dillenburg', 'Friedberg'].map(city => (
+                <span key={city} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> {city}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageWrapper>

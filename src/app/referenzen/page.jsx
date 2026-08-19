@@ -29,10 +29,10 @@ export default function Projects() {
         {/* Header */}
         <div className="text-center mb-[var(--spacing-16)]">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] tracking-tight">
-            Unsere Referenzen
+            Ausgewählte Meisterprojekte &amp; Referenzen in Wetzlar
           </h1>
           <p className="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto font-light leading-relaxed">
-            Erfolgreiche Projekte aus der Region – von der Badsanierung bis zur kompletten Heizungsmodernisierung
+            Entdecken Sie unsere Meisterprojekte &amp; Referenzen: Von der exklusiven Badsanierung und barrierefreien Duschbädern über effiziente Wärmepumpen-Installationen bis hin zu modernen Klimasystemen in Wetzlar, Gießen und ganz Mittelhessen.
           </p>
         </div>
 

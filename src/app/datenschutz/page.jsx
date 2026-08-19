@@ -17,7 +17,7 @@ export default function Datenschutz() {
             <div className="flex items-center gap-3 mb-8">
               <Shield className="w-10 h-10 text-[#1a3a52]" />
               <div>
-                <h1 className="text-4xl font-bold text-[#1a3a52]">Datenschutzerklärung</h1>
+                <h1 className="text-4xl font-bold text-[#1a3a52]">Datenschutzerklärung &amp; Datenschutzhinweise</h1>
                 <p className="text-gray-500 text-sm mt-1">Stand: Januar 2026 (Version 2.1)</p>
               </div>
             </div>
@@ -75,8 +75,8 @@ export default function Datenschutz() {
                   </div>
                   <p className="text-sm italic">
                     Wir haben einen Vertrag über Auftragsverarbeitung (AVV) mit dem oben genannten Anbieter geschlossen.
-                    <br /><br />
-                    Den Auftragsverarbeitungsvertrag mit Vercel können Sie hier einsehen: <a href="https://vercel.com/legal/data-processing-addendum" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">https://vercel.com/legal/data-processing-addendum</a>
+                    <br />
+                    Den Auftragsverarbeitungsvertrag mit Vercel können Sie hier einsehen: <a href="https://vercel.com/legal/dpa" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">https://vercel.com/legal/dpa</a>
                     <br />
                     Vercel ist zertifiziert nach: ISO 27001, SOC 2 Type II und dem EU-U.S. Data Privacy Framework.
                   </p>
@@ -118,21 +118,22 @@ export default function Datenschutz() {
                   </div>
 
                   <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                    <h3 className="font-semibold text-lg mb-3">3.2 Server-Logfiles</h3>
+                    <h3 className="font-semibold text-lg mb-3">3.2 Server-Log-Dateien</h3>
                     <p className="text-sm leading-relaxed mb-3">
                       Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
                     </p>
-                    <ul className="list-disc list-inside text-sm space-y-1 text-gray-600">
-                      <li>IP-Adresse (anonymisiert)</li>
-                      <li>Datum und Uhrzeit der Serveranfrage</li>
-                      <li>Referrer URL (die zuvor besuchte Seite)</li>
-                      <li>Browsertyp und Browserversion</li>
-                      <li>Verwendetes Betriebssystem</li>
-                    </ul>
-                    <p className="text-sm mt-3">
-                      Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
-                      <br /><br />
-                      <span className="font-medium">Rechtsgrundlage:</span> Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der technisch fehlerfreien Darstellung und der Optimierung unserer Website – hierzu müssen die Server-Logfiles erfasst werden.
+                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                      <ul className="list-disc list-inside text-sm space-y-1 text-gray-600">
+                        <li>Browsertyp und Browserversion</li>
+                        <li>verwendetes Betriebssystem</li>
+                        <li>Referrer URL</li>
+                        <li>Hostname des zugreifenden Rechners</li>
+                        <li>Uhrzeit der Serveranfrage</li>
+                        <li>IP-Adresse (anonymisiert)</li>
+                      </ul>
+                    </div>
+                    <p className="text-sm leading-relaxed mt-3">
+                      Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
                     </p>
                     <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-100">
                       <p className="text-sm font-semibold text-blue-900">Speicherdauer:</p>
@@ -293,7 +294,7 @@ export default function Datenschutz() {
                     <p className="text-sm text-gray-600 mt-1">
                       {dpa?.street}<br />
                       {dpa?.zipCity}<br />
-                      <a href={`https://${dpa?.website}`} target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] underline flex items-center gap-1 inline mt-2">
+                      <a href={dpa?.website?.startsWith('http') ? dpa.website : `https://${dpa?.website}`} target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] underline flex items-center gap-1 inline mt-2">
                         {dpa?.website} <ExternalLink className="w-3 h-3" />
                       </a>
                     </p>

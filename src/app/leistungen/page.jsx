@@ -54,10 +54,10 @@ export default function ServicePage() {
         {/* Header */}
         <div className="text-center mb-[var(--spacing-16)]">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)] tracking-tight">
-            Unsere Leistungen
+            Umfassende Haustechnik-Leistungen in Wetzlar &amp; Region
           </h1>
           <p className="text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto font-light leading-relaxed">
-            Umfassende Lösungen für Sanitär, Heizung und Energietechnik – alles aus einer Hand
+            Als eingetragener Meisterbetrieb bietet Ihnen Batherm Haustechnik in Wetzlar erstklassige Leistungen in Sanitärtechnik, moderner Heizungstechnik, Klimatechnik, Wärmepumpen und intelligenter Gebäudeautomation. Profitieren Sie von handwerklicher Präzision, transparenten Festpreisen und persönlicher Fachberatung.
           </p>
         </div>
 

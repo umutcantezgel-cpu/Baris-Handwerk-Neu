@@ -150,16 +150,16 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-[var(--spacing-4)]">
                         <div className="flex flex-col md:flex-row items-center gap-[var(--spacing-4)]">
                             <a
-                                href="/instagram"
+                                href="https://www.instagram.com/bathermhaustechnik"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center justify-center text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors"
-                                aria-label="Instagram"
+                                aria-label="Instagram Profil von Batherm Haustechnik"
                             >
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <div className="flex flex-col sm:flex-row items-center gap-2 text-[var(--color-neutral-500)] text-xs text-center md:text-left">
-                                <span>© {new Date().getFullYear()} {siteConfig.name}. Alle Rechte vorbehalten.</span>
+                                <span>© {new Date().getFullYear()} Batherm Haustechnik. Alle Rechte vorbehalten.</span>
                                 <span className="hidden sm:inline">|</span>
                                 <span className="text-[var(--color-neutral-600)] transition-colors">
                                     <span className="sr-only">Diese Handwerker Webseite wurde konzipiert und technisch realisiert durch die Coday Web Agency, Experten für Webdesign und GEO in Hessen.</span>

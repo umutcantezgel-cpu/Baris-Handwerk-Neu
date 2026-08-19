@@ -11,7 +11,7 @@ export default function Impressum() {
           <div className="absolute inset-0 bg-white/60 backdrop-blur-xl rounded-3xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]" />
 
           <div className="relative p-8 md:p-12">
-            <h1 className="text-4xl font-bold text-[#1a3a52] mb-8">Impressum</h1>
+            <h1 className="text-4xl font-bold text-[#1a3a52] mb-8">Impressum – Gesetzliche Anbieterkennzeichnung</h1>
 
             <div className="space-y-8 text-[#2c3e50]">
               {/* Provider Identity */}
@@ -148,8 +148,8 @@ export default function Impressum() {
                   <div className="text-gray-600 space-y-3">
                     <p>
                       Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-                      <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] hover:underline ml-1">
-                        https://ec.europa.eu/consumers/odr
+                      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] hover:underline ml-1">
+                        https://ec.europa.eu/consumers/odr/
                       </a>
                     </p>
                     <p className="text-sm">

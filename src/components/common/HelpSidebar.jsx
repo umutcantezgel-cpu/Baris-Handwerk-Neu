@@ -365,7 +365,7 @@ const HelpSidebar = ({ isOpen, onClose }) => {
           <div className="bg-[var(--color-neutral-100)] p-1 rounded-full mr-2">
             <ChevronRight className="w-4 h-4 rotate-180" />
           </div>
-          Zurück zur Übersicht
+          Zurück zum Hilfe-Center
         </button>
 
         <div className="mb-[var(--spacing-6)]">

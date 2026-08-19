@@ -31,7 +31,7 @@ export default function Widerruf() {
                         <div className="flex items-center gap-3 mb-8">
                             <FileText className="w-10 h-10 text-[#1a3a52]" />
                             <div>
-                                <h1 className="text-3xl font-bold text-[#1a3a52]">Muster-Widerrufsformular</h1>
+                                <h1 className="text-3xl font-bold text-[#1a3a52]">Widerrufsbelehrung &amp; Muster-Widerrufsformular</h1>
                                 <p className="text-gray-500 text-sm mt-1">gemäß § 246a Abs. 1 EGBGB</p>
                             </div>
                         </div>

@@ -56,8 +56,8 @@ const faqData = {
         color: 'bg-amber-100 text-amber-600',
         questions: [
             { q: 'Helfen Sie bei der Beantragung von Fördermitteln?', a: 'Selbstverständlich. Wir beraten Sie zu aktuellen Förderprogrammen (BAFA, KfW) und unterstützen Sie bei der Antragstellung.' },
-            { q: 'Wie hoch ist die Förderung für Wärmepumpen?', a: 'Aktuell werden Wärmepumpen mit bis zu 40% der Investitionskosten gefördert (BAFA). Die genaue Höhe hängt von verschiedenen Faktoren ab.' },
-            { q: 'Erstellen Sie kostenlose Angebote?', a: 'Ja, wir erstellen Ihnen gerne ein unverbindliches Angebot nach einer Vor-Ort-Besichtigung.' }
+            { q: 'Wie hoch ist die Förderung für Wärmepumpen?', a: 'Aktuell werden Wärmepumpen mit bis zu 70% der Investitionskosten gefördert (KfW/BAFA). Die genaue Höhe hängt von individuellen Boni und Einkommensgrenzen ab.' },
+            { q: 'Erstellen Sie kostenlose Angebote?', a: 'Ja, wir erstellen Ihnen gerne ein unverbindliches und detailliertes Angebot nach einer Vor-Ort-Besichtigung.' }
         ]
     }
 };
@@ -89,7 +89,7 @@ export default function FAQ() {
     return (
         <PageWrapper>
             <SEO
-                title="FAQ | Häufige Fragen | Batherm Haustechnik"
+                title="FAQ | Häufige Fragen zu Sanitär & Heizung"
                 description="Antworten auf häufig gestellte Fragen zu Heizung, Sanitär, Klimatechnik, Wartung und Kosten. Finden Sie schnelle Hilfe."
                 keywords="FAQ Heizung, Sanitär Fragen, Klimaanlage FAQ, Wartung Fragen"
             />
@@ -102,10 +102,10 @@ export default function FAQ() {
                         Schnelle Antworten
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display">
-                        Häufig gestellte Fragen
+                        Häufig gestellte Fragen zu Sanitär, Heizung &amp; Haustechnik
                     </h1>
-                    <p className="text-xl text-white/80 mb-8 font-light">
-                        Finden Sie Antworten auf die wichtigsten Fragen rund um Heizung, Sanitär und Klima.
+                    <p className="text-xl text-white/80 mb-8 font-light max-w-2xl mx-auto">
+                        Hier beantwortet unser Meisterbetrieb die wichtigsten Fragen rund um Sanitärtechnik, moderne Heizung, Wärmepumpen, Klimatechnik, Wartungsintervalle und staatliche Förderungen in Wetzlar.
                     </p>
 
                     {/* Search Bar */}
@@ -125,7 +125,6 @@ export default function FAQ() {
             {/* FAQ Content */}
             <section className="py-[var(--spacing-20)] px-[var(--spacing-4)]">
                 <div className="max-w-5xl mx-auto">
-                    {/* Category Tabs */}
                     {!searchQuery && (
                         <div className="flex flex-wrap gap-3 justify-center mb-12">
                             {categories.map(([key, category]) => {
@@ -200,7 +199,7 @@ export default function FAQ() {
                             <HelpCircle className="w-16 h-16 text-[var(--color-neutral-300)] mx-auto mb-4" />
                             <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">Keine Ergebnisse</h3>
                             <p className="text-[var(--color-text-secondary)]">
-                                Für &quot;{searchQuery}&quot; wurden keine Fragen gefunden.
+                                Für &quot;{searchQuery}&quot; wurden leider keine passenden Fragen gefunden.
                             </p>
                         </div>
                     )}
@@ -214,10 +213,10 @@ export default function FAQ() {
                         Ihre Frage nicht dabei?
                     </h2>
                     <p className="text-[var(--color-text-secondary)] mb-6">
-                        Kontaktieren Sie uns direkt – wir helfen Ihnen gerne weiter.
+                        Kontaktieren Sie uns direkt – unser Team berät Sie gerne persönlich.
                     </p>
-                    <Link href={createPageUrl('Contact')}>
-                        <Button className="bg-[var(--color-neutral-900)] hover:bg-[var(--color-neutral-800)] text-white">
+                    <Link href="/kontakt">
+                        <Button className="bg-[var(--color-neutral-900)] hover:bg-[var(--color-neutral-800)] text-white font-bold px-8 h-12">
                             Kontakt aufnehmen
                             <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>

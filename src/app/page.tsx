@@ -48,7 +48,7 @@ export default function HomePage() {
       />
       <Hero
         title="Meisterhafte Installationen für Ihr Zuhause"
-        subtitle="Wir verbinden handwerkliche Präzision mit modernster Technik für Sanitär, Heizung und Klima."
+        subtitle="Batherm Haustechnik ist Ihr zuverlässiger Meisterbetrieb für Sanitär, Heizung, Solar und moderne Klimatechnik in Wetzlar & Region – von der Fachberatung bis zur nachhaltigen Installation."
         backgroundImage="/images/uploads/extra-07.webp"
         primaryCtaText="Angebot anfordern"
         primaryCtaLink="/kontakt"

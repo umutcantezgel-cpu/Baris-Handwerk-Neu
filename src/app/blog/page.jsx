@@ -10,16 +10,9 @@ import { IconWrapper } from '@/utils/iconMapper';
 import Link from 'next/link';
 
 const Blog = () => {
-  const { blogCategories = [], blogPosts = [], loading } = useContent();
+  const { blogCategories = [], blogPosts = [] } = useContent();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
-
-  // Simulate loading effect for smoother transition on first mount
-  useEffect(() => {
-    const timer = setTimeout(() => setIsInitialLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Filter posts based on category and search query
   const filteredPosts = (blogPosts || []).filter(post => {
@@ -35,7 +28,6 @@ const Blog = () => {
     <PageWrapper>
       {/* ═══════════════════════════════════════════════════════════════════
           PREMIUM HERO SECTION
-          Animated gradient background with glassmorphism elements
       ═══════════════════════════════════════════════════════════════════ */}
       <div className="relative pt-[var(--spacing-32)] pb-20 overflow-hidden">
         {/* Animated Gradient Background */}
@@ -43,8 +35,8 @@ const Blog = () => {
 
         {/* Animated Mesh Blobs */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-1/2 -left-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#c69c6d]/20 to-transparent blur-3xl animate-pulse" />
-          <div className="absolute -bottom-1/2 -right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-[#c69c6d]/20 to-transparent blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute -top-1/2 -left-1/4 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-[#c69c6d]/20 to-transparent blur-3xl" />
+          <div className="absolute -bottom-1/2 -right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-[#c69c6d]/20 to-transparent blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/5 blur-2xl" />
         </div>
 
@@ -59,11 +51,10 @@ const Blog = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-[#c69c6d] mb-6 leading-tight drop-shadow-md">
-            Ratgeber & <span className="bg-gradient-to-r from-[#1a3a52] to-[#c69c6d] bg-clip-text text-transparent underline decoration-[#c69c6d]/30 underline-offset-8">Neuigkeiten</span>
+            Ratgeber &amp; Neuigkeiten rund um Haustechnik in Wetzlar
           </h1>
-          <p className="text-xl text-[#bfa181] max-w-2xl mx-auto leading-relaxed font-medium">
-            Expertentipps rund um Heizung, Sanitär und Solartechnik.
-            Bleiben Sie informiert über aktuelle Förderungen und Technik-Trends.
+          <p className="text-xl text-[#bfa181] max-w-3xl mx-auto leading-relaxed font-medium">
+            Praxisnahe Ratgeber &amp; Neuigkeiten zu Sanitär, moderner Heizungstechnik, Wärmepumpen-Förderung und Solaranlagen von Ihrem Meisterbetrieb Batherm Haustechnik in Wetzlar und Umgebung.
           </p>
         </div>
       </div>
@@ -98,45 +89,37 @@ const Blog = () => {
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
                     className={`flex items-center space-x-2 px-5 py-3 rounded-2xl whitespace-nowrap transition-all duration-300 backdrop-blur-md border ${activeCategory === category.id
-                      ? 'bg-primary-600 text-white border-primary-500 shadow-lg shadow-primary-500/30'
-                      : 'bg-white/80 text-gray-700 border-white/50 hover:bg-white hover:shadow-md'
+                      ? 'bg-[#c69c6d] text-white border-[#c69c6d] shadow-lg'
+                      : 'bg-white/80 text-gray-700 border-white/50 hover:bg-white'
                       }`}
                   >
                     <IconWrapper name={category.icon} className="w-4 h-4" />
-                    <span className="font-medium">{category.name}</span>
+                    <span className="text-sm font-semibold">{category.name}</span>
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* ═══════════════════════════════════════════════════════════════════
-                FEATURED POST (Premium Design)
-            ═══════════════════════════════════════════════════════════════════ */}
-            {activeCategory === 'all' && !searchQuery && featuredPost && (
+            {/* Featured Post Hero Card */}
+            {featuredPost && activeCategory === 'all' && !searchQuery && (
               <div className="mb-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-1 bg-gradient-to-r from-[#1a3a52] to-[#c69c6d] rounded-full" />
-                  <h2 className="text-2xl font-bold text-gray-900">Im Fokus</h2>
-                </div>
-
-                <Link href={`/blog/${featuredPost.slug}`} className="block group">
-                  <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
+                <Link
+                  href={`/blog/${featuredPost.slug}`}
+                  className="group block relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                >
+                  <div className="relative transform-gpu transition-transform duration-500 ease-out group-hover:scale-[1.01]">
                     <div className="grid md:grid-cols-2 gap-0">
-                      {/* Image with Parallax Effect */}
-                      <div className="relative h-72 md:h-96 overflow-hidden">
+                      {/* Image */}
+                      <div className="relative h-64 md:h-auto min-h-[280px] overflow-hidden">
                         <img
                           src={featuredPost.image}
                           alt={featuredPost.title}
+                          width={600}
+                          height={350}
                           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                         />
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent md:bg-gradient-to-r" />
-
-                        {/* Featured Badge */}
-                        <div className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#c69c6d] to-[#c69c6d]/80 text-white text-sm font-bold shadow-lg">
-                          <Sparkles className="w-4 h-4" />
-                          Featured
-                        </div>
                       </div>
 
                       {/* Content */}
@@ -152,9 +135,9 @@ const Blog = () => {
                           </span>
                         </div>
 
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors leading-tight">
                           {featuredPost.title}
-                        </h3>
+                        </h2>
 
                         <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">
                           {featuredPost.excerpt}
@@ -172,55 +155,14 @@ const Blog = () => {
             )}
 
             {/* ═══════════════════════════════════════════════════════════════════
-                POST GRID (Staggered Masonry-like)
+                POST GRID
             ═══════════════════════════════════════════════════════════════════ */}
             <div className="grid md:grid-cols-2 gap-8">
-              {isInitialLoading ? (
-                // Skeleton Loading State
-                <>
-                  <div className="col-span-1 md:col-span-2 grid md:grid-cols-2 gap-8">
-                    <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm h-full">
-                      <div className="h-52 bg-gray-200 animate-pulse w-full" />
-                      <div className="p-6 space-y-4">
-                        <div className="h-4 w-24 bg-gray-200 animate-pulse" />
-                        <div className="h-8 w-3/4 bg-gray-200 animate-pulse" />
-                        <div className="space-y-2">
-                          <div className="h-4 w-full bg-gray-200 animate-pulse" />
-                          <div className="h-4 w-full bg-gray-200 animate-pulse" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm h-full">
-                      <div className="h-52 bg-gray-200 animate-pulse w-full" />
-                      <div className="p-6 space-y-4">
-                        <div className="h-4 w-24 bg-gray-200 animate-pulse" />
-                        <div className="h-8 w-3/4 bg-gray-200 animate-pulse" />
-                        <div className="space-y-2">
-                          <div className="h-4 w-full bg-gray-200 animate-pulse" />
-                          <div className="h-4 w-full bg-gray-200 animate-pulse" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                filteredPosts.map((post, index) => (
-                  <div
-                    key={post.id}
-                    className={`${index % 3 === 0 ? 'md:row-span-1' : ''}`}
-                    style={{
-                      animationName: 'fadeInUp',
-                      animationDuration: '0.6s',
-                      animationTimingFunction: 'ease-out',
-                      animationFillMode: 'forwards',
-                      animationDelay: `${index * 0.1}s`,
-                      opacity: 0
-                    }}
-                  >
-                    <BlogCard post={post} />
-                  </div>
-                ))
-              )}
+              {filteredPosts.map((post) => (
+                <div key={post.id}>
+                  <BlogCard post={post} />
+                </div>
+              ))}
             </div>
 
             {/* Empty State */}

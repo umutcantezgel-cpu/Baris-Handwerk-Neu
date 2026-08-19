@@ -1,7 +1,7 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Allgemeine Geschäftsbedingungen (AGB)',
+  title: 'AGB – Geschäftsbedingungen',
   description: 'Allgemeine Geschäftsbedingungen der Batherm Haustechnik für handwerkliche Leistungen in Sanitär, Heizung und Klimatechnik.',
   path: '/agb',
 });

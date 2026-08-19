@@ -80,9 +80,9 @@ const ServiceDetail = () => {
                 <div className="absolute inset-0 bg-black/80" />
 
                 <div className="max-w-7xl mx-auto relative z-10">
-                    <Link href={createPageUrl('Services')} className="inline-flex items-center text-white/80 hover:text-white mb-[var(--spacing-8)] transition-colors group">
+                    <Link href="/leistungen" className="inline-flex items-center text-white/80 hover:text-white mb-[var(--spacing-8)] transition-colors group">
                         <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-                        Zurück zur Übersicht
+                        Zurück zu allen Leistungen
                     </Link>
 
                     <div className="flex flex-col md:flex-row gap-[var(--spacing-8)] items-start">
@@ -91,14 +91,20 @@ const ServiceDetail = () => {
                                 <IconWrapper name={service.icon} className="w-8 h-8 text-white" />
                             </div>
                             <h1 className="text-3xl md:text-5xl font-bold text-white mb-[var(--spacing-4)] font-display">
-                                {service.name}
+                                {service.id === 'sanitaer' ? 'Sanitärtechnik & Badsanierung in Wetzlar' :
+                                 service.id === 'heizung' ? 'Heizungstechnik, Wärmepumpen & Heizungstausch' :
+                                 service.id === 'klima' ? 'Klimatechnik & Klimalösungen in Wetzlar' :
+                                 service.id === 'wartung' ? 'Fachgerechte Wartung & Service für Haustechnik' :
+                                 service.id === 'smart-home' ? 'Intelligente Smart Home Heizungssteuerung' :
+                                 service.id === 'wasseraufbereitung' ? 'Professionelle Wasseraufbereitung & Kalkschutz' :
+                                 `${service.name} vom Meisterbetrieb`}
                             </h1>
                             <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
                                 {service.shortDescription}
                             </p>
                         </div>
                         <div className="flex-shrink-0">
-                            <Link href={createPageUrl('Contact')}>
+                            <Link href="/kontakt">
                                 <Button size="lg" className="bg-[var(--color-brand-secondary)] hover:bg-[var(--color-brand-primary)] text-white border-0 shadow-lg">
                                     {service.ctaText || 'Jetzt anfragen'}
                                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -135,21 +141,28 @@ const ServiceDetail = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-[var(--spacing-12)]">
                         <div>
-                            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)]">Leistungsbeschreibung</h2>
+                            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)]">Leistungsbeschreibung & Fachkompetenz</h2>
                             <p className="text-lg text-gray-700 leading-relaxed mb-[var(--spacing-8)]">
                                 {service.detailText}
                             </p>
 
                             {service.features && service.features.length > 0 && (
-                                <div className="space-y-[var(--spacing-3)]">
+                                <div className="space-y-[var(--spacing-3)] mb-8">
                                     {service.features.map((feature, idx) => (
                                         <div key={idx} className="flex items-center gap-3">
                                             <CheckCircle2 className="w-5 h-5 text-[var(--color-brand-secondary)] flex-shrink-0" />
-                                            <span className="text-gray-800">{feature}</span>
+                                            <span className="text-gray-800 font-medium">{feature}</span>
                                         </div>
                                     ))}
                                 </div>
                             )}
+
+                            <div className="p-6 bg-blue-50/60 rounded-2xl border border-blue-100">
+                                <h3 className="font-bold text-blue-900 mb-2">Warum Meisterqualität entscheidend ist</h3>
+                                <p className="text-sm text-blue-800 leading-relaxed">
+                                    Moderne Haustechnik verlangt höchste Präzision nach aktuellen DIN-Normen und Trinkwasser- bzw. Energiesparverordnungen. Als eingetragener Meisterbetrieb gewährleisten wir rechtssichere Planung, fachgerechte Montage und langfristige Garantien.
+                                </p>
+                            </div>
                         </div>
 
                         {/* Sidebar CTA */}
@@ -173,7 +186,7 @@ const ServiceDetail = () => {
                                     </a>
                                 </div>
 
-                                <Link href={createPageUrl('Contact')} className="block">
+                                <Link href="/kontakt" className="block">
                                     <Button className="w-full bg-white text-[var(--color-brand-primary)] hover:bg-[var(--color-neutral-100)] border-0 h-12 font-bold">
                                         Kontakt aufnehmen
                                     </Button>
@@ -188,7 +201,7 @@ const ServiceDetail = () => {
             <section className="py-[var(--spacing-16)] bg-[var(--color-neutral-900)] px-[var(--spacing-4)]">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-2xl font-bold text-white text-center mb-[var(--spacing-12)]">
-                        Unser Ablauf
+                        Unser Ablauf bei {service.name}
                     </h2>
                     <div className="grid md:grid-cols-4 gap-[var(--spacing-6)]">
                         {processSteps.map((step, idx) => (
@@ -230,7 +243,6 @@ const ServiceDetail = () => {
                 </div>
             </section>
 
-            {/* Gallery Section */}
             {/* Quality Promise Section */}
             <section className="py-[var(--spacing-16)] bg-[var(--color-neutral-50)] px-[var(--spacing-4)]">
                 <div className="max-w-4xl mx-auto text-center">
@@ -240,9 +252,23 @@ const ServiceDetail = () => {
                     <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)]">
                         Unser Qualitätsversprechen
                     </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed">
+                    <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-6">
                         Wir verstehen, dass Handwerksarbeiten Vertrauenssache sind. Deshalb garantieren wir Ihnen nicht nur eine fachgerechte Ausführung nach neuesten Standards, sondern auch absolute Zuverlässigkeit und Sauberkeit. Ihr Projekt ist bei unserem erfahrenen Team in besten Händen.
                     </p>
+                    <div className="grid sm:grid-cols-3 gap-4 text-left">
+                        <div className="bg-white p-4 rounded-xl border border-gray-200">
+                            <h4 className="font-bold text-gray-900 text-sm mb-1">Feste Termintreue</h4>
+                            <p className="text-xs text-gray-600">Pünktliche Ausführung ohne unvorhergesehene Verzögerungen.</p>
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-gray-200">
+                            <h4 className="font-bold text-gray-900 text-sm mb-1">Transparente Preise</h4>
+                            <p className="text-xs text-gray-600">Detaillierte Festpreis-Angebote ohne versteckte Zusatzkosten.</p>
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-gray-200">
+                            <h4 className="font-bold text-gray-900 text-sm mb-1">Markenqualität</h4>
+                            <p className="text-xs text-gray-600">Wir verbauen ausschließlich geprüfte Premium-Komponenten.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

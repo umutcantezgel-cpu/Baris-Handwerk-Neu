@@ -14,10 +14,7 @@ const BlogCard = ({ post }) => {
     const categoryData = blogCategories.find(c => c.id === post.category);
 
     return (
-        <Link
-            href={`/blog/${post.slug}`}
-            className="group cursor-pointer block h-full perspective-1000"
-        >
+        <div className="group relative block h-full perspective-1000">
             <div className="relative h-full transform-gpu transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 group-hover:rotate-y-1">
                 {/* Card Background with Glassmorphism */}
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.08)] group-hover:shadow-[0_20px_60px_rgba(0,176,80,0.15)] transition-all duration-500" />
@@ -47,7 +44,7 @@ const BlogCard = ({ post }) => {
                         )}
 
                         {/* Category Badge */}
-                        <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-white/50 shadow-lg">
+                        <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-white/50 shadow-lg pointer-events-none">
                             {categoryData && (
                                 <IconWrapper
                                     name={categoryData.icon}
@@ -60,7 +57,7 @@ const BlogCard = ({ post }) => {
                         </div>
 
                         {/* Reading Time Badge */}
-                        <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-medium">
+                        <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-medium pointer-events-none">
                             <Clock className="w-3.5 h-3.5" />
                             {post.readTime}
                         </div>
@@ -75,9 +72,11 @@ const BlogCard = ({ post }) => {
                             </p>
                         )}
 
-                        {/* Title */}
+                        {/* Title with Stretched Link for perfect SEO Anchor Text */}
                         <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors line-clamp-2 leading-tight">
-                            {post.title}
+                            <Link href={`/blog/${post.slug}`} className="hover:underline focus:outline-none after:absolute after:inset-0">
+                                {post.title}
+                            </Link>
                         </h3>
 
                         {/* Excerpt */}
@@ -88,15 +87,15 @@ const BlogCard = ({ post }) => {
                         {/* Footer */}
                         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                             {/* Read More Arrow */}
-                            <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                                Lesen
+                            <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
+                                Artikel lesen
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 

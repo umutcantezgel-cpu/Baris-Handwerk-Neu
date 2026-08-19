@@ -64,8 +64,8 @@ const BlogPost = () => {
       <div className="min-h-screen pt-[var(--spacing-32)] flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Artikel nicht gefunden</h2>
-          <Link href={createPageUrl('Blog')}>
-            <Button>Zurück zur Übersicht</Button>
+          <Link href="/blog">
+            <Button>Zurück zum Ratgeber-Blog</Button>
           </Link>
         </div>
       </div>
@@ -114,11 +114,11 @@ const BlogPost = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <Link
-            href={createPageUrl('Blog')}
+            href="/blog"
             className="inline-flex items-center text-white/70 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
-            Zurück zur Übersicht
+            Zurück zum Ratgeber-Blog
           </Link>
 
           <div className="max-w-4xl mx-auto text-center">

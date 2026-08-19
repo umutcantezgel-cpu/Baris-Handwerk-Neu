@@ -7,7 +7,7 @@ export const posts = [
         author: "Baris Haustechnik",
         date: "15. März 2024",
         readTime: "5 Min.",
-        image: "/images/blog/post-1.jpg",
+        image: "/images/uploads/extra-01.webp",
         slug: "waermepumpen-foerderung-2024",
         featured: true,
         content: `
@@ -25,39 +25,39 @@ Wärmepumpen nutzen die kostenlose Umweltwärme aus Luft, Wasser oder Erdreich, 
 
 ## Die Förderstruktur im Überblick
 
-Die Förderung setzt sich aus einer Grundförderung und verschiedenen Boni zusammen. Insgesamt können bis zu **70% der förderfähigen Kosten** erstattet werden.
+Die Förderung setzt sich aus einer Grundförderung und verschiedenen Boni zusammen. Insgesamt können bis zu 70% der förderfähigen Kosten erstattet werden.
 
 ### Übersicht der Fördersätze
 
 | Förderkomponente | Höhe | Voraussetzung |
 | :--- | :--- | :--- |
-| **Grundförderung** | **30%** | Für alle Wohngebäude bei Umstieg auf erneuerbare Energien. |
-| **Klimageschwindigkeits-Bonus** | **20%** | Bei Austausch alter fossiler Heizungen bis Ende 2028. |
-| **Einkommens-Bonus** | **30%** | Für selbstnutzende Eigentümer mit < 40.000 € Haushaltseinkommen. |
-| **Effizienz-Bonus** | **5%** | Für Wärmepumpen mit natürlichem Kältemittel oder Erdreich/Wasser als Quelle. |
+| Grundförderung | 30% | Für alle Wohngebäude bei Umstieg auf erneuerbare Energien. |
+| Klimageschwindigkeits-Bonus | 20% | Bei Austausch alter fossiler Heizungen bis Ende 2028. |
+| Einkommens-Bonus | 30% | Für selbstnutzende Eigentümer mit unter 40.000 € Haushaltseinkommen. |
+| Effizienz-Bonus | 5% | Für Wärmepumpen mit natürlichem Kältemittel oder Erdreich/Wasser als Quelle. |
 
-*Hinweis: Die Boni sind kumulierbar, jedoch ist die Gesamtförderung auf **70%** gedeckelt.*
+*Hinweis: Die Boni sind kumulierbar, jedoch ist die Gesamtförderung auf 70% gedeckelt.*
 
 ## Rechenbeispiel
 
-Nehmen wir an, der Einbau einer neuen Luft-Wasser-Wärmepumpe kostet **30.000 Euro**.
+Nehmen wir an, der Einbau einer neuen Luft-Wasser-Wärmepumpe kostet 30.000 Euro.
 
 ### Szenario A: Der Standardfall
 Sie tauschen Ihre alte Ölheizung aus.
 *   Grundförderung: 30%
 *   Klimageschwindigkeits-Bonus: 20%
-*   **Gesamtförderung: 50%**
-*   **Zuschuss: 15.000 Euro**
-*   **Eigenanteil: 15.000 Euro**
+*   Gesamtförderung: 50%
+*   Zuschuss: 15.000 Euro
+*   Eigenanteil: 15.000 Euro
 
 ### Szenario B: Maximale Förderung
 Sie tauschen Ihre alte Heizung aus und Ihr zu versteuerndes Haushaltseinkommen liegt unter 40.000 Euro.
 *   Grundförderung: 30%
 *   Klima-Bonus: 20%
 *   Einkommens-Bonus: 30%
-*   **Gesamtförderung: 70% (gedeckelt)**
-*   **Zuschuss: 21.000 Euro**
-*   **Eigenanteil: 9.000 Euro**
+*   Gesamtförderung: 70% (gedeckelt)
+*   Zuschuss: 21.000 Euro
+*   Eigenanteil: 9.000 Euro
 
 ## Schritt-für-Schritt zur Förderung
 
@@ -65,9 +65,9 @@ Damit bei der Beantragung nichts schiefgeht, halten Sie sich an diesen Ablauf:
 
 1.  **Beratung & Planung:** Lassen Sie sich von einem Energieeffizienz-Experten oder uns beraten.
 2.  **Angebot einholen:** Wir erstellen Ihnen ein detailliertes Angebot.
-3.  **Vertrag schließen:** Schließen Sie einen Liefer- und Leistungsvertrag mit uns ab. Wichtig: Der Vertrag muss eine **aufschiebende Bedingung** enthalten (Gültigkeit erst nach Förderzusage).
-4.  **Antrag stellen:** Reichen Sie den Antrag bei der KfW (Kreditanstalt für Wiederaufbau) ein.
-5.  **Zusage abwarten:** Sobald Sie den Zuwendungsbescheid haben, können wir mit der Installation beginnen.
+3.  **Vertrag schließen:** Schließen Sie einen Liefer- und Leistungsvertrag mit uns ab mit aufschiebender Bedingung.
+4.  **Antrag stellen:** Reichen Sie den Antrag bei der KfW ein.
+5.  **Zusage abwarten:** Sobald Sie den Zuwendungsbescheid haben, beginnen wir mit der Installation.
 6.  **Nachweis & Auszahlung:** Nach Abschluss der Arbeiten reichen wir die Rechnungen ein und Sie erhalten das Geld.
 
 ## Häufige Fragen (FAQ)
@@ -79,13 +79,11 @@ Nein, die BEG-Förderung für den Heizungstausch richtet sich primär an den Bes
 Dazu gehören nicht nur die Wärmepumpe selbst, sondern auch die Installation, der Ausbau der alten Heizung, neue Heizkörper (falls nötig) und Umfeldmaßnahmen. Die Höchstgrenze liegt bei 30.000 Euro für die erste Wohneinheit.
 
 **Muss ich einen Energieberater hinzuziehen?**
-Für die Heizungsförderung ist dies nicht zwingend vorgeschrieben, aber oft empfehlenswert, um ein individuelles Sanierungsfahrplan (iSFP) zu erstellen, der zusätzliche Boni bei der Hülle bringen kann.
+Für die reine Heizungsförderung ist dies nicht zwingend vorgeschrieben, aber oft empfehlenswert, um einen individuellen Sanierungsfahrplan (iSFP) zu erstellen.
 
 ## Unser Service für Sie
 
-Der Förderdschungel kann verwirrend sein. Als Ihr Fachbetrieb in Wetzlar und Umgebung unterstützen wir Sie nicht nur bei der technischen Planung und Installation, sondern auch bei der Beantragung der Fördermittel.
-
-**Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch!**
+Als Ihr Fachbetrieb in Wetzlar und Umgebung unterstützen wir Sie bei der technischen Planung, Montage und Fördermittelbeantragung. Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch!
     `,
         tags: ["Heizung", "Förderung", "Wärmepumpe", "2024", "Sanierung"]
     },
@@ -97,7 +95,7 @@ Der Förderdschungel kann verwirrend sein. Als Ihr Fachbetrieb in Wetzlar und Um
         author: "Team Baris",
         date: "10. März 2024",
         readTime: "3 Min.",
-        image: "/images/blog/post-2.jpg",
+        image: "/images/uploads/extra-02.webp",
         slug: "wasserschaden-vermeiden-tipps",
         featured: false,
         content: `
@@ -109,13 +107,13 @@ Ein Wasserschaden gehört zu den ärgerlichsten und teuersten Schäden im Hausha
 
 Die kleinen Ventile unter Waschbecken und Spüle fristen oft ein Schattendasein – bis man sie im Notfall braucht.
 *   **Das Problem:** Wenn Eckventile jahrelang nicht bewegt werden, verkalken sie und lassen sich nicht mehr schließen.
-*   **Die Lösung:** Drehen Sie alle Eckventile in Ihrem Haus mindestens **zweimal im Jahr** (z.B. bei der Zeitumstellung) komplett zu und wieder auf. So bleiben sie gängig.
+*   **Die Lösung:** Drehen Sie alle Eckventile in Ihrem Haus mindestens zweimal im Jahr komplett zu und wieder auf. So bleiben sie leichtgängig.
 
 ## 2. Flexschläuche im Blick behalten
 
 Die flexiblen Verbindungsschläuche an Armaturen und Spülkästen sind Verschleißteile.
 *   **Das Risiko:** Mit der Zeit wird das Material spröde oder das Metallgeflecht korrodiert. Ein geplatzter Schlauch setzt binnen Minuten ganze Etagen unter Wasser.
-*   **Unsere Empfehlung:** Überprüfen Sie die Schläuche regelmäßig auf Knicke, Risse oder Roststellen. Wir empfehlen einen prophylaktischen Austausch alle **10 bis 15 Jahre**.
+*   **Unsere Empfehlung:** Überprüfen Sie die Schläuche regelmäßig auf Knicke, Risse oder Roststellen. Wir empfehlen einen prophylaktischen Austausch alle 10 bis 15 Jahre.
 
 ## 3. Siphons und Abflüsse reinigen
 
@@ -125,17 +123,17 @@ Verstopfte Abflüsse sind nicht nur unhygienisch, sie können auch zu Rückstau 
 ## 4. Waschmaschine & Spülmaschine: Niemals ohne Aufsicht
 
 Es ist verlockend, die Waschmaschine anzustellen und das Haus zu verlassen. Doch wenn dann ein Schlauch platzt, ist der Schaden groß.
-*   **Sicherheit:** Nutzen Sie Geräte nur, wenn Sie zu Hause sind.
-*   **Aquastop:** Stellen Sie sicher, dass Ihre Geräte über ein Aquastop-System verfügen. Dieses riegelt die Wasserzufuhr bei einem Defekt automatisch ab.
+*   **Sicherheit:** Nutzen Sie Geräte vorzugsweise, wenn Sie zu Hause sind.
+*   **Aquastop:** Stellen Sie sicher, dass Ihre Geräte über ein funktionierendes Aquastop-System verfügen. Dieses riegelt die Wasserzufuhr bei einem Defekt automatisch ab.
 
 ## 5. Hauptwasserhahn bei Abwesenheit schließen
 
 Wenn Sie in den Urlaub fahren oder das Haus für längere Zeit verlassen, ist dies die sicherste Maßnahme.
-*   **Vorgehen:** Drehen Sie den Hauptwasserhahn (meist im Keller nach der Wasseruhr) zu und entleeren Sie ggf. die Leitungen kurz über einen Wasserhahn. So kann selbst bei einem Rohrbruch kein Wasser nachlaufen.
+*   **Vorgehen:** Drehen Sie den Hauptwasserhahn (meist im Keller nach der Wasseruhr) zu und entleeren Sie ggf. die Leitungen kurz über einen Wasserhahn.
 
 ## Fazit
 
-Ein wenig Aufmerksamkeit kann Sie vor großem Ärger bewahren. Sollten Sie dennoch Feuchtigkeit bemerken oder unsicher über den Zustand Ihrer Installation sein, rufen Sie uns an. Wir führen gerne einen **Sanitär-Check** bei Ihnen durch.
+Ein wenig Aufmerksamkeit schützt vor erheblichem Schaden. Sollten Sie dennoch Feuchtigkeit bemerken oder unsicher über den Zustand Ihrer Installation sein, rufen Sie uns an. Wir führen gerne einen professionellen Sanitär-Check bei Ihnen durch.
     `,
         tags: ["Sanitär", "Wartung", "Tipps", "Sicherheit", "Prävention"]
     },
@@ -147,7 +145,7 @@ Ein wenig Aufmerksamkeit kann Sie vor großem Ärger bewahren. Sollten Sie denno
         author: "Baris Haustechnik",
         date: "05. März 2024",
         readTime: "7 Min.",
-        image: "/images/blog/post-3.jpg",
+        image: "/images/uploads/extra-03.webp",
         slug: "solarthermie-vs-photovoltaik-vergleich",
         featured: false,
         content: `
@@ -158,45 +156,38 @@ Die Sonne schickt uns täglich mehr Energie, als wir verbrauchen können. Wer di
 ## Die Grundlagen
 
 ### Solarthermie (Wärme)
-Solarthermische Anlagen wandeln Sonnenstrahlung direkt in **Wärme** um. In den Kollektoren auf dem Dach zirkuliert eine Flüssigkeit, die sich erhitzt und diese Wärme in einen Pufferspeicher im Haus transportiert.
+Solarthermische Anlagen wandeln Sonnenstrahlung direkt in Wärme um. In den Kollektoren auf dem Dach zirkuliert eine Trägerflüssigkeit, die Wärme in einen Pufferspeicher transportiert.
 *   **Nutzung:** Warmwasserbereitung und/oder Heizungsunterstützung.
 
 ### Photovoltaik (Strom)
-Photovoltaikanlagen (PV) wandeln Sonnenlicht mittels Solarzellen direkt in **elektrischen Strom** um.
-*   **Nutzung:** Betrieb von Haushaltsgeräten, Beleuchtung, Wärmepumpe oder Laden von E-Autos. Überschüsse werden ins Netz eingespeist oder in Batterien gespeichert.
+Photovoltaikanlagen (PV) wandeln Sonnenlicht mittels Solarzellen direkt in elektrischen Strom um.
+*   **Nutzung:** Betrieb von Haushaltsgeräten, Wärmepumpe oder Laden von E-Autos. Überschüsse werden eingespeist oder in Batterien gespeichert.
 
 ## Der Vergleich
 
 | Merkmal | Solarthermie | Photovoltaik |
 | :--- | :--- | :--- |
-| **Output** | Wärme (Warmwasser/Heizung) | Strom |
-| **Wirkungsgrad** | Hoch (ca. 50-60% der Strahlungsenergie) | Geringer (ca. 20-22% der Strahlungsenergie) |
-| **Platzbedarf** | Gering (wenige m² reichen für Warmwasser) | Höher (je mehr Fläche, desto mehr Ertrag) |
-| **Kosten** | Günstiger in der Anschaffung | Höhere Investition, aber Einnahmen durch Einspeisung |
-| **Sommer/Winter** | Hohe Überschüsse im Sommer, wenig im Winter | Ertrag auch im Winter (bei Licht), aber geringer |
+| Output | Wärme (Warmwasser/Heizung) | Strom |
+| Wirkungsgrad | Hoch (ca. 50-60%) | Ca. 20-22% |
+| Platzbedarf | Gering (wenige m² genügen) | Höher (flächenabhängiger Ertrag) |
+| Investition | Günstiger in der Anschaffung | Höher, amortisiert sich durch Eigennutzung |
+| Jahresverlauf | Hohe Überschüsse im Sommer | Ertrag ganzjährig bei Tageslicht |
 
 ## Wann lohnt sich was?
 
 ### Solarthermie lohnt sich, wenn...
 *   Sie einen hohen Warmwasserbedarf haben (z.B. Mehrfamilienhaus).
-*   Sie Ihre Heizung entlasten wollen.
-*   Sie nur wenig Dachfläche zur Verfügung haben.
+*   Sie Ihre bestehende Heizung effizient entlasten wollen.
+*   Sie nur begrenzte Dachfläche zur Verfügung haben.
 
 ### Photovoltaik lohnt sich, wenn...
-*   Sie Ihren Stromverbrauch senken und unabhängiger vom Energieversorger werden wollen.
-*   Sie eine Wärmepumpe betreiben (ideale Kombination!).
-*   Sie ein Elektroauto besitzen.
-*   Sie eine große Dachfläche haben.
-
-## Die perfekte Kombination
-
-In vielen Fällen ist ein "Entweder-oder" gar nicht nötig. Eine Kombination kann sehr sinnvoll sein:
-1.  **PV + Wärmepumpe:** Der selbst produzierte Strom treibt die Wärmepumpe an. Das ist ökologisch und ökonomisch oft die beste Lösung.
-2.  **Hybrid-Kollektoren (PVT):** Diese erzeugen gleichzeitig Strom und Wärme, sind aber noch eine Nischenlösung.
+*   Sie Ihren Netzstrombezug nachhaltig senken möchten.
+*   Sie eine Wärmepumpe oder ein Elektroauto betreiben.
+*   Sie eine gut ausgerichtete Dachfläche besitzen.
 
 ## Fazit
 
-Die Entscheidung hängt von Ihrem individuellen Verbrauch, Ihrem Budget und den baulichen Gegebenheiten ab. Als Experte für beide Technologien beraten wir Sie gerne objektiv und erstellen ein maßgeschneidertes Konzept für Ihr Haus.
+Die optimale Lösung richtet sich nach Ihren Verbrauchsgewohnheiten und den baulichen Rahmenbedingungen. Als Fachbetrieb für beide Technologien beraten wir Sie objektiv und erstellen ein wirtschaftliches Konzept.
     `,
         tags: ["Solar", "Energie", "Vergleich", "Photovoltaik", "Solarthermie"]
     },
@@ -208,46 +199,34 @@ Die Entscheidung hängt von Ihrem individuellen Verbrauch, Ihrem Budget und den 
         author: "Team Baris",
         date: "28. Februar 2024",
         readTime: "4 Min.",
-        image: "/images/blog/post-4.jpg",
+        image: "/images/uploads/extra-04.webp",
         slug: "heizungswartung-pflicht-oder-kuer",
         featured: false,
         content: `
 # Heizungswartung: Kür oder Pflicht?
 
-"Meine Heizung läuft doch, warum soll ich Geld für eine Wartung ausgeben?" Diesen Satz hören wir oft. Doch der Verzicht auf eine regelmäßige Wartung ist Sparen am falschen Ende. Es gibt triftige Gründe – technische, wirtschaftliche und rechtliche –, warum der jährliche Check durch den Fachmann unverzichtbar ist.
+Der Verzicht auf eine regelmäßige Wartung ist Sparen am falschen Ende. Es gibt triftige Gründe – technische, wirtschaftliche und rechtliche –, warum der jährliche Check durch den Fachbetrieb unverzichtbar ist.
 
 ## 1. Energieeffizienz und Kosteneinsparung
 
-Eine Heizung ist wie ein Auto: Ohne Ölwechsel und Inspektion steigt der Verbrauch und der Verschleiß.
-*   **Rußablagerungen:** Bei Öl- und Gasheizungen setzen sich Verbrennungsrückstände im Kessel ab. Schon 1 Millimeter Rußschicht wirkt wie eine Dämmung und verringert die Wärmeübertragung um ca. **5%**.
-*   **Einstellung:** Der Fachmann optimiert die Brennerwerte und die Regelung. Eine optimal eingestellte Heizung spart bis zu **15% Energiekosten**. Die Wartungskosten haben Sie so oft schnell wieder drin.
+Eine Heizung verlangt wie jedes technische System regelmäßige Pflege.
+*   **Rußablagerungen:** Bei Öl- und Gasheizungen setzen sich Verbrennungsrückstände im Kessel ab. Schon 1 Millimeter Rußschicht verringert den Wirkungsgrad spürbar.
+*   **Einstellung:** Der Fachmann optimiert Brennerwerte und Regelung. Eine präzise eingestellte Heizung spart bis zu 15% Energiekosten.
 
 ## 2. Betriebssicherheit und Brandschutz
 
-Sicherheit geht vor. Bei der Wartung werden sicherheitsrelevante Bauteile geprüft.
-*   **Gasaustritt:** Undichte Stellen werden frühzeitig erkannt.
-*   **Kohlenmonoxid:** Eine schlechte Verbrennung kann zu gefährlichem CO-Austritt führen.
-*   **Verschleißteile:** Elektroden, Düsen oder Filter werden getauscht, bevor die Heizung im tiefsten Winter ausfällt.
+Sicherheit geht stets vor. Bei der Wartung werden sicherheitsrelevante Bauteile gründlich geprüft:
+*   **Dichtheitsprüfung:** Gas- und Ölleitungen werden auf Leckagen kontrolliert.
+*   **Abgasmessung:** Gewährleistet eine saubere Verbrennung ohne CO-Gefahr.
+*   **Verschleißteile:** Zündelektroden, Düsen und Filter werden rechtzeitig erneuert.
 
-## 3. Gewährleistung und Garantie
+## 3. Gewährleistung und Versicherungsschutz
 
-Hersteller von Heizungsanlagen knüpfen ihre Garantiebedingungen fast immer an den Nachweis einer regelmäßigen, fachgerechten Wartung.
-*   **Risiko:** Fällt ein teures Bauteil innerhalb der Garantiezeit aus und Sie können keine Wartung nachweisen, bleiben Sie oft auf den Kosten sitzen.
-
-## 4. Versicherungsschutz
-
-Auch Gebäudeversicherungen verlangen in ihren Klauseln oft, dass technische Anlagen instand gehalten werden müssen.
-*   **Im Schadensfall:** Kommt es zu einem Brand oder Wasserschaden, der auf eine mangelnde Wartung zurückzuführen ist, kann die Versicherung die Leistung kürzen oder ganz verweigern ("Grobe Fahrlässigkeit").
-
-## 5. Rechtliche Pflichten
-
-In der Energieeinsparverordnung (EnEV) bzw. dem Gebäudeenergiegesetz (GEG) ist festgelegt, dass Betreiber von Heizungsanlagen verpflichtet sind, diese regelmäßig warten und instand halten zu lassen.
+Hersteller knüpfen Garantieansprüche an nachgewiesene Fachwartungen. Auch Gebäudeversicherungen fordern im Schadenfall den Nachweis ordnungsgemäßer Instandhaltung.
 
 ## Unser Wartungsangebot
 
-Gehen Sie auf Nummer sicher. Mit einer regelmäßigen **Wartung** von Baris Haustechnik müssen Sie sich um nichts kümmern. Wir sorgen dafür, dass Ihre Anlage effizient und sicher läuft.
-
-**Sprechen Sie uns an – für ein warmes und sicheres Zuhause.**
+Mit unserem Wartungsservice von Baris Haustechnik sichern Sie sich maximale Zuverlässigkeit, niedrige Heizkosten und lange Lebensdauer Ihrer Anlage.
     `,
         tags: ["Heizung", "Wartung", "Sicherheit", "Kosten", "Rechtliches"]
     },
@@ -259,54 +238,35 @@ Gehen Sie auf Nummer sicher. Mit einer regelmäßigen **Wartung** von Baris Haus
         author: "Baris Haustechnik",
         date: "20. Februar 2024",
         readTime: "6 Min.",
-        image: "/images/blog/post-5.jpg",
+        image: "/images/uploads/extra-05.webp",
         slug: "barrierefreies-bad-planung-zuschuesse",
         featured: false,
         content: `
 # Das barrierefreie Bad: Komfort für heute und morgen
 
-Ein barrierefreies Bad wird oft nur mit Alter oder Pflegebedürftigkeit assoziiert. Dabei ist es viel mehr: Es ist ein Komfort-Bad für alle Generationen. Eine bodengleiche Dusche sieht nicht nur modern und großzügig aus, sie ist auch sicher für Kinder und bequem für Senioren. Wir zeigen Ihnen, worauf es bei der Planung ankommt und wie Sie an Fördergelder kommen.
+Ein barrierefreies Bad bietet generationsübergreifenden Komfort. Eine bodengleiche Dusche sieht nicht nur elegant und großzügig aus, sie sorgt auch für höchste Trittsicherheit und barrierefreien Einstieg.
 
 ## Was macht ein Bad barrierefrei?
 
-Die DIN 18040-2 regelt die Standards für barrierefreies Bauen im Wohnbereich. Die wichtigsten Aspekte sind:
+Die DIN 18040-2 regelt die Standards für barrierefreies Bauen im Wohnbereich:
 
 ### 1. Platz und Bewegungsfreiheit
-*   Vor allen Sanitärobjekten (WC, Waschtisch, Dusche) sollte eine Bewegungsfläche von mindestens **120 x 120 cm** vorhanden sein.
-*   Für Rollstuhlnutzer sind **150 x 150 cm** erforderlich.
+*   Vor allen Sanitärobjekten (WC, Waschtisch, Dusche) sollte ausreichend Bewegungsfläche eingeplant werden.
 
 ### 2. Die Dusche
-*   **Bodengleich:** Keine Schwellen oder Kanten.
-*   **Rutschfestigkeit:** Fliesen mit Rutschhemmklasse R10 oder höher.
-*   **Sitzgelegenheit:** Ein Klappsitz oder Hocker erhöht den Komfort.
+*   **Bodengleich:** Schwellenloser Übergang für maximale Sicherheit.
+*   **Rutschhemmung:** Fliesen mit Klasse R10 oder höher.
+*   **Duschsitze:** Klappsitze oder Haltegriffe bieten zusätzlichen Halt.
 
-### 3. Der Waschtisch
-*   Sollte im Sitzen nutzbar sein (unterfahrbar).
-*   Einhebelmischer oder berührungslose Armaturen sind leichter zu bedienen.
+### 3. Waschtisch & WC
+*   Unterfahrbare Waschtische und optimierte Sitzhöhen erleichtern die tägliche Nutzung.
 
-### 4. Das WC
-*   Eine Sitzhöhe von 46-48 cm erleichtert das Aufstehen.
-*   Stützklappgriffe bieten Sicherheit.
+## Finanzielle Zuschüsse
 
-## Finanzielle Unterstützung
+*   **Pflegekasse:** Bei Vorliegen eines Pflegegrads bis zu 4.000 Euro Zuschuss für wohnumfeldverbessernde Maßnahmen.
+*   **KfW-Förderung:** Zinsgünstige Kredite und Förderprogramme für den Abbau von Barrieren im Bestand.
 
-Der Umbau zum barrierefreien Bad wird staatlich stark gefördert.
-
-### Pflegekasse
-Wenn bei einer im Haushalt lebenden Person ein **Pflegegrad** (1-5) vorliegt, bezuschusst die Pflegekasse "wohnumfeldverbessernde Maßnahmen".
-*   **Zuschuss:** Bis zu **4.000 Euro** pro Person (maximal 16.000 Euro, wenn mehrere Anspruchsberechtigte zusammenwohnen).
-*   **Voraussetzung:** Der Antrag muss *vor* Beginn der Maßnahme gestellt werden.
-
-### KfW-Förderung
-Auch ohne Pflegegrad unterstützt die Kreditanstalt für Wiederaufbau (KfW) den Abbau von Barrieren.
-*   **Zuschuss 455-B:** Bis zu 6.250 Euro Zuschuss (abhängig von den Investitionskosten). *Hinweis: Fördertöpfe sind oft schnell leer!*
-*   **Kredit 159:** Zinsgünstiger Kredit bis zu 50.000 Euro für den altersgerechten Umbau.
-
-## Planung ist alles
-
-Ein Badumbau ist eine Investition für die nächsten 20-30 Jahre. Planen Sie deshalb vorausschauend. Wir von Baris Haustechnik sind zertifizierte Experten für barrierefreies Bauen. Wir erstellen mit Ihnen ein Konzept, das Design und Funktionalität verbindet – und helfen Ihnen bei den Anträgen.
-
-**Machen Sie Ihr Bad fit für die Zukunft!**
+Planen Sie Ihre Badsanierung vorausschauend mit unserem Meisterteam in Wetzlar!
     `,
         tags: ["Bad", "Barrierefrei", "Zuschüsse", "Planung", "Seniorengerecht"]
     },
@@ -318,7 +278,7 @@ Ein Badumbau ist eine Investition für die nächsten 20-30 Jahre. Planen Sie des
         author: "Team Baris",
         date: "15. Februar 2024",
         readTime: "4 Min.",
-        image: "/images/blog/post-6.jpg",
+        image: "/images/uploads/extra-06.webp",
         slug: "smart-home-heizungssteuerung-nachruesten",
         featured: false,
         content: `
