@@ -109,7 +109,7 @@ export default function Karriere() {
                         Karriere &amp; Jobs im SHK-Handwerk in Wetzlar
                     </h1>
                     <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed font-light">
-                        Werden Sie Teil unseres erfolgreichen Meisterbetriebs! Wir bieten erstklassige Rahmenbedingungen, modernste Werkzeuge und ein echtes Wohlfühlklima im Team.
+                        Werden Sie Teil unseres erfolgreichen Meisterbetriebs! Wir bieten erstklassige Karriere-Chancen und attraktive Jobs im SHK-Handwerk in Wetzlar, modernste Werkzeuge und ein echtes Wohlfühlklima im Team.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#offene-stellen">

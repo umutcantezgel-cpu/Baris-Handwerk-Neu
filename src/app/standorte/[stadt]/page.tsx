@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!city) return {};
 
   const pageUrl = `https://www.batherm.de/standorte/${city.slug}`;
-  const title = `Sanitär & Heizung in ${city.name}`;
+  const title = city.name.length > 15 ? `${city.name}: Sanitär & Heizung` : `Sanitär & Heizung in ${city.name}`;
   const fullTitle = `${title} | Batherm Haustechnik`;
   const description = `Ihr Meisterbetrieb für Sanitär, Heizung & Klima in ${city.name}. ${
     city.distanceKm === 0

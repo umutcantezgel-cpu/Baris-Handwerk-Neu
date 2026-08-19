@@ -80,7 +80,7 @@ export default function Foerderung() {
                         Förderung &amp; Zuschüsse für Heizung in Wetzlar
                     </h1>
                     <p className="text-lg md:text-xl text-neutral-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-                        Nutzen Sie bis zu 70% staatliche Förderung beim Heizungstausch. Wir prüfen Ihre Förderansprüche und begleiten Sie verlässlich von der Planung bis zur Auszahlung.
+                        Nutzen Sie maximale Förderung &amp; Finanzierung sowie bis zu 70% staatliche Zuschüsse für Ihre neue Heizung in Wetzlar durch Meisterbetrieb Batherm Haustechnik. Wir prüfen Ihre Ansprüche und begleiten Sie von der Planung bis zur Auszahlung.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/beratung">

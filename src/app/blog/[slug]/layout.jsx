@@ -13,11 +13,11 @@ export async function generateMetadata({ params }) {
 
   const pageUrl = `https://www.batherm.de/blog/${post.slug}`;
   const title = post.title;
-  const fullTitle = `${title} | Batherm Haustechnik`;
+  const fullTitle = post.title.length > 38 ? post.title : `${post.title} | Batherm Haustechnik`;
   const description = post.excerpt ? (post.excerpt.length > 155 ? `${post.excerpt.slice(0, 152)}...` : post.excerpt) : 'Ratgeber von Batherm Haustechnik';
 
   return {
-    title,
+    title: post.title.length > 38 ? { absolute: post.title } : title,
     description,
     alternates: {
       canonical: pageUrl,

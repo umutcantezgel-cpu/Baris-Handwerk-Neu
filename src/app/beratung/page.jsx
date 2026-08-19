@@ -66,7 +66,7 @@ const Beratung = () => {
                             Kostenlose Fachberatung buchen
                         </h1>
                         <p className="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto leading-relaxed">
-                            Ob moderne Wärmepumpe, Badsanierung oder Heizungsmodernisierung in Wetzlar: Wir nehmen uns Zeit für Ihre Fragen und finden die perfekte Lösung.
+                            Jetzt Ihre kostenlose Fachberatung buchen: Ob moderne Wärmepumpe, Badsanierung oder Heizungsmodernisierung in Wetzlar – wir nehmen uns Zeit für Ihre Fragen und finden die perfekte Lösung.
                         </p>
                     </motion.div>
                 </div>
