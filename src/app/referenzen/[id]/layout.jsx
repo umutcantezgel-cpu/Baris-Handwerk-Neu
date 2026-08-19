@@ -1,4 +1,6 @@
 import { PORTFOLIO_PROJECTS } from '@/config/projects';
+import { buildGraph, buildProjectNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
   return PORTFOLIO_PROJECTS.map((project) => ({
@@ -11,7 +13,7 @@ export async function generateMetadata({ params }) {
   const project = PORTFOLIO_PROJECTS.find((p) => p.id.toString() === id);
   if (!project) return {};
 
-  const pageUrl = `https://www.batherm.de/referenzen/${project.id}`;
+  const pageUrl = `${SITE_URL}/referenzen/${project.id}`;
   const title = `${project.title} in ${project.location}`;
   const fullTitle = `${title} | Batherm Haustechnik`;
   const description = project.description ? (project.description.length > 155 ? `${project.description.slice(0, 152)}...` : project.description) : 'Projekt von Batherm Haustechnik';
@@ -53,6 +55,42 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Layout({ children }) {
-  return children;
+export default async function Layout({ children, params }) {
+  const { id } = await params;
+  const project = PORTFOLIO_PROJECTS.find((p) => p.id.toString() === id);
+
+  let projectSchemaGraph = null;
+  if (project) {
+    const pageUrl = `${SITE_URL}/referenzen/${project.id}`;
+    const breadcrumbs = [
+      { name: 'Home', path: '/' },
+      { name: 'Referenzen', path: '/referenzen' },
+      { name: project.title, path: pageUrl },
+    ];
+
+    projectSchemaGraph = buildGraph([
+      buildWebPageNode({
+        url: pageUrl,
+        name: `${project.title} | Batherm Haustechnik Referenz`,
+        description: project.description,
+        breadcrumbItems: breadcrumbs,
+      }),
+      buildBreadcrumbNode(breadcrumbs, pageUrl),
+      buildProjectNode({
+        name: project.title,
+        description: project.description,
+        url: pageUrl,
+        locationCreated: project.location,
+        image: project.image,
+      }),
+    ]);
+  }
+
+  return (
+    <>
+      <JsonLd schema={projectSchemaGraph} />
+      {children}
+    </>
+  );
 }
+

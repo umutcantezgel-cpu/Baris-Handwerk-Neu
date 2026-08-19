@@ -1,4 +1,6 @@
 import { createMetadata } from '@/lib/metadata';
+import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Impressum & rechtliche Angaben',
@@ -6,6 +8,28 @@ export const metadata = createMetadata({
   path: '/impressum',
 });
 
+const pageUrl = `${SITE_URL}/impressum`;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Impressum', path: '/impressum' },
+];
+
+const impressumSchema = buildGraph([
+  buildWebPageNode({
+    url: pageUrl,
+    name: 'Impressum & rechtliche Angaben | Batherm Haustechnik',
+    description: 'Gesetzliche Anbieterkennzeichnung von Batherm Haustechnik in Wetzlar.',
+    breadcrumbItems: breadcrumbs,
+  }),
+  buildBreadcrumbNode(breadcrumbs, pageUrl),
+]);
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd schema={impressumSchema} />
+      {children}
+    </>
+  );
 }
+

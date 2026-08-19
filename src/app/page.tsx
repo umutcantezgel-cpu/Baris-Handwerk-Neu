@@ -8,44 +8,36 @@ import PartnerLogos from '@/components/sections/PartnerLogos';
 import LatestPosts from '@/components/sections/LatestPosts';
 import PageWrapper from '@/components/common/PageWrapper';
 
-// Keep the metadata
 import { createMetadata } from '@/lib/metadata';
+import { buildGraph, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
 export const metadata = createMetadata({
   title: 'Sanitär, Heizung & Solar in Wetzlar',
   description: 'Ihr Meisterbetrieb für Sanitär, Heizung, Solar und Wärmepumpen in Wetzlar. 24h Notdienst, faire Preise & persönliche Beratung. Jetzt anfragen!',
   path: '/',
 });
 
-const agencySchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.codayweb.de/#organization",
-      "name": "Coday Web Agency",
-      "url": "https://www.codayweb.de/",
-      "description": "Experten für Webdesign und GEO in Hessen",
-      "sameAs": [
-        "https://www.codayweb.de/"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.batherm.de/#website",
-      "creator": {
-        "@id": "https://www.codayweb.de/#organization"
-      }
-    }
-  ]
-};
+const homeGraph = buildGraph([
+  buildWebPageNode({
+    url: `${SITE_URL}/`,
+    name: 'Batherm Haustechnik | Meisterbetrieb für Sanitär, Heizung & Solar in Wetzlar',
+    description:
+      'Ihr Meisterbetrieb für Sanitär, Heizung, Wärmepumpen, Solartechnik und Badsanierung in Wetzlar, Gießen und ganz Mittelhessen.',
+  }),
+  {
+    '@type': 'Organization',
+    '@id': 'https://www.codayweb.de/#organization',
+    name: 'Coday Web Agency',
+    url: 'https://www.codayweb.de/',
+    description: 'Experten für Webdesign und GEO in Hessen',
+  },
+]);
 
 export default function HomePage() {
   return (
     <PageWrapper className="relative min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(agencySchema) }}
-      />
+      <JsonLd schema={homeGraph} />
       <Hero
         title="Meisterhafte Installationen für Ihr Zuhause"
         subtitle="Batherm Haustechnik ist Ihr zuverlässiger Meisterbetrieb für Sanitär, Heizung, Solar und moderne Klimatechnik in Wetzlar & Region – von der Fachberatung bis zur nachhaltigen Installation."

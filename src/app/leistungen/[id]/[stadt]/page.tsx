@@ -4,6 +4,8 @@ import { CITIES } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
+import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 // ---------------------------------------------------------------------------
 // Static Params – generates a page for every service × city combination
@@ -138,68 +140,37 @@ export default async function ServiceCityPage({
       ? 'direkt vor Ort in Wetzlar'
       : `nur ${city.distanceKm} km von unserem Standort in Wetzlar entfernt`;
 
-  // ── JSON-LD: Service schema ───────────────────────────────────────────
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: `${service.name} in ${city.name}`,
-    serviceType: service.name,
-    description: `${service.shortDescription} – professionell ausgeführt in ${city.name} und Umgebung.`,
-    provider: {
-      '@type': 'LocalBusiness',
-      '@id': 'https://www.batherm.de/#organization',
-      name: COMPANY_DATA.legalName,
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-    },
-    url: pageUrl,
-  };
+  // ── JSON-LD: Service + Breadcrumbs @graph ─────────────────────────────
+  const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Leistungen', path: '/leistungen' },
+    { name: service.name, path: `/leistungen/${service.id}` },
+    { name: city.name, path: pageUrl },
+  ];
 
-  // ── JSON-LD: BreadcrumbList ───────────────────────────────────────────
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://www.batherm.de',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Leistungen',
-        item: 'https://www.batherm.de/leistungen',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: service.name,
-        item: `https://www.batherm.de/leistungen/${service.id}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: city.name,
-        item: pageUrl,
-      },
-    ],
-  };
+  const serviceCityGraph = buildGraph([
+    buildWebPageNode({
+      url: pageUrl,
+      name: `${service.name} in ${city.name} | Batherm Haustechnik`,
+      description: `${service.shortDescription} – professionell ausgeführt in ${city.name} und Umgebung.`,
+      breadcrumbItems: breadcrumbs,
+    }),
+    buildBreadcrumbNode(breadcrumbs, pageUrl),
+    buildServiceNode({
+      name: `${service.name} in ${city.name}`,
+      serviceType: service.name,
+      description: `${service.shortDescription} – professionell ausgeführt in ${city.name} und Umgebung.`,
+      url: pageUrl,
+      areaServedCity: city.name,
+      offers: (service.features || []).map((feat: string) => ({ name: feat })),
+      image: service.heroImage,
+    }),
+  ]);
 
   return (
     <>
       {/* ── Structured Data ──────────────────────────────────────────────── */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd schema={serviceCityGraph} />
 
       {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <section className="relative pt-[var(--spacing-32)] pb-20 px-4 bg-gradient-to-br from-[#1a3a52] to-[#0e1f2b] overflow-hidden">

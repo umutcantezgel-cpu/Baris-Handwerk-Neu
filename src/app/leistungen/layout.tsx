@@ -1,4 +1,6 @@
 import { createMetadata } from '@/lib/metadata';
+import { buildGraph, buildBreadcrumbNode, buildWebPageNode, ORG_ID, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Leistungen für Sanitär, Heizung & Klima',
@@ -6,72 +8,85 @@ export const metadata = createMetadata({
   path: '/leistungen',
 });
 
-const offerCatalogSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'OfferCatalog',
-  '@id': 'https://www.batherm.de/leistungen/#catalog',
-  'name': 'Leistungen von Batherm Haustechnik',
-  'provider': { '@id': 'https://www.batherm.de/#organization' },
-  'itemListElement': [
-    {
-      '@type': 'Offer',
-      'itemOffered': {
-        '@type': 'Service',
-        'name': 'Sanitärtechnik',
-        'url': 'https://www.batherm.de/leistungen/sanitaer',
+const pageUrl = `${SITE_URL}/leistungen`;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Leistungen', path: '/leistungen' },
+];
+
+const leistungenSchema = buildGraph([
+  buildWebPageNode({
+    url: pageUrl,
+    name: 'Haustechnik Leistungen in Wetzlar | Batherm Haustechnik',
+    description:
+      'Komplettes Leistungsportfolio: Sanitärtechnik, moderne Heizungstechnik, Wärmepumpen, Klimatechnik und Smart Home.',
+    breadcrumbItems: breadcrumbs,
+  }),
+  buildBreadcrumbNode(breadcrumbs, pageUrl),
+  {
+    '@type': 'OfferCatalog',
+    '@id': `${pageUrl}#catalog`,
+    name: 'Leistungen von Batherm Haustechnik',
+    provider: { '@id': ORG_ID },
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Sanitärtechnik',
+          url: `${SITE_URL}/leistungen/sanitaer`,
+        },
       },
-    },
-    {
-      '@type': 'Offer',
-      'itemOffered': {
-        '@type': 'Service',
-        'name': 'Heizungstechnik',
-        'url': 'https://www.batherm.de/leistungen/heizung',
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Heizungstechnik',
+          url: `${SITE_URL}/leistungen/heizung`,
+        },
       },
-    },
-    {
-      '@type': 'Offer',
-      'itemOffered': {
-        '@type': 'Service',
-        'name': 'Klimatechnik',
-        'url': 'https://www.batherm.de/leistungen/klima',
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Klimatechnik',
+          url: `${SITE_URL}/leistungen/klima`,
+        },
       },
-    },
-    {
-      '@type': 'Offer',
-      'itemOffered': {
-        '@type': 'Service',
-        'name': 'Wartung & Service',
-        'url': 'https://www.batherm.de/leistungen/wartung',
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Wartung & Service',
+          url: `${SITE_URL}/leistungen/wartung`,
+        },
       },
-    },
-    {
-      '@type': 'Offer',
-      'itemOffered': {
-        '@type': 'Service',
-        'name': 'Smart Home',
-        'url': 'https://www.batherm.de/leistungen/smart-home',
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Smart Home',
+          url: `${SITE_URL}/leistungen/smart-home`,
+        },
       },
-    },
-    {
-      '@type': 'Offer',
-      'itemOffered': {
-        '@type': 'Service',
-        'name': 'Wasseraufbereitung',
-        'url': 'https://www.batherm.de/leistungen/wasseraufbereitung',
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Wasseraufbereitung',
+          url: `${SITE_URL}/leistungen/wasseraufbereitung`,
+        },
       },
-    },
-  ],
-};
+    ],
+  },
+]);
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }}
-      />
+      <JsonLd schema={leistungenSchema} />
       {children}
     </>
   );
 }
+

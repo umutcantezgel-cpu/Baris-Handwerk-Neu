@@ -2,13 +2,9 @@ import { MetadataRoute } from 'next';
 import { posts } from '@/config/posts';
 import { SERVICES } from '@/config/services';
 import { PORTFOLIO_PROJECTS } from '@/config/projects';
-export const dynamic = 'force-static';
+import { CITIES } from '@/config/cities';
 
-const CITIES = [
-  'wetzlar', 'giessen', 'marburg', 'limburg', 'bad-nauheim',
-  'friedberg', 'butzbach', 'herborn', 'dillenburg', 'haiger',
-  'braunfels', 'solms', 'asslar'
-];
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.batherm.de';
@@ -17,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/leistungen`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/standorte`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/kontakt`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/ueber-uns`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
@@ -55,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const cityPages: MetadataRoute.Sitemap = CITIES.map((city) => ({
-    url: `${baseUrl}/standorte/${city}`,
+    url: `${baseUrl}/standorte/${city.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
@@ -64,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Service×City Matrix: hyper-local pages (e.g. /leistungen/sanitaer/giessen)
   const serviceCityPages: MetadataRoute.Sitemap = SERVICES.flatMap((service) =>
     CITIES.map((city) => ({
-      url: `${baseUrl}/leistungen/${service.id}/${city}`,
+      url: `${baseUrl}/leistungen/${service.id}/${city.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,

@@ -4,6 +4,8 @@ import { CITIES } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
+import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 // ---------------------------------------------------------------------------
 // Static Params – generates a page for every city at build time
@@ -106,29 +108,32 @@ export default async function StandortPage({
 
   const nearbyCities = getNearbyCities(city.slug, 5);
 
-  // JSON-LD Service schema with areaServed for local SEO
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Sanitär, Heizung & Klimatechnik',
-    provider: {
-      '@type': 'LocalBusiness',
-      '@id': 'https://www.batherm.de/#organization',
-      name: 'Batherm Haustechnik',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-    },
-    description: `Professionelle Sanitär-, Heizungs- und Klimatechnik in ${city.name} und Umgebung. Meisterbetrieb aus Wetzlar.`,
-  };
+  const pageUrl = `${SITE_URL}/standorte/${city.slug}`;
+  const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Standorte', path: '/standorte/wetzlar' },
+    { name: city.name, path: pageUrl },
+  ];
+
+  const cityGraph = buildGraph([
+    buildWebPageNode({
+      url: pageUrl,
+      name: `Sanitär, Heizung & Klimatechnik in ${city.name} | Batherm Haustechnik`,
+      description: `Ihr Meisterbetrieb für Sanitär, Heizung & Klima in ${city.name}. Kostenlose Beratung & 24h Notdienst.`,
+      breadcrumbItems: breadcrumbs,
+    }),
+    buildBreadcrumbNode(breadcrumbs, pageUrl),
+    buildCityLocalBusinessNode({
+      cityName: city.name,
+      citySlug: city.slug,
+      distanceKm: city.distanceKm,
+      description: `Ihr lokaler Meisterbetrieb für Sanitär, Heizung und Klimatechnik in ${city.name}. Fachgerechte Installation und 24h Service.`,
+    }),
+  ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+      <JsonLd schema={cityGraph} />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative pt-[var(--spacing-32)] pb-20 px-4 bg-gradient-to-br from-[#1a3a52] to-[#0e1f2b]">

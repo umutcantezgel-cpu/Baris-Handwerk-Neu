@@ -3,12 +3,20 @@ import Link from 'next/link';
 import { PhoneCall, Clock, MapPin, WarningCircle, Wrench, ShieldCheck, CheckCircle, Question } from '@phosphor-icons/react/dist/ssr';
 import { createMetadata } from '@/lib/metadata';
 import { COMPANY_DATA } from '@/config/company';
+import { buildGraph, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL, LOCAL_BUSINESS_ID } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: '24h Notdienst Sanitär & Heizung Wetzlar',
   description: 'Rohrbruch, Heizungsausfall oder verstopfter Abfluss? Unser 24h Notdienst ist rund um die Uhr in Wetzlar und Umgebung für Sie erreichbar. Jetzt anrufen!',
   path: '/notdienst',
 });
+
+const pageUrl = `${SITE_URL}/notdienst`;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: '24h Notdienst', path: '/notdienst' },
+];
 
 const emergencyFaqs = [
   {
@@ -29,12 +37,43 @@ const emergencyFaqs = [
   }
 ];
 
+const notdienstGraph = buildGraph([
+  buildWebPageNode({
+    url: pageUrl,
+    name: '24h Notdienst Sanitär & Heizung Wetzlar | Batherm Haustechnik',
+    description: '24/7 Notdienst bei Rohrbruch, Heizungsausfall und Sanitär-Notfällen in Wetzlar, Gießen und Umgebung.',
+    breadcrumbItems: breadcrumbs,
+  }),
+  buildBreadcrumbNode(breadcrumbs, pageUrl),
+  {
+    '@type': 'EmergencyService',
+    '@id': `${pageUrl}#emergencyservice`,
+    name: '24h Notdienst Sanitär & Heizung – Batherm Haustechnik',
+    serviceType: 'Sanitär- & Heizungsnotdienst 24/7',
+    description: 'Schnelle Soforthilfe bei Rohrbrüchen, Heizungsausfällen und Wasserschäden rund um die Uhr in Wetzlar und Region.',
+    url: pageUrl,
+    provider: { '@id': LOCAL_BUSINESS_ID },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Wetzlar, Gießen, Lahn-Dill-Kreis & Mittelhessen',
+    },
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  },
+  buildFaqNode(emergencyFaqs, pageUrl),
+]);
+
 export default function NotdienstPage() {
   const phoneFormatted = COMPANY_DATA.contact.phone;
   const phoneClean = COMPANY_DATA.contact.phone.replace(/\s/g, '');
 
   return (
     <main className="min-h-screen bg-neutral-50">
+      <JsonLd schema={notdienstGraph} />
       {/* ── Emergency Hero ─────────────────────────────────────────────── */}
       <section className="bg-gradient-to-br from-red-700 via-red-600 to-red-800 pt-32 pb-20 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 to-transparent pointer-events-none" />

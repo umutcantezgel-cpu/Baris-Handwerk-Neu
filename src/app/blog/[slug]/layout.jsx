@@ -1,4 +1,6 @@
 import { posts } from '@/config/posts';
+import { buildGraph, buildArticleNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
   return posts.map((post) => ({
@@ -11,7 +13,7 @@ export async function generateMetadata({ params }) {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
 
-  const pageUrl = `https://www.batherm.de/blog/${post.slug}`;
+  const pageUrl = `${SITE_URL}/blog/${post.slug}`;
   const title = post.title;
   const fullTitle = post.title.length > 38 ? post.title : `${post.title} | Batherm Haustechnik`;
   const description = post.excerpt ? (post.excerpt.length > 155 ? `${post.excerpt.slice(0, 152)}...` : post.excerpt) : 'Ratgeber von Batherm Haustechnik';
@@ -33,8 +35,8 @@ export async function generateMetadata({ params }) {
       siteName: 'Batherm Haustechnik',
       locale: 'de_DE',
       type: 'article',
-      publishedTime: post.created_date,
-      images: post.image_url ? [{ url: post.image_url, width: 1200, height: 630 }] : [],
+      publishedTime: post.created_date || '2024-03-15T08:00:00+01:00',
+      images: post.image ? [{ url: `${SITE_URL}${post.image}`, width: 1200, height: 630 }] : [],
     },
     twitter: {
       card: 'summary_large_image',
@@ -55,6 +57,43 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Layout({ children }) {
-  return children;
+export default async function Layout({ children, params }) {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
+
+  let postSchemaGraph = null;
+  if (post) {
+    const pageUrl = `${SITE_URL}/blog/${post.slug}`;
+    const breadcrumbs = [
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: post.title, path: pageUrl },
+    ];
+
+    postSchemaGraph = buildGraph([
+      buildWebPageNode({
+        url: pageUrl,
+        name: `${post.title} | Batherm Haustechnik`,
+        description: post.excerpt || post.title,
+        breadcrumbItems: breadcrumbs,
+      }),
+      buildBreadcrumbNode(breadcrumbs, pageUrl),
+      buildArticleNode({
+        headline: post.title,
+        description: post.excerpt || post.title,
+        url: pageUrl,
+        datePublished: post.created_date || '2024-03-15T08:00:00+01:00',
+        image: post.image,
+        keywords: [post.category, 'Haustechnik', 'Wetzlar', 'Sanitär', 'Heizung'],
+      }),
+    ]);
+  }
+
+  return (
+    <>
+      <JsonLd schema={postSchemaGraph} />
+      {children}
+    </>
+  );
 }
+
